@@ -1,0 +1,296 @@
+{
+  "status": "SUCCESS",
+  "spaces": {
+    "strategy": {
+      "status": "SUCCESS",
+      "unique_documents": 596
+    },
+    "security": {
+      "status": "SUCCESS",
+      "unique_documents": 476
+    },
+    "rationale": {
+      "status": "SUCCESS",
+      "unique_documents": 220
+    },
+    "risk": {
+      "status": "SUCCESS",
+      "unique_documents": 179
+    }
+  },
+  "topics": [
+    {
+      "topic_id": "topic_1",
+      "space": "strategy",
+      "comment_count": 202,
+      "unique_texts": 194,
+      "acceptance": "CANDIDATE_PENDING_HUMAN_REVIEW"
+    },
+    {
+      "topic_id": "topic_2",
+      "space": "strategy",
+      "comment_count": 96,
+      "unique_texts": 62,
+      "acceptance": "CANDIDATE_PENDING_HUMAN_REVIEW"
+    },
+    {
+      "topic_id": "topic_3",
+      "space": "strategy",
+      "comment_count": 49,
+      "unique_texts": 49,
+      "acceptance": "CANDIDATE_PENDING_HUMAN_REVIEW"
+    },
+    {
+      "topic_id": "topic_4",
+      "space": "strategy",
+      "comment_count": 42,
+      "unique_texts": 42,
+      "acceptance": "CANDIDATE_PENDING_HUMAN_REVIEW"
+    },
+    {
+      "topic_id": "topic_5",
+      "space": "strategy",
+      "comment_count": 27,
+      "unique_texts": 27,
+      "acceptance": "CANDIDATE_PENDING_HUMAN_REVIEW"
+    },
+    {
+      "topic_id": "topic_6",
+      "space": "strategy",
+      "comment_count": 29,
+      "unique_texts": 26,
+      "acceptance": "CANDIDATE_PENDING_HUMAN_REVIEW"
+    },
+    {
+      "topic_id": "topic_7",
+      "space": "strategy",
+      "comment_count": 21,
+      "unique_texts": 21,
+      "acceptance": "CANDIDATE_PENDING_HUMAN_REVIEW"
+    },
+    {
+      "topic_id": "topic_8",
+      "space": "strategy",
+      "comment_count": 20,
+      "unique_texts": 20,
+      "acceptance": "CANDIDATE_PENDING_HUMAN_REVIEW"
+    },
+    {
+      "topic_id": "topic_9",
+      "space": "strategy",
+      "comment_count": 19,
+      "unique_texts": 19,
+      "acceptance": "CANDIDATE_PENDING_HUMAN_REVIEW"
+    },
+    {
+      "topic_id": "topic_10",
+      "space": "strategy",
+      "comment_count": 23,
+      "unique_texts": 19,
+      "acceptance": "CANDIDATE_PENDING_HUMAN_REVIEW"
+    },
+    {
+      "topic_id": "topic_11",
+      "space": "strategy",
+      "comment_count": 29,
+      "unique_texts": 17,
+      "acceptance": "CANDIDATE_PENDING_HUMAN_REVIEW"
+    },
+    {
+      "topic_id": "topic_12",
+      "space": "strategy",
+      "comment_count": 17,
+      "unique_texts": 17,
+      "acceptance": "CANDIDATE_PENDING_HUMAN_REVIEW"
+    },
+    {
+      "topic_id": "topic_13",
+      "space": "strategy",
+      "comment_count": 16,
+      "unique_texts": 16,
+      "acceptance": "CANDIDATE_PENDING_HUMAN_REVIEW"
+    },
+    {
+      "topic_id": "topic_14",
+      "space": "strategy",
+      "comment_count": 16,
+      "unique_texts": 16,
+      "acceptance": "CANDIDATE_PENDING_HUMAN_REVIEW"
+    },
+    {
+      "topic_id": "topic_15",
+      "space": "strategy",
+      "comment_count": 16,
+      "unique_texts": 16,
+      "acceptance": "CANDIDATE_PENDING_HUMAN_REVIEW"
+    },
+    {
+      "topic_id": "topic_16",
+      "space": "strategy",
+      "comment_count": 22,
+      "unique_texts": 13,
+      "acceptance": "CANDIDATE_PENDING_HUMAN_REVIEW"
+    },
+    {
+      "topic_id": "topic_17",
+      "space": "strategy",
+      "comment_count": 12,
+      "unique_texts": 12,
+      "acceptance": "CANDIDATE_PENDING_HUMAN_REVIEW"
+    },
+    {
+      "topic_id": "topic_18",
+      "space": "strategy",
+      "comment_count": 20,
+      "unique_texts": 10,
+      "acceptance": "CANDIDATE_PENDING_HUMAN_REVIEW"
+    },
+    {
+      "topic_id": "topic_19",
+      "space": "security",
+      "comment_count": 88,
+      "unique_texts": 88,
+      "acceptance": "CANDIDATE_PENDING_HUMAN_REVIEW"
+    },
+    {
+      "topic_id": "topic_20",
+      "space": "security",
+      "comment_count": 92,
+      "unique_texts": 92,
+      "acceptance": "CANDIDATE_PENDING_HUMAN_REVIEW"
+    },
+    {
+      "topic_id": "topic_21",
+      "space": "security",
+      "comment_count": 51,
+      "unique_texts": 51,
+      "acceptance": "CANDIDATE_PENDING_HUMAN_REVIEW"
+    },
+    {
+      "topic_id": "topic_22",
+      "space": "security",
+      "comment_count": 52,
+      "unique_texts": 49,
+      "acceptance": "CANDIDATE_PENDING_HUMAN_REVIEW"
+    },
+    {
+      "topic_id": "topic_23",
+      "space": "security",
+      "comment_count": 34,
+      "unique_texts": 33,
+      "acceptance": "CANDIDATE_PENDING_HUMAN_REVIEW"
+    },
+    {
+      "topic_id": "topic_24",
+      "space": "security",
+      "comment_count": 32,
+      "unique_texts": 30,
+      "acceptance": "CANDIDATE_PENDING_HUMAN_REVIEW"
+    },
+    {
+      "topic_id": "topic_25",
+      "space": "security",
+      "comment_count": 29,
+      "unique_texts": 28,
+      "acceptance": "CANDIDATE_PENDING_HUMAN_REVIEW"
+    },
+    {
+      "topic_id": "topic_26",
+      "space": "security",
+      "comment_count": 27,
+      "unique_texts": 27,
+      "acceptance": "CANDIDATE_PENDING_HUMAN_REVIEW"
+    },
+    {
+      "topic_id": "topic_27",
+      "space": "security",
+      "comment_count": 25,
+      "unique_texts": 25,
+      "acceptance": "CANDIDATE_PENDING_HUMAN_REVIEW"
+    },
+    {
+      "topic_id": "topic_28",
+      "space": "security",
+      "comment_count": 30,
+      "unique_texts": 23,
+      "acceptance": "CANDIDATE_PENDING_HUMAN_REVIEW"
+    },
+    {
+      "topic_id": "topic_29",
+      "space": "security",
+      "comment_count": 19,
+      "unique_texts": 19,
+      "acceptance": "CANDIDATE_PENDING_HUMAN_REVIEW"
+    },
+    {
+      "topic_id": "topic_30",
+      "space": "security",
+      "comment_count": 11,
+      "unique_texts": 11,
+      "acceptance": "CANDIDATE_PENDING_HUMAN_REVIEW"
+    },
+    {
+      "topic_id": "topic_31",
+      "space": "rationale",
+      "comment_count": 43,
+      "unique_texts": 40,
+      "acceptance": "CANDIDATE_PENDING_HUMAN_REVIEW"
+    },
+    {
+      "topic_id": "topic_32",
+      "space": "rationale",
+      "comment_count": 69,
+      "unique_texts": 69,
+      "acceptance": "CANDIDATE_PENDING_HUMAN_REVIEW"
+    },
+    {
+      "topic_id": "topic_33",
+      "space": "rationale",
+      "comment_count": 46,
+      "unique_texts": 46,
+      "acceptance": "CANDIDATE_PENDING_HUMAN_REVIEW"
+    },
+    {
+      "topic_id": "topic_34",
+      "space": "rationale",
+      "comment_count": 32,
+      "unique_texts": 32,
+      "acceptance": "CANDIDATE_PENDING_HUMAN_REVIEW"
+    },
+    {
+      "topic_id": "topic_35",
+      "space": "rationale",
+      "comment_count": 18,
+      "unique_texts": 18,
+      "acceptance": "CANDIDATE_PENDING_HUMAN_REVIEW"
+    },
+    {
+      "topic_id": "topic_36",
+      "space": "rationale",
+      "comment_count": 15,
+      "unique_texts": 15,
+      "acceptance": "CANDIDATE_PENDING_HUMAN_REVIEW"
+    },
+    {
+      "topic_id": "topic_37",
+      "space": "risk",
+      "comment_count": 3,
+      "unique_texts": 3,
+      "acceptance": "CANDIDATE_PENDING_HUMAN_REVIEW"
+    },
+    {
+      "topic_id": "topic_38",
+      "space": "risk",
+      "comment_count": 161,
+      "unique_texts": 156,
+      "acceptance": "CANDIDATE_PENDING_HUMAN_REVIEW"
+    },
+    {
+      "topic_id": "topic_39",
+      "space": "risk",
+      "comment_count": 29,
+      "unique_texts": 20,
+      "acceptance": "CANDIDATE_PENDING_HUMAN_REVIEW"
+    }
+  ]
+}

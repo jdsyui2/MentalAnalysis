@@ -1,0 +1,69 @@
+{
+  "schema_version": "3.0",
+  "prompt_version": "investment-3.0",
+  "generated_at": "2026-10-05T11:27:43.491952+08:00",
+  "model": "deepseek-flash",
+  "pilot": false,
+  "run_status": "COMPLETE",
+  "promotion_state": "RESEARCH_ONLY",
+  "maturity_level": "RESEARCH_ASSIST",
+  "acceptance": "PENDING_HUMAN_ANNOTATION",
+  "engineering_ready": true,
+  "research_assist_ready": true,
+  "model_accuracy_validated": false,
+  "investment_signal_ready": false,
+  "asdc_factor_ready": false,
+  "report_version": "3.1.0",
+  "source_run_id": "20261005T111901191947",
+  "report_revision_id": "20261005T111901191947-v3.1",
+  "report_code_hashes": {
+    "aggregator.py": "5db08e8b106a0afa4e8f1bd4011467d12a1763db0338f4d1bfc1cdf826afb02f",
+    "report.py": "2bed48342cb81386faeaf0488c8364db26563226c5f678904753779cdcc78180",
+    "build_conclusions.py": "f865d382cb27c779c4a9ac899a252bc2c29d6278648d079b836ce03bf8f69891",
+    "publishing.py": "d32e3e71963edc6354f4f5acf2f39c4cf241bd7606ee7c5309db134c0112ee56",
+    "presentation.py": "4facec01d0e568941e09b9a695267efd1fde666af0cf500e3476aaebf84b1d21",
+    "report_taxonomy.json": "0e743e6402c987372e2a080aa12bb4361109927cbb82eaef01e04a52d264848d",
+    "rebuild_report.py": "4e2e50fa1b6bda09b9b03057c992f76792b9ae429febb035d283c76303c6a17e"
+  },
+  "catalog_coverage": {
+    "ASSET": 13,
+    "INDEX": 9,
+    "ETF": 1799,
+    "SECTOR": 8,
+    "STOCK": 5268,
+    "REIT": 101
+  },
+  "catalog_gaps": [
+    "BSE full security list unavailable",
+    "Index coverage is curated, not a full all-index master",
+    "Historical aliases and SSE listing dates incomplete",
+    "Global stock coverage remains curated; not a full global security master"
+  ],
+  "input_hashes": [
+    {
+      "logical_source_id": "source_1",
+      "sha256": "f2571d93da223a5a751fbf37fdb59b98fb3f6c7a9d868f79b5bb2e7a4dc64d96",
+      "status": "INCLUDED"
+    },
+    {
+      "logical_source_id": "source_2",
+      "sha256": "98a065892074937435db260285e4fedfc1309f22dc4c9cc811381b92c81bb313",
+      "status": "INCLUDED"
+    },
+    {
+      "logical_source_id": "source_3",
+      "sha256": "d305036aee128b38e5248f3c56f1e3cbcd2a22a584aebf88db25154ae95f2533",
+      "status": "INCLUDED"
+    },
+    {
+      "logical_source_id": "source_4",
+      "sha256": null,
+      "status": "EXCLUDED"
+    },
+    {
+      "logical_source_id": "source_5",
+      "sha256": null,
+      "status": "EXCLUDED"
+    }
+  ]
+}

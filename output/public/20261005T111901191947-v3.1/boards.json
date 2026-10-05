@@ -1,0 +1,2833 @@
+{
+  "securities": [
+    {
+      "entity": {
+        "entity_id": "300725.SZ",
+        "name": "药石科技",
+        "category": "STOCK",
+        "ticker": "300725",
+        "ts_code": "300725.SZ",
+        "layer": "SECURITY"
+      },
+      "mentions": 1,
+      "explicit_recommendation_count": 1,
+      "context_recommendation_count": 0,
+      "recommendation_count": 1,
+      "self_position_count": 0,
+      "self_position_buy_count": 0,
+      "hold_count": 0,
+      "watch_count": 0,
+      "avoid_count": 0,
+      "sell_count": 0,
+      "unique_text_mentions": 1,
+      "near_duplicate_cluster_mentions": 1,
+      "video_count": 1,
+      "video_total": 3,
+      "bullish_index": 0.6931,
+      "directional_count": 1,
+      "bull_ratio": 1.0,
+      "disagreement": 0.0,
+      "engagement_adjusted_bull_ratio": 1.0,
+      "engagement_observed_comments": 1,
+      "video_balanced_score": 0.00013451708366962604,
+      "stances": {
+        "BULLISH": 1
+      },
+      "actions": {
+        "NONE": 1
+      },
+      "speech_acts": {
+        "RECOMMENDATION": 1
+      },
+      "reason_counts": []
+    },
+    {
+      "entity": {
+        "entity_id": "000011.SZ",
+        "name": "深物业A",
+        "category": "STOCK",
+        "ticker": "000011",
+        "ts_code": "000011.SZ",
+        "layer": "SECURITY"
+      },
+      "mentions": 1,
+      "explicit_recommendation_count": 0,
+      "context_recommendation_count": 0,
+      "recommendation_count": 0,
+      "self_position_count": 0,
+      "self_position_buy_count": 0,
+      "hold_count": 0,
+      "watch_count": 0,
+      "avoid_count": 0,
+      "sell_count": 0,
+      "unique_text_mentions": 1,
+      "near_duplicate_cluster_mentions": 1,
+      "video_count": 1,
+      "video_total": 3,
+      "bullish_index": -0.6931,
+      "directional_count": 1,
+      "bull_ratio": 0.0,
+      "disagreement": 0.0,
+      "engagement_adjusted_bull_ratio": 0.0,
+      "engagement_observed_comments": 1,
+      "video_balanced_score": 0.00013451708366962604,
+      "stances": {
+        "BEARISH": 1
+      },
+      "actions": {
+        "UNKNOWN": 1
+      },
+      "speech_acts": {
+        "OBSERVATION": 1
+      },
+      "reason_counts": [
+        {
+          "reason_code": "OTHER",
+          "stance": "BEARISH",
+          "mentions": 1
+        }
+      ]
+    },
+    {
+      "entity": {
+        "entity_id": "000591.SZ",
+        "name": "太阳能",
+        "category": "STOCK",
+        "ticker": "000591",
+        "ts_code": "000591.SZ",
+        "layer": "SECURITY"
+      },
+      "mentions": 1,
+      "explicit_recommendation_count": 0,
+      "context_recommendation_count": 0,
+      "recommendation_count": 0,
+      "self_position_count": 0,
+      "self_position_buy_count": 0,
+      "hold_count": 0,
+      "watch_count": 0,
+      "avoid_count": 0,
+      "sell_count": 0,
+      "unique_text_mentions": 1,
+      "near_duplicate_cluster_mentions": 1,
+      "video_count": 1,
+      "video_total": 3,
+      "bullish_index": 0.0,
+      "directional_count": 0,
+      "bull_ratio": null,
+      "disagreement": null,
+      "engagement_adjusted_bull_ratio": null,
+      "engagement_observed_comments": 1,
+      "video_balanced_score": 0.0003658982802780827,
+      "stances": {
+        "UNKNOWN": 1
+      },
+      "actions": {
+        "NONE": 1
+      },
+      "speech_acts": {
+        "FORECAST": 1
+      },
+      "reason_counts": [
+        {
+          "reason_code": "OTHER",
+          "stance": "UNKNOWN",
+          "mentions": 1
+        }
+      ]
+    },
+    {
+      "entity": {
+        "entity_id": "000678.SZ",
+        "name": "襄阳轴承",
+        "category": "STOCK",
+        "ticker": "000678",
+        "ts_code": "000678.SZ",
+        "layer": "SECURITY"
+      },
+      "mentions": 1,
+      "explicit_recommendation_count": 0,
+      "context_recommendation_count": 0,
+      "recommendation_count": 0,
+      "self_position_count": 0,
+      "self_position_buy_count": 0,
+      "hold_count": 0,
+      "watch_count": 0,
+      "avoid_count": 0,
+      "sell_count": 0,
+      "unique_text_mentions": 1,
+      "near_duplicate_cluster_mentions": 1,
+      "video_count": 1,
+      "video_total": 3,
+      "bullish_index": 0.0,
+      "directional_count": 0,
+      "bull_ratio": null,
+      "disagreement": null,
+      "engagement_adjusted_bull_ratio": null,
+      "engagement_observed_comments": 1,
+      "video_balanced_score": 0.00013451708366962604,
+      "stances": {
+        "UNKNOWN": 1
+      },
+      "actions": {
+        "NONE": 1
+      },
+      "speech_acts": {
+        "OBSERVATION": 1
+      },
+      "reason_counts": []
+    },
+    {
+      "entity": {
+        "entity_id": "002426.SZ",
+        "name": "胜利精密",
+        "category": "STOCK",
+        "ticker": "002426",
+        "ts_code": "002426.SZ",
+        "layer": "SECURITY"
+      },
+      "mentions": 1,
+      "explicit_recommendation_count": 0,
+      "context_recommendation_count": 0,
+      "recommendation_count": 0,
+      "self_position_count": 0,
+      "self_position_buy_count": 0,
+      "hold_count": 0,
+      "watch_count": 0,
+      "avoid_count": 0,
+      "sell_count": 0,
+      "unique_text_mentions": 1,
+      "near_duplicate_cluster_mentions": 1,
+      "video_count": 1,
+      "video_total": 3,
+      "bullish_index": 0.0,
+      "directional_count": 0,
+      "bull_ratio": null,
+      "disagreement": null,
+      "engagement_adjusted_bull_ratio": null,
+      "engagement_observed_comments": 1,
+      "video_balanced_score": 0.00013451708366962604,
+      "stances": {
+        "UNKNOWN": 1
+      },
+      "actions": {
+        "BUY": 1
+      },
+      "speech_acts": {
+        "HISTORY": 1
+      },
+      "reason_counts": []
+    },
+    {
+      "entity": {
+        "entity_id": "002588.SZ",
+        "name": "史丹利",
+        "category": "STOCK",
+        "ticker": "002588",
+        "ts_code": "002588.SZ",
+        "layer": "SECURITY"
+      },
+      "mentions": 1,
+      "explicit_recommendation_count": 0,
+      "context_recommendation_count": 0,
+      "recommendation_count": 0,
+      "self_position_count": 1,
+      "self_position_buy_count": 1,
+      "hold_count": 0,
+      "watch_count": 0,
+      "avoid_count": 0,
+      "sell_count": 0,
+      "unique_text_mentions": 1,
+      "near_duplicate_cluster_mentions": 1,
+      "video_count": 1,
+      "video_total": 3,
+      "bullish_index": 0.6931,
+      "directional_count": 1,
+      "bull_ratio": 1.0,
+      "disagreement": 0.0,
+      "engagement_adjusted_bull_ratio": 1.0,
+      "engagement_observed_comments": 1,
+      "video_balanced_score": 0.00013451708366962604,
+      "stances": {
+        "BULLISH": 1
+      },
+      "actions": {
+        "BUY": 1
+      },
+      "speech_acts": {
+        "SELF_POSITION": 1
+      },
+      "reason_counts": []
+    },
+    {
+      "entity": {
+        "entity_id": "300750.SZ",
+        "name": "宁德时代",
+        "category": "STOCK",
+        "ticker": "300750",
+        "ts_code": "300750.SZ",
+        "layer": "SECURITY"
+      },
+      "mentions": 1,
+      "explicit_recommendation_count": 0,
+      "context_recommendation_count": 0,
+      "recommendation_count": 0,
+      "self_position_count": 0,
+      "self_position_buy_count": 0,
+      "hold_count": 0,
+      "watch_count": 0,
+      "avoid_count": 0,
+      "sell_count": 0,
+      "unique_text_mentions": 1,
+      "near_duplicate_cluster_mentions": 1,
+      "video_count": 1,
+      "video_total": 3,
+      "bullish_index": 0.0,
+      "directional_count": 0,
+      "bull_ratio": null,
+      "disagreement": null,
+      "engagement_adjusted_bull_ratio": null,
+      "engagement_observed_comments": 1,
+      "video_balanced_score": 0.00013451708366962604,
+      "stances": {
+        "UNKNOWN": 1
+      },
+      "actions": {
+        "NONE": 1
+      },
+      "speech_acts": {
+        "OBSERVATION": 1
+      },
+      "reason_counts": []
+    },
+    {
+      "entity": {
+        "entity_id": "300981.SZ",
+        "name": "中红医疗",
+        "category": "STOCK",
+        "ticker": "300981",
+        "ts_code": "300981.SZ",
+        "layer": "SECURITY"
+      },
+      "mentions": 1,
+      "explicit_recommendation_count": 0,
+      "context_recommendation_count": 0,
+      "recommendation_count": 0,
+      "self_position_count": 1,
+      "self_position_buy_count": 1,
+      "hold_count": 0,
+      "watch_count": 0,
+      "avoid_count": 0,
+      "sell_count": 0,
+      "unique_text_mentions": 1,
+      "near_duplicate_cluster_mentions": 1,
+      "video_count": 1,
+      "video_total": 3,
+      "bullish_index": 0.6931,
+      "directional_count": 1,
+      "bull_ratio": 1.0,
+      "disagreement": 0.0,
+      "engagement_adjusted_bull_ratio": 1.0,
+      "engagement_observed_comments": 1,
+      "video_balanced_score": 0.00013451708366962604,
+      "stances": {
+        "BULLISH": 1
+      },
+      "actions": {
+        "BUY": 1
+      },
+      "speech_acts": {
+        "SELF_POSITION": 1
+      },
+      "reason_counts": []
+    },
+    {
+      "entity": {
+        "entity_id": "600418.SH",
+        "name": "江淮汽车",
+        "category": "STOCK",
+        "ticker": "600418",
+        "ts_code": "600418.SH",
+        "layer": "SECURITY"
+      },
+      "mentions": 1,
+      "explicit_recommendation_count": 0,
+      "context_recommendation_count": 0,
+      "recommendation_count": 0,
+      "self_position_count": 0,
+      "self_position_buy_count": 0,
+      "hold_count": 0,
+      "watch_count": 0,
+      "avoid_count": 0,
+      "sell_count": 0,
+      "unique_text_mentions": 1,
+      "near_duplicate_cluster_mentions": 1,
+      "video_count": 1,
+      "video_total": 3,
+      "bullish_index": 0.0,
+      "directional_count": 0,
+      "bull_ratio": null,
+      "disagreement": null,
+      "engagement_adjusted_bull_ratio": null,
+      "engagement_observed_comments": 1,
+      "video_balanced_score": 0.00013451708366962604,
+      "stances": {
+        "UNKNOWN": 1
+      },
+      "actions": {
+        "NONE": 1
+      },
+      "speech_acts": {
+        "QUESTION": 1
+      },
+      "reason_counts": []
+    },
+    {
+      "entity": {
+        "entity_id": "600707.SH",
+        "name": "彩虹股份",
+        "category": "STOCK",
+        "ticker": "600707",
+        "ts_code": "600707.SH",
+        "layer": "SECURITY"
+      },
+      "mentions": 1,
+      "explicit_recommendation_count": 0,
+      "context_recommendation_count": 0,
+      "recommendation_count": 0,
+      "self_position_count": 0,
+      "self_position_buy_count": 0,
+      "hold_count": 0,
+      "watch_count": 0,
+      "avoid_count": 0,
+      "sell_count": 0,
+      "unique_text_mentions": 1,
+      "near_duplicate_cluster_mentions": 1,
+      "video_count": 1,
+      "video_total": 3,
+      "bullish_index": 0.0,
+      "directional_count": 0,
+      "bull_ratio": null,
+      "disagreement": null,
+      "engagement_adjusted_bull_ratio": null,
+      "engagement_observed_comments": 1,
+      "video_balanced_score": 0.00013451708366962604,
+      "stances": {
+        "UNKNOWN": 1
+      },
+      "actions": {
+        "UNKNOWN": 1
+      },
+      "speech_acts": {
+        "QUESTION": 1
+      },
+      "reason_counts": []
+    },
+    {
+      "entity": {
+        "entity_id": "601005.SH",
+        "name": "重庆钢铁",
+        "category": "STOCK",
+        "ticker": "601005",
+        "ts_code": "601005.SH",
+        "layer": "SECURITY"
+      },
+      "mentions": 1,
+      "explicit_recommendation_count": 0,
+      "context_recommendation_count": 0,
+      "recommendation_count": 0,
+      "self_position_count": 1,
+      "self_position_buy_count": 1,
+      "hold_count": 0,
+      "watch_count": 0,
+      "avoid_count": 0,
+      "sell_count": 0,
+      "unique_text_mentions": 1,
+      "near_duplicate_cluster_mentions": 1,
+      "video_count": 1,
+      "video_total": 3,
+      "bullish_index": 0.6931,
+      "directional_count": 1,
+      "bull_ratio": 1.0,
+      "disagreement": 0.0,
+      "engagement_adjusted_bull_ratio": 1.0,
+      "engagement_observed_comments": 1,
+      "video_balanced_score": 0.00013451708366962604,
+      "stances": {
+        "BULLISH": 1
+      },
+      "actions": {
+        "BUY": 1
+      },
+      "speech_acts": {
+        "SELF_POSITION": 1
+      },
+      "reason_counts": []
+    },
+    {
+      "entity": {
+        "entity_id": "601988.SH",
+        "name": "中国银行",
+        "category": "STOCK",
+        "ticker": "601988",
+        "ts_code": "601988.SH",
+        "layer": "SECURITY"
+      },
+      "mentions": 1,
+      "explicit_recommendation_count": 0,
+      "context_recommendation_count": 0,
+      "recommendation_count": 0,
+      "self_position_count": 1,
+      "self_position_buy_count": 1,
+      "hold_count": 0,
+      "watch_count": 0,
+      "avoid_count": 0,
+      "sell_count": 0,
+      "unique_text_mentions": 1,
+      "near_duplicate_cluster_mentions": 1,
+      "video_count": 1,
+      "video_total": 3,
+      "bullish_index": 0.6931,
+      "directional_count": 1,
+      "bull_ratio": 1.0,
+      "disagreement": 0.0,
+      "engagement_adjusted_bull_ratio": 1.0,
+      "engagement_observed_comments": 1,
+      "video_balanced_score": 0.00013451708366962604,
+      "stances": {
+        "BULLISH": 1
+      },
+      "actions": {
+        "BUY": 1
+      },
+      "speech_acts": {
+        "SELF_POSITION": 1
+      },
+      "reason_counts": []
+    },
+    {
+      "entity": {
+        "entity_id": "601991.SH",
+        "name": "大唐发电",
+        "category": "STOCK",
+        "ticker": "601991",
+        "ts_code": "601991.SH",
+        "layer": "SECURITY"
+      },
+      "mentions": 1,
+      "explicit_recommendation_count": 0,
+      "context_recommendation_count": 0,
+      "recommendation_count": 0,
+      "self_position_count": 1,
+      "self_position_buy_count": 0,
+      "hold_count": 0,
+      "watch_count": 0,
+      "avoid_count": 1,
+      "sell_count": 0,
+      "unique_text_mentions": 1,
+      "near_duplicate_cluster_mentions": 1,
+      "video_count": 1,
+      "video_total": 3,
+      "bullish_index": -0.6931,
+      "directional_count": 1,
+      "bull_ratio": 0.0,
+      "disagreement": 0.0,
+      "engagement_adjusted_bull_ratio": 0.0,
+      "engagement_observed_comments": 1,
+      "video_balanced_score": 0.00013451708366962604,
+      "stances": {
+        "BEARISH": 1
+      },
+      "actions": {
+        "AVOID": 1
+      },
+      "speech_acts": {
+        "SELF_POSITION": 1
+      },
+      "reason_counts": []
+    },
+    {
+      "entity": {
+        "entity_id": "603823.SH",
+        "name": "百合花",
+        "category": "STOCK",
+        "ticker": "603823",
+        "ts_code": "603823.SH",
+        "layer": "SECURITY"
+      },
+      "mentions": 1,
+      "explicit_recommendation_count": 0,
+      "context_recommendation_count": 0,
+      "recommendation_count": 0,
+      "self_position_count": 1,
+      "self_position_buy_count": 0,
+      "hold_count": 0,
+      "watch_count": 0,
+      "avoid_count": 0,
+      "sell_count": 0,
+      "unique_text_mentions": 1,
+      "near_duplicate_cluster_mentions": 1,
+      "video_count": 1,
+      "video_total": 3,
+      "bullish_index": 0.0,
+      "directional_count": 0,
+      "bull_ratio": null,
+      "disagreement": null,
+      "engagement_adjusted_bull_ratio": null,
+      "engagement_observed_comments": 1,
+      "video_balanced_score": 0.00013451708366962604,
+      "stances": {
+        "UNKNOWN": 1
+      },
+      "actions": {
+        "NONE": 1
+      },
+      "speech_acts": {
+        "SELF_POSITION": 1
+      },
+      "reason_counts": []
+    },
+    {
+      "entity": {
+        "entity_id": "603949.SH",
+        "name": "雪龙集团",
+        "category": "STOCK",
+        "ticker": "603949",
+        "ts_code": "603949.SH",
+        "layer": "SECURITY"
+      },
+      "mentions": 1,
+      "explicit_recommendation_count": 0,
+      "context_recommendation_count": 0,
+      "recommendation_count": 0,
+      "self_position_count": 0,
+      "self_position_buy_count": 0,
+      "hold_count": 0,
+      "watch_count": 0,
+      "avoid_count": 0,
+      "sell_count": 0,
+      "unique_text_mentions": 1,
+      "near_duplicate_cluster_mentions": 1,
+      "video_count": 1,
+      "video_total": 3,
+      "bullish_index": 0.0,
+      "directional_count": 0,
+      "bull_ratio": null,
+      "disagreement": null,
+      "engagement_adjusted_bull_ratio": null,
+      "engagement_observed_comments": 1,
+      "video_balanced_score": 0.00013451708366962604,
+      "stances": {
+        "UNKNOWN": 1
+      },
+      "actions": {
+        "NONE": 1
+      },
+      "speech_acts": {
+        "COMPARISON": 1
+      },
+      "reason_counts": [
+        {
+          "reason_code": "OTHER",
+          "stance": "UNKNOWN",
+          "mentions": 1
+        }
+      ]
+    },
+    {
+      "entity": {
+        "entity_id": "688256.SH",
+        "name": "寒武纪",
+        "category": "STOCK",
+        "ticker": "688256",
+        "ts_code": "688256.SH",
+        "layer": "SECURITY"
+      },
+      "mentions": 1,
+      "explicit_recommendation_count": 0,
+      "context_recommendation_count": 0,
+      "recommendation_count": 0,
+      "self_position_count": 1,
+      "self_position_buy_count": 1,
+      "hold_count": 0,
+      "watch_count": 0,
+      "avoid_count": 0,
+      "sell_count": 0,
+      "unique_text_mentions": 1,
+      "near_duplicate_cluster_mentions": 1,
+      "video_count": 1,
+      "video_total": 3,
+      "bullish_index": 0.6931,
+      "directional_count": 1,
+      "bull_ratio": 1.0,
+      "disagreement": 0.0,
+      "engagement_adjusted_bull_ratio": 1.0,
+      "engagement_observed_comments": 1,
+      "video_balanced_score": 0.00013451708366962604,
+      "stances": {
+        "BULLISH": 1
+      },
+      "actions": {
+        "BUY": 1
+      },
+      "speech_acts": {
+        "SELF_POSITION": 1
+      },
+      "reason_counts": []
+    }
+  ],
+  "assets": [
+    {
+      "entity": {
+        "entity_id": "INDEX:纳斯达克100",
+        "name": "纳斯达克100",
+        "category": "INDEX",
+        "ticker": null,
+        "ts_code": null,
+        "layer": "CONCEPT"
+      },
+      "mentions": 30,
+      "explicit_recommendation_count": 13,
+      "context_recommendation_count": 0,
+      "recommendation_count": 13,
+      "self_position_count": 11,
+      "self_position_buy_count": 9,
+      "hold_count": 2,
+      "watch_count": 0,
+      "avoid_count": 0,
+      "sell_count": 1,
+      "unique_text_mentions": 22,
+      "near_duplicate_cluster_mentions": 22,
+      "video_count": 3,
+      "video_total": 3,
+      "bullish_index": 2.3514,
+      "directional_count": 21,
+      "bull_ratio": 0.9523809523809523,
+      "disagreement": 0.09523809523809523,
+      "engagement_adjusted_bull_ratio": 0.9540222320060502,
+      "engagement_observed_comments": 30,
+      "video_balanced_score": 0.005975773447726414,
+      "stances": {
+        "BULLISH": 20,
+        "UNKNOWN": 9,
+        "BEARISH": 1
+      },
+      "actions": {
+        "BUY": 21,
+        "NONE": 6,
+        "HOLD": 2,
+        "SELL": 1
+      },
+      "speech_acts": {
+        "SELF_POSITION": 11,
+        "RECOMMENDATION": 13,
+        "OBSERVATION": 2,
+        "QUESTION": 1
+      },
+      "reason_counts": [
+        {
+          "reason_code": "OTHER",
+          "stance": "BULLISH",
+          "mentions": 5
+        }
+      ]
+    },
+    {
+      "entity": {
+        "entity_id": "ASSET:美股市场",
+        "name": "美股市场",
+        "category": "ASSET",
+        "ticker": null,
+        "ts_code": null,
+        "layer": "CONCEPT"
+      },
+      "mentions": 42,
+      "explicit_recommendation_count": 6,
+      "context_recommendation_count": 0,
+      "recommendation_count": 6,
+      "self_position_count": 1,
+      "self_position_buy_count": 1,
+      "hold_count": 0,
+      "watch_count": 0,
+      "avoid_count": 0,
+      "sell_count": 0,
+      "unique_text_mentions": 41,
+      "near_duplicate_cluster_mentions": 41,
+      "video_count": 3,
+      "video_total": 3,
+      "bullish_index": 0.6931,
+      "directional_count": 7,
+      "bull_ratio": 0.7142857142857143,
+      "disagreement": 0.5714285714285714,
+      "engagement_adjusted_bull_ratio": 0.7155340364521934,
+      "engagement_observed_comments": 42,
+      "video_balanced_score": 0.013534804647662562,
+      "stances": {
+        "UNKNOWN": 35,
+        "BULLISH": 5,
+        "BEARISH": 2
+      },
+      "actions": {
+        "NONE": 31,
+        "BUY": 7,
+        "UNKNOWN": 4
+      },
+      "speech_acts": {
+        "RECOMMENDATION": 6,
+        "QUESTION": 9,
+        "OBSERVATION": 19,
+        "FORECAST": 7,
+        "SELF_POSITION": 1
+      },
+      "reason_counts": [
+        {
+          "reason_code": "OTHER",
+          "stance": "UNKNOWN",
+          "mentions": 7
+        },
+        {
+          "reason_code": "EARNINGS_GROWTH",
+          "stance": "UNKNOWN",
+          "mentions": 1
+        },
+        {
+          "reason_code": "OTHER",
+          "stance": "BULLISH",
+          "mentions": 1
+        },
+        {
+          "reason_code": "RATE_HIKE",
+          "stance": "BEARISH",
+          "mentions": 1
+        },
+        {
+          "reason_code": "STRONG_DOLLAR",
+          "stance": "UNKNOWN",
+          "mentions": 1
+        },
+        {
+          "reason_code": "VALUATION_LOW",
+          "stance": "UNKNOWN",
+          "mentions": 1
+        },
+        {
+          "reason_code": "WEAK_DOLLAR",
+          "stance": "UNKNOWN",
+          "mentions": 1
+        }
+      ]
+    },
+    {
+      "entity": {
+        "entity_id": "ASSET:黄金",
+        "name": "黄金",
+        "category": "ASSET",
+        "ticker": null,
+        "ts_code": null,
+        "layer": "CONCEPT"
+      },
+      "mentions": 100,
+      "explicit_recommendation_count": 3,
+      "context_recommendation_count": 0,
+      "recommendation_count": 3,
+      "self_position_count": 8,
+      "self_position_buy_count": 1,
+      "hold_count": 3,
+      "watch_count": 0,
+      "avoid_count": 0,
+      "sell_count": 0,
+      "unique_text_mentions": 100,
+      "near_duplicate_cluster_mentions": 100,
+      "video_count": 3,
+      "video_total": 3,
+      "bullish_index": -0.7802,
+      "directional_count": 33,
+      "bull_ratio": 0.30303030303030304,
+      "disagreement": 0.6060606060606061,
+      "engagement_adjusted_bull_ratio": 0.28510091851038594,
+      "engagement_observed_comments": 100,
+      "video_balanced_score": 0.036750124308497494,
+      "stances": {
+        "UNKNOWN": 67,
+        "BEARISH": 23,
+        "BULLISH": 10
+      },
+      "actions": {
+        "NONE": 69,
+        "HOLD": 3,
+        "BUY": 4,
+        "UNKNOWN": 24
+      },
+      "speech_acts": {
+        "QUESTION": 32,
+        "RECOMMENDATION": 3,
+        "OBSERVATION": 32,
+        "FORECAST": 24,
+        "SELF_POSITION": 8,
+        "HISTORY": 1
+      },
+      "reason_counts": [
+        {
+          "reason_code": "OTHER",
+          "stance": "UNKNOWN",
+          "mentions": 13
+        },
+        {
+          "reason_code": "STRONG_DOLLAR",
+          "stance": "UNKNOWN",
+          "mentions": 8
+        },
+        {
+          "reason_code": "OTHER",
+          "stance": "BEARISH",
+          "mentions": 6
+        },
+        {
+          "reason_code": "OTHER",
+          "stance": "BULLISH",
+          "mentions": 4
+        },
+        {
+          "reason_code": "GEOPOLITICAL_RISK",
+          "stance": "BEARISH",
+          "mentions": 2
+        },
+        {
+          "reason_code": "RATE_CUT",
+          "stance": "UNKNOWN",
+          "mentions": 2
+        },
+        {
+          "reason_code": "RATE_HIKE",
+          "stance": "BEARISH",
+          "mentions": 2
+        },
+        {
+          "reason_code": "GEOPOLITICAL_RISK",
+          "stance": "BULLISH",
+          "mentions": 1
+        },
+        {
+          "reason_code": "STRONG_DOLLAR",
+          "stance": "BEARISH",
+          "mentions": 1
+        },
+        {
+          "reason_code": "VALUATION_HIGH",
+          "stance": "BEARISH",
+          "mentions": 1
+        },
+        {
+          "reason_code": "WEAK_DOLLAR",
+          "stance": "BULLISH",
+          "mentions": 1
+        }
+      ]
+    },
+    {
+      "entity": {
+        "entity_id": "INDEX:大盘",
+        "name": "大盘",
+        "category": "INDEX",
+        "ticker": null,
+        "ts_code": null,
+        "layer": "CONCEPT"
+      },
+      "mentions": 23,
+      "explicit_recommendation_count": 3,
+      "context_recommendation_count": 0,
+      "recommendation_count": 3,
+      "self_position_count": 1,
+      "self_position_buy_count": 0,
+      "hold_count": 0,
+      "watch_count": 0,
+      "avoid_count": 0,
+      "sell_count": 0,
+      "unique_text_mentions": 23,
+      "near_duplicate_cluster_mentions": 23,
+      "video_count": 3,
+      "video_total": 3,
+      "bullish_index": 1.0986,
+      "directional_count": 2,
+      "bull_ratio": 1.0,
+      "disagreement": 0.0,
+      "engagement_adjusted_bull_ratio": 1.0,
+      "engagement_observed_comments": 23,
+      "video_balanced_score": 0.008309743512258909,
+      "stances": {
+        "BULLISH": 2,
+        "UNKNOWN": 21
+      },
+      "actions": {
+        "NONE": 14,
+        "BUY": 3,
+        "UNKNOWN": 6
+      },
+      "speech_acts": {
+        "RECOMMENDATION": 3,
+        "OBSERVATION": 16,
+        "SELF_POSITION": 1,
+        "QUESTION": 2,
+        "FORECAST": 1
+      },
+      "reason_counts": [
+        {
+          "reason_code": "OTHER",
+          "stance": "UNKNOWN",
+          "mentions": 2
+        },
+        {
+          "reason_code": "OVERSOLD_REBOUND",
+          "stance": "BULLISH",
+          "mentions": 2
+        },
+        {
+          "reason_code": "TECHNICAL_BREAKOUT",
+          "stance": "UNKNOWN",
+          "mentions": 1
+        }
+      ]
+    },
+    {
+      "entity": {
+        "entity_id": "CONCEPT:A股市场",
+        "name": "A股市场",
+        "category": "ASSET",
+        "ticker": null,
+        "ts_code": null,
+        "layer": "CONCEPT"
+      },
+      "mentions": 96,
+      "explicit_recommendation_count": 1,
+      "context_recommendation_count": 0,
+      "recommendation_count": 1,
+      "self_position_count": 7,
+      "self_position_buy_count": 0,
+      "hold_count": 0,
+      "watch_count": 0,
+      "avoid_count": 18,
+      "sell_count": 5,
+      "unique_text_mentions": 95,
+      "near_duplicate_cluster_mentions": 95,
+      "video_count": 3,
+      "video_total": 3,
+      "bullish_index": -2.9704,
+      "directional_count": 39,
+      "bull_ratio": 0.02564102564102564,
+      "disagreement": 0.05128205128205128,
+      "engagement_adjusted_bull_ratio": 0.031507106776898094,
+      "engagement_observed_comments": 96,
+      "video_balanced_score": 0.02829213682206296,
+      "stances": {
+        "BEARISH": 38,
+        "UNKNOWN": 57,
+        "BULLISH": 1
+      },
+      "actions": {
+        "AVOID": 18,
+        "NONE": 60,
+        "SELL": 5,
+        "BUY": 1,
+        "UNKNOWN": 12
+      },
+      "speech_acts": {
+        "QUESTION": 11,
+        "SELF_POSITION": 7,
+        "HISTORY": 1,
+        "OBSERVATION": 58,
+        "RECOMMENDATION": 14,
+        "COMPARISON": 1,
+        "FORECAST": 4
+      },
+      "reason_counts": [
+        {
+          "reason_code": "OTHER",
+          "stance": "UNKNOWN",
+          "mentions": 18
+        },
+        {
+          "reason_code": "OTHER",
+          "stance": "BEARISH",
+          "mentions": 16
+        },
+        {
+          "reason_code": "GEOPOLITICAL_RISK",
+          "stance": "UNKNOWN",
+          "mentions": 2
+        },
+        {
+          "reason_code": "OVERSOLD_REBOUND",
+          "stance": "BULLISH",
+          "mentions": 1
+        }
+      ]
+    },
+    {
+      "entity": {
+        "entity_id": "CONCEPT:美国国债",
+        "name": "美国国债",
+        "category": "ASSET",
+        "ticker": null,
+        "ts_code": null,
+        "layer": "CONCEPT"
+      },
+      "mentions": 25,
+      "explicit_recommendation_count": 1,
+      "context_recommendation_count": 0,
+      "recommendation_count": 1,
+      "self_position_count": 0,
+      "self_position_buy_count": 0,
+      "hold_count": 0,
+      "watch_count": 0,
+      "avoid_count": 0,
+      "sell_count": 0,
+      "unique_text_mentions": 25,
+      "near_duplicate_cluster_mentions": 25,
+      "video_count": 1,
+      "video_total": 3,
+      "bullish_index": -0.4055,
+      "directional_count": 3,
+      "bull_ratio": 0.3333333333333333,
+      "disagreement": 0.6666666666666666,
+      "engagement_adjusted_bull_ratio": 0.3333333333333333,
+      "engagement_observed_comments": 25,
+      "video_balanced_score": 0.009147457006952067,
+      "stances": {
+        "UNKNOWN": 22,
+        "BEARISH": 2,
+        "BULLISH": 1
+      },
+      "actions": {
+        "NONE": 21,
+        "BUY": 1,
+        "UNKNOWN": 3
+      },
+      "speech_acts": {
+        "FORECAST": 2,
+        "OBSERVATION": 11,
+        "RECOMMENDATION": 1,
+        "QUESTION": 11
+      },
+      "reason_counts": [
+        {
+          "reason_code": "OTHER",
+          "stance": "UNKNOWN",
+          "mentions": 5
+        },
+        {
+          "reason_code": "OTHER",
+          "stance": "BEARISH",
+          "mentions": 2
+        },
+        {
+          "reason_code": "RATE_CUT",
+          "stance": "UNKNOWN",
+          "mentions": 1
+        },
+        {
+          "reason_code": "STRONG_DOLLAR",
+          "stance": "UNKNOWN",
+          "mentions": 1
+        }
+      ]
+    },
+    {
+      "entity": {
+        "entity_id": "ASSET:原油",
+        "name": "原油",
+        "category": "ASSET",
+        "ticker": null,
+        "ts_code": null,
+        "layer": "CONCEPT"
+      },
+      "mentions": 23,
+      "explicit_recommendation_count": 1,
+      "context_recommendation_count": 0,
+      "recommendation_count": 1,
+      "self_position_count": 1,
+      "self_position_buy_count": 1,
+      "hold_count": 0,
+      "watch_count": 0,
+      "avoid_count": 0,
+      "sell_count": 0,
+      "unique_text_mentions": 23,
+      "near_duplicate_cluster_mentions": 22,
+      "video_count": 1,
+      "video_total": 3,
+      "bullish_index": 1.0986,
+      "directional_count": 2,
+      "bull_ratio": 1.0,
+      "disagreement": 0.0,
+      "engagement_adjusted_bull_ratio": 1.0,
+      "engagement_observed_comments": 23,
+      "video_balanced_score": 0.008415660446395903,
+      "stances": {
+        "BULLISH": 2,
+        "UNKNOWN": 21
+      },
+      "actions": {
+        "NONE": 17,
+        "BUY": 2,
+        "UNKNOWN": 4
+      },
+      "speech_acts": {
+        "OBSERVATION": 10,
+        "QUESTION": 9,
+        "SELF_POSITION": 1,
+        "RECOMMENDATION": 1,
+        "FORECAST": 1
+      },
+      "reason_counts": [
+        {
+          "reason_code": "GEOPOLITICAL_RISK",
+          "stance": "UNKNOWN",
+          "mentions": 1
+        },
+        {
+          "reason_code": "OTHER",
+          "stance": "UNKNOWN",
+          "mentions": 1
+        },
+        {
+          "reason_code": "POLICY_SUPPORT",
+          "stance": "BULLISH",
+          "mentions": 1
+        }
+      ]
+    },
+    {
+      "entity": {
+        "entity_id": "INDEX:标普500",
+        "name": "标普500",
+        "category": "INDEX",
+        "ticker": null,
+        "ts_code": null,
+        "layer": "CONCEPT"
+      },
+      "mentions": 4,
+      "explicit_recommendation_count": 1,
+      "context_recommendation_count": 0,
+      "recommendation_count": 1,
+      "self_position_count": 2,
+      "self_position_buy_count": 2,
+      "hold_count": 0,
+      "watch_count": 0,
+      "avoid_count": 0,
+      "sell_count": 1,
+      "unique_text_mentions": 4,
+      "near_duplicate_cluster_mentions": 4,
+      "video_count": 1,
+      "video_total": 3,
+      "bullish_index": 0.6931,
+      "directional_count": 1,
+      "bull_ratio": 1.0,
+      "disagreement": 0.0,
+      "engagement_adjusted_bull_ratio": 1.0,
+      "engagement_observed_comments": 4,
+      "video_balanced_score": 0.0005380683346785041,
+      "stances": {
+        "BULLISH": 1,
+        "UNKNOWN": 3
+      },
+      "actions": {
+        "SELL": 1,
+        "BUY": 3,
+        "NONE": 1
+      },
+      "speech_acts": {
+        "SELF_POSITION": 2,
+        "OBSERVATION": 1,
+        "RECOMMENDATION": 1,
+        "HISTORY": 1
+      },
+      "reason_counts": [
+        {
+          "reason_code": "OTHER",
+          "stance": "BULLISH",
+          "mentions": 1
+        }
+      ]
+    },
+    {
+      "entity": {
+        "entity_id": "CONCEPT:日经225ETF",
+        "name": "日经225ETF",
+        "category": "ETF",
+        "ticker": null,
+        "ts_code": null,
+        "layer": "CONCEPT"
+      },
+      "mentions": 1,
+      "explicit_recommendation_count": 1,
+      "context_recommendation_count": 0,
+      "recommendation_count": 1,
+      "self_position_count": 0,
+      "self_position_buy_count": 0,
+      "hold_count": 0,
+      "watch_count": 0,
+      "avoid_count": 0,
+      "sell_count": 0,
+      "unique_text_mentions": 1,
+      "near_duplicate_cluster_mentions": 1,
+      "video_count": 1,
+      "video_total": 3,
+      "bullish_index": 0.0,
+      "directional_count": 0,
+      "bull_ratio": null,
+      "disagreement": null,
+      "engagement_adjusted_bull_ratio": null,
+      "engagement_observed_comments": 1,
+      "video_balanced_score": 0.00013451708366962604,
+      "stances": {
+        "UNKNOWN": 1
+      },
+      "actions": {
+        "BUY": 1
+      },
+      "speech_acts": {
+        "RECOMMENDATION": 1
+      },
+      "reason_counts": []
+    },
+    {
+      "entity": {
+        "entity_id": "CONCEPT:纳指ETF",
+        "name": "纳指ETF",
+        "category": "ETF",
+        "ticker": null,
+        "ts_code": null,
+        "layer": "CONCEPT"
+      },
+      "mentions": 1,
+      "explicit_recommendation_count": 1,
+      "context_recommendation_count": 0,
+      "recommendation_count": 1,
+      "self_position_count": 0,
+      "self_position_buy_count": 0,
+      "hold_count": 0,
+      "watch_count": 0,
+      "avoid_count": 0,
+      "sell_count": 0,
+      "unique_text_mentions": 1,
+      "near_duplicate_cluster_mentions": 1,
+      "video_count": 1,
+      "video_total": 3,
+      "bullish_index": 0.6931,
+      "directional_count": 1,
+      "bull_ratio": 1.0,
+      "disagreement": 0.0,
+      "engagement_adjusted_bull_ratio": 1.0,
+      "engagement_observed_comments": 1,
+      "video_balanced_score": 0.00013451708366962604,
+      "stances": {
+        "BULLISH": 1
+      },
+      "actions": {
+        "BUY": 1
+      },
+      "speech_acts": {
+        "RECOMMENDATION": 1
+      },
+      "reason_counts": []
+    },
+    {
+      "entity": {
+        "entity_id": "CONCEPT:美元",
+        "name": "美元",
+        "category": "ASSET",
+        "ticker": null,
+        "ts_code": null,
+        "layer": "CONCEPT"
+      },
+      "mentions": 75,
+      "explicit_recommendation_count": 0,
+      "context_recommendation_count": 0,
+      "recommendation_count": 0,
+      "self_position_count": 0,
+      "self_position_buy_count": 0,
+      "hold_count": 0,
+      "watch_count": 0,
+      "avoid_count": 0,
+      "sell_count": 0,
+      "unique_text_mentions": 75,
+      "near_duplicate_cluster_mentions": 75,
+      "video_count": 1,
+      "video_total": 3,
+      "bullish_index": -0.2231,
+      "directional_count": 7,
+      "bull_ratio": 0.42857142857142855,
+      "disagreement": 0.8571428571428571,
+      "engagement_adjusted_bull_ratio": 0.38859771098513207,
+      "engagement_observed_comments": 75,
+      "video_balanced_score": 0.027442371020856202,
+      "stances": {
+        "UNKNOWN": 68,
+        "BEARISH": 4,
+        "BULLISH": 3
+      },
+      "actions": {
+        "NONE": 70,
+        "UNKNOWN": 5
+      },
+      "speech_acts": {
+        "FORECAST": 9,
+        "OBSERVATION": 43,
+        "QUESTION": 23
+      },
+      "reason_counts": [
+        {
+          "reason_code": "OTHER",
+          "stance": "UNKNOWN",
+          "mentions": 9
+        },
+        {
+          "reason_code": "OTHER",
+          "stance": "BEARISH",
+          "mentions": 2
+        },
+        {
+          "reason_code": "OTHER",
+          "stance": "BULLISH",
+          "mentions": 2
+        },
+        {
+          "reason_code": "RATE_HIKE",
+          "stance": "UNKNOWN",
+          "mentions": 2
+        },
+        {
+          "reason_code": "STRONG_DOLLAR",
+          "stance": "UNKNOWN",
+          "mentions": 2
+        },
+        {
+          "reason_code": "GEOPOLITICAL_RISK",
+          "stance": "UNKNOWN",
+          "mentions": 1
+        },
+        {
+          "reason_code": "RATE_CUT",
+          "stance": "UNKNOWN",
+          "mentions": 1
+        }
+      ]
+    },
+    {
+      "entity": {
+        "entity_id": "CONCEPT:美元指数",
+        "name": "美元指数",
+        "category": "INDEX",
+        "ticker": null,
+        "ts_code": null,
+        "layer": "CONCEPT"
+      },
+      "mentions": 10,
+      "explicit_recommendation_count": 0,
+      "context_recommendation_count": 0,
+      "recommendation_count": 0,
+      "self_position_count": 0,
+      "self_position_buy_count": 0,
+      "hold_count": 0,
+      "watch_count": 0,
+      "avoid_count": 0,
+      "sell_count": 0,
+      "unique_text_mentions": 10,
+      "near_duplicate_cluster_mentions": 10,
+      "video_count": 1,
+      "video_total": 3,
+      "bullish_index": 0.0,
+      "directional_count": 0,
+      "bull_ratio": null,
+      "disagreement": null,
+      "engagement_adjusted_bull_ratio": null,
+      "engagement_observed_comments": 10,
+      "video_balanced_score": 0.0036589828027808274,
+      "stances": {
+        "UNKNOWN": 10
+      },
+      "actions": {
+        "NONE": 10
+      },
+      "speech_acts": {
+        "OBSERVATION": 7,
+        "FORECAST": 2,
+        "QUESTION": 1
+      },
+      "reason_counts": [
+        {
+          "reason_code": "OTHER",
+          "stance": "UNKNOWN",
+          "mentions": 1
+        },
+        {
+          "reason_code": "RATE_HIKE",
+          "stance": "UNKNOWN",
+          "mentions": 1
+        }
+      ]
+    },
+    {
+      "entity": {
+        "entity_id": "CONCEPT:铜",
+        "name": "铜",
+        "category": "ASSET",
+        "ticker": null,
+        "ts_code": null,
+        "layer": "CONCEPT"
+      },
+      "mentions": 5,
+      "explicit_recommendation_count": 0,
+      "context_recommendation_count": 0,
+      "recommendation_count": 0,
+      "self_position_count": 0,
+      "self_position_buy_count": 0,
+      "hold_count": 0,
+      "watch_count": 0,
+      "avoid_count": 0,
+      "sell_count": 0,
+      "unique_text_mentions": 5,
+      "near_duplicate_cluster_mentions": 5,
+      "video_count": 2,
+      "video_total": 3,
+      "bullish_index": 0.0,
+      "directional_count": 0,
+      "bull_ratio": null,
+      "disagreement": null,
+      "engagement_adjusted_bull_ratio": null,
+      "engagement_observed_comments": 5,
+      "video_balanced_score": 0.0015981102047819568,
+      "stances": {
+        "UNKNOWN": 5
+      },
+      "actions": {
+        "NONE": 4,
+        "UNKNOWN": 1
+      },
+      "speech_acts": {
+        "QUESTION": 3,
+        "OBSERVATION": 2
+      },
+      "reason_counts": [
+        {
+          "reason_code": "OTHER",
+          "stance": "UNKNOWN",
+          "mentions": 1
+        }
+      ]
+    },
+    {
+      "entity": {
+        "entity_id": "ASSET:白银",
+        "name": "白银",
+        "category": "ASSET",
+        "ticker": null,
+        "ts_code": null,
+        "layer": "CONCEPT"
+      },
+      "mentions": 4,
+      "explicit_recommendation_count": 0,
+      "context_recommendation_count": 0,
+      "recommendation_count": 0,
+      "self_position_count": 0,
+      "self_position_buy_count": 0,
+      "hold_count": 0,
+      "watch_count": 0,
+      "avoid_count": 0,
+      "sell_count": 0,
+      "unique_text_mentions": 4,
+      "near_duplicate_cluster_mentions": 4,
+      "video_count": 2,
+      "video_total": 3,
+      "bullish_index": 0.0,
+      "directional_count": 0,
+      "bull_ratio": null,
+      "disagreement": null,
+      "engagement_adjusted_bull_ratio": null,
+      "engagement_observed_comments": 4,
+      "video_balanced_score": 0.0010008307278954176,
+      "stances": {
+        "UNKNOWN": 4
+      },
+      "actions": {
+        "NONE": 3,
+        "UNKNOWN": 1
+      },
+      "speech_acts": {
+        "OBSERVATION": 2,
+        "QUESTION": 1,
+        "HISTORY": 1
+      },
+      "reason_counts": []
+    },
+    {
+      "entity": {
+        "entity_id": "CONCEPT:比特币",
+        "name": "比特币",
+        "category": "ASSET",
+        "ticker": null,
+        "ts_code": null,
+        "layer": "CONCEPT"
+      },
+      "mentions": 4,
+      "explicit_recommendation_count": 0,
+      "context_recommendation_count": 0,
+      "recommendation_count": 0,
+      "self_position_count": 0,
+      "self_position_buy_count": 0,
+      "hold_count": 0,
+      "watch_count": 0,
+      "avoid_count": 0,
+      "sell_count": 0,
+      "unique_text_mentions": 4,
+      "near_duplicate_cluster_mentions": 4,
+      "video_count": 1,
+      "video_total": 3,
+      "bullish_index": 0.0,
+      "directional_count": 0,
+      "bull_ratio": null,
+      "disagreement": null,
+      "engagement_adjusted_bull_ratio": null,
+      "engagement_observed_comments": 4,
+      "video_balanced_score": 0.001463593121112331,
+      "stances": {
+        "UNKNOWN": 4
+      },
+      "actions": {
+        "NONE": 4
+      },
+      "speech_acts": {
+        "QUESTION": 2,
+        "OBSERVATION": 2
+      },
+      "reason_counts": [
+        {
+          "reason_code": "RATE_HIKE",
+          "stance": "UNKNOWN",
+          "mentions": 1
+        }
+      ]
+    },
+    {
+      "entity": {
+        "entity_id": "ASSET:银行存款",
+        "name": "银行存款",
+        "category": "ASSET",
+        "ticker": null,
+        "ts_code": null,
+        "layer": "CONCEPT"
+      },
+      "mentions": 3,
+      "explicit_recommendation_count": 0,
+      "context_recommendation_count": 0,
+      "recommendation_count": 0,
+      "self_position_count": 1,
+      "self_position_buy_count": 0,
+      "hold_count": 0,
+      "watch_count": 0,
+      "avoid_count": 0,
+      "sell_count": 0,
+      "unique_text_mentions": 3,
+      "near_duplicate_cluster_mentions": 3,
+      "video_count": 1,
+      "video_total": 3,
+      "bullish_index": 0.0,
+      "directional_count": 0,
+      "bull_ratio": null,
+      "disagreement": null,
+      "engagement_adjusted_bull_ratio": null,
+      "engagement_observed_comments": 3,
+      "video_balanced_score": 0.00040355125100887816,
+      "stances": {
+        "UNKNOWN": 3
+      },
+      "actions": {
+        "NONE": 3
+      },
+      "speech_acts": {
+        "OBSERVATION": 2,
+        "SELF_POSITION": 1
+      },
+      "reason_counts": [
+        {
+          "reason_code": "OTHER",
+          "stance": "UNKNOWN",
+          "mentions": 1
+        }
+      ]
+    },
+    {
+      "entity": {
+        "entity_id": "CONCEPT:港股市场",
+        "name": "港股市场",
+        "category": "ASSET",
+        "ticker": null,
+        "ts_code": null,
+        "layer": "CONCEPT"
+      },
+      "mentions": 3,
+      "explicit_recommendation_count": 0,
+      "context_recommendation_count": 0,
+      "recommendation_count": 0,
+      "self_position_count": 1,
+      "self_position_buy_count": 0,
+      "hold_count": 0,
+      "watch_count": 0,
+      "avoid_count": 1,
+      "sell_count": 0,
+      "unique_text_mentions": 3,
+      "near_duplicate_cluster_mentions": 3,
+      "video_count": 2,
+      "video_total": 3,
+      "bullish_index": -1.0986,
+      "directional_count": 2,
+      "bull_ratio": 0.0,
+      "disagreement": 0.0,
+      "engagement_adjusted_bull_ratio": 0.0,
+      "engagement_observed_comments": 3,
+      "video_balanced_score": 0.0008663136442257914,
+      "stances": {
+        "BEARISH": 2,
+        "UNKNOWN": 1
+      },
+      "actions": {
+        "NONE": 2,
+        "AVOID": 1
+      },
+      "speech_acts": {
+        "SELF_POSITION": 1,
+        "OBSERVATION": 2
+      },
+      "reason_counts": [
+        {
+          "reason_code": "STRONG_DOLLAR",
+          "stance": "UNKNOWN",
+          "mentions": 1
+        }
+      ]
+    },
+    {
+      "entity": {
+        "entity_id": "ETF:QQQ",
+        "name": "QQQ",
+        "category": "ETF",
+        "ticker": null,
+        "ts_code": null,
+        "layer": "GLOBAL"
+      },
+      "mentions": 2,
+      "explicit_recommendation_count": 0,
+      "context_recommendation_count": 0,
+      "recommendation_count": 0,
+      "self_position_count": 1,
+      "self_position_buy_count": 1,
+      "hold_count": 0,
+      "watch_count": 0,
+      "avoid_count": 0,
+      "sell_count": 0,
+      "unique_text_mentions": 2,
+      "near_duplicate_cluster_mentions": 2,
+      "video_count": 1,
+      "video_total": 3,
+      "bullish_index": 0.6931,
+      "directional_count": 1,
+      "bull_ratio": 1.0,
+      "disagreement": 0.0,
+      "engagement_adjusted_bull_ratio": 1.0,
+      "engagement_observed_comments": 2,
+      "video_balanced_score": 0.0002690341673392521,
+      "stances": {
+        "UNKNOWN": 1,
+        "BULLISH": 1
+      },
+      "actions": {
+        "BUY": 1,
+        "NONE": 1
+      },
+      "speech_acts": {
+        "SELF_POSITION": 1
+      },
+      "reason_counts": []
+    },
+    {
+      "entity": {
+        "entity_id": "ETF:红利ETF",
+        "name": "红利ETF",
+        "category": "ETF",
+        "ticker": null,
+        "ts_code": null,
+        "layer": "CONCEPT"
+      },
+      "mentions": 2,
+      "explicit_recommendation_count": 0,
+      "context_recommendation_count": 0,
+      "recommendation_count": 0,
+      "self_position_count": 2,
+      "self_position_buy_count": 2,
+      "hold_count": 0,
+      "watch_count": 0,
+      "avoid_count": 0,
+      "sell_count": 0,
+      "unique_text_mentions": 2,
+      "near_duplicate_cluster_mentions": 2,
+      "video_count": 1,
+      "video_total": 3,
+      "bullish_index": 0.6931,
+      "directional_count": 1,
+      "bull_ratio": 1.0,
+      "disagreement": 0.0,
+      "engagement_adjusted_bull_ratio": 1.0,
+      "engagement_observed_comments": 2,
+      "video_balanced_score": 0.0002690341673392521,
+      "stances": {
+        "UNKNOWN": 1,
+        "BULLISH": 1
+      },
+      "actions": {
+        "BUY": 2
+      },
+      "speech_acts": {
+        "SELF_POSITION": 2
+      },
+      "reason_counts": []
+    },
+    {
+      "entity": {
+        "entity_id": "ASSET:橡胶",
+        "name": "橡胶",
+        "category": "ASSET",
+        "ticker": null,
+        "ts_code": null,
+        "layer": "CONCEPT"
+      },
+      "mentions": 1,
+      "explicit_recommendation_count": 0,
+      "context_recommendation_count": 0,
+      "recommendation_count": 0,
+      "self_position_count": 1,
+      "self_position_buy_count": 1,
+      "hold_count": 0,
+      "watch_count": 0,
+      "avoid_count": 0,
+      "sell_count": 0,
+      "unique_text_mentions": 1,
+      "near_duplicate_cluster_mentions": 1,
+      "video_count": 1,
+      "video_total": 3,
+      "bullish_index": 0.6931,
+      "directional_count": 1,
+      "bull_ratio": 1.0,
+      "disagreement": 0.0,
+      "engagement_adjusted_bull_ratio": 1.0,
+      "engagement_observed_comments": 1,
+      "video_balanced_score": 0.00013451708366962604,
+      "stances": {
+        "BULLISH": 1
+      },
+      "actions": {
+        "BUY": 1
+      },
+      "speech_acts": {
+        "SELF_POSITION": 1
+      },
+      "reason_counts": [
+        {
+          "reason_code": "OVERSOLD_REBOUND",
+          "stance": "BULLISH",
+          "mentions": 1
+        }
+      ]
+    },
+    {
+      "entity": {
+        "entity_id": "CONCEPT:中证红利ETF",
+        "name": "中证红利ETF",
+        "category": "ETF",
+        "ticker": null,
+        "ts_code": null,
+        "layer": "CONCEPT"
+      },
+      "mentions": 1,
+      "explicit_recommendation_count": 0,
+      "context_recommendation_count": 0,
+      "recommendation_count": 0,
+      "self_position_count": 1,
+      "self_position_buy_count": 1,
+      "hold_count": 0,
+      "watch_count": 0,
+      "avoid_count": 0,
+      "sell_count": 0,
+      "unique_text_mentions": 1,
+      "near_duplicate_cluster_mentions": 1,
+      "video_count": 1,
+      "video_total": 3,
+      "bullish_index": 0.6931,
+      "directional_count": 1,
+      "bull_ratio": 1.0,
+      "disagreement": 0.0,
+      "engagement_adjusted_bull_ratio": 1.0,
+      "engagement_observed_comments": 1,
+      "video_balanced_score": 0.00013451708366962604,
+      "stances": {
+        "BULLISH": 1
+      },
+      "actions": {
+        "BUY": 1
+      },
+      "speech_acts": {
+        "SELF_POSITION": 1
+      },
+      "reason_counts": []
+    },
+    {
+      "entity": {
+        "entity_id": "ETF:TQQQ",
+        "name": "TQQQ",
+        "category": "ETF",
+        "ticker": null,
+        "ts_code": null,
+        "layer": "GLOBAL"
+      },
+      "mentions": 1,
+      "explicit_recommendation_count": 0,
+      "context_recommendation_count": 0,
+      "recommendation_count": 0,
+      "self_position_count": 0,
+      "self_position_buy_count": 0,
+      "hold_count": 0,
+      "watch_count": 0,
+      "avoid_count": 0,
+      "sell_count": 0,
+      "unique_text_mentions": 1,
+      "near_duplicate_cluster_mentions": 1,
+      "video_count": 1,
+      "video_total": 3,
+      "bullish_index": 0.0,
+      "directional_count": 0,
+      "bull_ratio": null,
+      "disagreement": null,
+      "engagement_adjusted_bull_ratio": null,
+      "engagement_observed_comments": 1,
+      "video_balanced_score": 0.00013451708366962604,
+      "stances": {
+        "UNKNOWN": 1
+      },
+      "actions": {
+        "NONE": 1
+      },
+      "speech_acts": {},
+      "reason_counts": []
+    },
+    {
+      "entity": {
+        "entity_id": "SSE_INDEX:000001",
+        "name": "上证指数",
+        "category": "INDEX",
+        "ticker": "000001",
+        "ts_code": null,
+        "layer": "SECURITY"
+      },
+      "mentions": 1,
+      "explicit_recommendation_count": 0,
+      "context_recommendation_count": 0,
+      "recommendation_count": 0,
+      "self_position_count": 0,
+      "self_position_buy_count": 0,
+      "hold_count": 0,
+      "watch_count": 0,
+      "avoid_count": 0,
+      "sell_count": 0,
+      "unique_text_mentions": 1,
+      "near_duplicate_cluster_mentions": 1,
+      "video_count": 1,
+      "video_total": 3,
+      "bullish_index": 0.0,
+      "directional_count": 0,
+      "bull_ratio": null,
+      "disagreement": null,
+      "engagement_adjusted_bull_ratio": null,
+      "engagement_observed_comments": 1,
+      "video_balanced_score": 0.0007575757575757576,
+      "stances": {
+        "UNKNOWN": 1
+      },
+      "actions": {
+        "NONE": 1
+      },
+      "speech_acts": {
+        "OBSERVATION": 1
+      },
+      "reason_counts": []
+    }
+  ],
+  "sectors": [
+    {
+      "entity": {
+        "entity_id": "SECTOR:银行板块",
+        "name": "银行板块",
+        "category": "SECTOR",
+        "ticker": null,
+        "ts_code": null,
+        "layer": "CONCEPT"
+      },
+      "mentions": 4,
+      "explicit_recommendation_count": 3,
+      "context_recommendation_count": 0,
+      "recommendation_count": 3,
+      "self_position_count": 1,
+      "self_position_buy_count": 1,
+      "hold_count": 0,
+      "watch_count": 0,
+      "avoid_count": 0,
+      "sell_count": 0,
+      "unique_text_mentions": 4,
+      "near_duplicate_cluster_mentions": 4,
+      "video_count": 1,
+      "video_total": 3,
+      "bullish_index": 1.6094,
+      "directional_count": 4,
+      "bull_ratio": 1.0,
+      "disagreement": 0.0,
+      "engagement_adjusted_bull_ratio": 1.0,
+      "engagement_observed_comments": 4,
+      "video_balanced_score": 0.0005380683346785041,
+      "stances": {
+        "BULLISH": 4
+      },
+      "actions": {
+        "BUY": 4
+      },
+      "speech_acts": {
+        "RECOMMENDATION": 3,
+        "SELF_POSITION": 1
+      },
+      "reason_counts": [
+        {
+          "reason_code": "DIVIDEND_YIELD",
+          "stance": "BULLISH",
+          "mentions": 2
+        },
+        {
+          "reason_code": "OTHER",
+          "stance": "BULLISH",
+          "mentions": 1
+        }
+      ]
+    },
+    {
+      "entity": {
+        "entity_id": "CONCEPT:科技板块",
+        "name": "科技板块",
+        "category": "SECTOR",
+        "ticker": null,
+        "ts_code": null,
+        "layer": "CONCEPT"
+      },
+      "mentions": 16,
+      "explicit_recommendation_count": 1,
+      "context_recommendation_count": 0,
+      "recommendation_count": 1,
+      "self_position_count": 3,
+      "self_position_buy_count": 3,
+      "hold_count": 0,
+      "watch_count": 0,
+      "avoid_count": 0,
+      "sell_count": 0,
+      "unique_text_mentions": 16,
+      "near_duplicate_cluster_mentions": 16,
+      "video_count": 2,
+      "video_total": 3,
+      "bullish_index": 0.4055,
+      "directional_count": 3,
+      "bull_ratio": 0.6666666666666666,
+      "disagreement": 0.6666666666666666,
+      "engagement_adjusted_bull_ratio": 0.6085160016015245,
+      "engagement_observed_comments": 16,
+      "video_balanced_score": 0.004234704108190127,
+      "stances": {
+        "UNKNOWN": 13,
+        "BULLISH": 2,
+        "BEARISH": 1
+      },
+      "actions": {
+        "NONE": 11,
+        "BUY": 4,
+        "UNKNOWN": 1
+      },
+      "speech_acts": {
+        "SELF_POSITION": 3,
+        "OBSERVATION": 7,
+        "FORECAST": 3,
+        "RECOMMENDATION": 1,
+        "QUESTION": 2
+      },
+      "reason_counts": [
+        {
+          "reason_code": "OTHER",
+          "stance": "UNKNOWN",
+          "mentions": 2
+        },
+        {
+          "reason_code": "AI_CAPEX",
+          "stance": "UNKNOWN",
+          "mentions": 1
+        },
+        {
+          "reason_code": "OTHER",
+          "stance": "BEARISH",
+          "mentions": 1
+        },
+        {
+          "reason_code": "OTHER",
+          "stance": "BULLISH",
+          "mentions": 1
+        },
+        {
+          "reason_code": "VALUATION_HIGH",
+          "stance": "UNKNOWN",
+          "mentions": 1
+        }
+      ]
+    },
+    {
+      "entity": {
+        "entity_id": "CONCEPT:新能源",
+        "name": "新能源",
+        "category": "SECTOR",
+        "ticker": null,
+        "ts_code": null,
+        "layer": "CONCEPT"
+      },
+      "mentions": 10,
+      "explicit_recommendation_count": 0,
+      "context_recommendation_count": 0,
+      "recommendation_count": 0,
+      "self_position_count": 0,
+      "self_position_buy_count": 0,
+      "hold_count": 0,
+      "watch_count": 0,
+      "avoid_count": 0,
+      "sell_count": 0,
+      "unique_text_mentions": 10,
+      "near_duplicate_cluster_mentions": 9,
+      "video_count": 1,
+      "video_total": 3,
+      "bullish_index": 0.0,
+      "directional_count": 0,
+      "bull_ratio": null,
+      "disagreement": null,
+      "engagement_adjusted_bull_ratio": null,
+      "engagement_observed_comments": 10,
+      "video_balanced_score": 0.0036589828027808274,
+      "stances": {
+        "UNKNOWN": 10
+      },
+      "actions": {
+        "NONE": 10
+      },
+      "speech_acts": {
+        "OBSERVATION": 7,
+        "QUESTION": 2,
+        "FORECAST": 1
+      },
+      "reason_counts": [
+        {
+          "reason_code": "OTHER",
+          "stance": "UNKNOWN",
+          "mentions": 4
+        },
+        {
+          "reason_code": "POLICY_SUPPORT",
+          "stance": "UNKNOWN",
+          "mentions": 1
+        }
+      ]
+    },
+    {
+      "entity": {
+        "entity_id": "SECTOR:半导体芯片",
+        "name": "半导体芯片",
+        "category": "SECTOR",
+        "ticker": null,
+        "ts_code": null,
+        "layer": "CONCEPT"
+      },
+      "mentions": 5,
+      "explicit_recommendation_count": 0,
+      "context_recommendation_count": 0,
+      "recommendation_count": 0,
+      "self_position_count": 1,
+      "self_position_buy_count": 1,
+      "hold_count": 0,
+      "watch_count": 0,
+      "avoid_count": 0,
+      "sell_count": 0,
+      "unique_text_mentions": 5,
+      "near_duplicate_cluster_mentions": 5,
+      "video_count": 2,
+      "video_total": 3,
+      "bullish_index": 0.0,
+      "directional_count": 2,
+      "bull_ratio": 0.5,
+      "disagreement": 1.0,
+      "engagement_adjusted_bull_ratio": 0.4786762151468744,
+      "engagement_observed_comments": 5,
+      "video_balanced_score": 0.0015981102047819568,
+      "stances": {
+        "BEARISH": 1,
+        "UNKNOWN": 3,
+        "BULLISH": 1
+      },
+      "actions": {
+        "NONE": 3,
+        "BUY": 1,
+        "UNKNOWN": 1
+      },
+      "speech_acts": {
+        "QUESTION": 2,
+        "OBSERVATION": 1,
+        "FORECAST": 1,
+        "SELF_POSITION": 1
+      },
+      "reason_counts": [
+        {
+          "reason_code": "DOMESTIC_SUBSTITUTION",
+          "stance": "UNKNOWN",
+          "mentions": 1
+        },
+        {
+          "reason_code": "OTHER",
+          "stance": "BEARISH",
+          "mentions": 1
+        }
+      ]
+    },
+    {
+      "entity": {
+        "entity_id": "SECTOR:房地产",
+        "name": "房地产",
+        "category": "SECTOR",
+        "ticker": null,
+        "ts_code": null,
+        "layer": "CONCEPT"
+      },
+      "mentions": 5,
+      "explicit_recommendation_count": 0,
+      "context_recommendation_count": 0,
+      "recommendation_count": 0,
+      "self_position_count": 0,
+      "self_position_buy_count": 0,
+      "hold_count": 0,
+      "watch_count": 0,
+      "avoid_count": 0,
+      "sell_count": 0,
+      "unique_text_mentions": 5,
+      "near_duplicate_cluster_mentions": 5,
+      "video_count": 2,
+      "video_total": 3,
+      "bullish_index": -0.6931,
+      "directional_count": 1,
+      "bull_ratio": 0.0,
+      "disagreement": 0.0,
+      "engagement_adjusted_bull_ratio": 0.0,
+      "engagement_observed_comments": 5,
+      "video_balanced_score": 0.0015981102047819568,
+      "stances": {
+        "BEARISH": 1,
+        "UNKNOWN": 4
+      },
+      "actions": {
+        "NONE": 4,
+        "UNKNOWN": 1
+      },
+      "speech_acts": {
+        "FORECAST": 1,
+        "QUESTION": 1,
+        "OBSERVATION": 3
+      },
+      "reason_counts": [
+        {
+          "reason_code": "OTHER",
+          "stance": "BEARISH",
+          "mentions": 1
+        },
+        {
+          "reason_code": "OTHER",
+          "stance": "UNKNOWN",
+          "mentions": 1
+        },
+        {
+          "reason_code": "POLICY_SUPPORT",
+          "stance": "UNKNOWN",
+          "mentions": 1
+        }
+      ]
+    },
+    {
+      "entity": {
+        "entity_id": "SECTOR:券商板块",
+        "name": "券商板块",
+        "category": "SECTOR",
+        "ticker": null,
+        "ts_code": null,
+        "layer": "CONCEPT"
+      },
+      "mentions": 3,
+      "explicit_recommendation_count": 0,
+      "context_recommendation_count": 0,
+      "recommendation_count": 0,
+      "self_position_count": 1,
+      "self_position_buy_count": 1,
+      "hold_count": 0,
+      "watch_count": 0,
+      "avoid_count": 0,
+      "sell_count": 0,
+      "unique_text_mentions": 3,
+      "near_duplicate_cluster_mentions": 3,
+      "video_count": 2,
+      "video_total": 3,
+      "bullish_index": 0.6931,
+      "directional_count": 1,
+      "bull_ratio": 1.0,
+      "disagreement": 0.0,
+      "engagement_adjusted_bull_ratio": 1.0,
+      "engagement_observed_comments": 3,
+      "video_balanced_score": 0.0006349324476173347,
+      "stances": {
+        "UNKNOWN": 2,
+        "BULLISH": 1
+      },
+      "actions": {
+        "NONE": 2,
+        "BUY": 1
+      },
+      "speech_acts": {
+        "OBSERVATION": 1,
+        "SELF_POSITION": 1,
+        "QUESTION": 1
+      },
+      "reason_counts": [
+        {
+          "reason_code": "OTHER",
+          "stance": "UNKNOWN",
+          "mentions": 1
+        }
+      ]
+    },
+    {
+      "entity": {
+        "entity_id": "CONCEPT:白酒",
+        "name": "白酒",
+        "category": "SECTOR",
+        "ticker": null,
+        "ts_code": null,
+        "layer": "CONCEPT"
+      },
+      "mentions": 2,
+      "explicit_recommendation_count": 0,
+      "context_recommendation_count": 0,
+      "recommendation_count": 0,
+      "self_position_count": 1,
+      "self_position_buy_count": 1,
+      "hold_count": 0,
+      "watch_count": 0,
+      "avoid_count": 0,
+      "sell_count": 0,
+      "unique_text_mentions": 2,
+      "near_duplicate_cluster_mentions": 2,
+      "video_count": 2,
+      "video_total": 3,
+      "bullish_index": 0.0,
+      "directional_count": 0,
+      "bull_ratio": null,
+      "disagreement": null,
+      "engagement_adjusted_bull_ratio": null,
+      "engagement_observed_comments": 2,
+      "video_balanced_score": 0.0008920928412453835,
+      "stances": {
+        "UNKNOWN": 2
+      },
+      "actions": {
+        "BUY": 1,
+        "NONE": 1
+      },
+      "speech_acts": {
+        "OBSERVATION": 1,
+        "SELF_POSITION": 1
+      },
+      "reason_counts": []
+    },
+    {
+      "entity": {
+        "entity_id": "CONCEPT:红利低波",
+        "name": "红利低波",
+        "category": "SECTOR",
+        "ticker": null,
+        "ts_code": null,
+        "layer": "CONCEPT"
+      },
+      "mentions": 1,
+      "explicit_recommendation_count": 0,
+      "context_recommendation_count": 0,
+      "recommendation_count": 0,
+      "self_position_count": 1,
+      "self_position_buy_count": 1,
+      "hold_count": 0,
+      "watch_count": 0,
+      "avoid_count": 0,
+      "sell_count": 0,
+      "unique_text_mentions": 1,
+      "near_duplicate_cluster_mentions": 1,
+      "video_count": 1,
+      "video_total": 3,
+      "bullish_index": 0.6931,
+      "directional_count": 1,
+      "bull_ratio": 1.0,
+      "disagreement": 0.0,
+      "engagement_adjusted_bull_ratio": 1.0,
+      "engagement_observed_comments": 1,
+      "video_balanced_score": 0.00013451708366962604,
+      "stances": {
+        "BULLISH": 1
+      },
+      "actions": {
+        "BUY": 1
+      },
+      "speech_acts": {
+        "SELF_POSITION": 1
+      },
+      "reason_counts": [
+        {
+          "reason_code": "OTHER",
+          "stance": "BULLISH",
+          "mentions": 1
+        }
+      ]
+    }
+  ],
+  "unbound_companies": [
+    {
+      "entity": {
+        "entity_id": "STOCK:AMD",
+        "name": "AMD",
+        "category": "STOCK",
+        "ticker": null,
+        "ts_code": null,
+        "layer": "CONCEPT"
+      },
+      "mentions": 1,
+      "explicit_recommendation_count": 0,
+      "context_recommendation_count": 0,
+      "recommendation_count": 0,
+      "self_position_count": 0,
+      "self_position_buy_count": 0,
+      "hold_count": 0,
+      "watch_count": 0,
+      "avoid_count": 0,
+      "sell_count": 0,
+      "unique_text_mentions": 1,
+      "near_duplicate_cluster_mentions": 1,
+      "video_count": 1,
+      "video_total": 3,
+      "bullish_index": 0.0,
+      "directional_count": 0,
+      "bull_ratio": null,
+      "disagreement": null,
+      "engagement_adjusted_bull_ratio": null,
+      "engagement_observed_comments": 1,
+      "video_balanced_score": 0.00013451708366962604,
+      "stances": {
+        "UNKNOWN": 1
+      },
+      "actions": {
+        "NONE": 1
+      },
+      "speech_acts": {},
+      "reason_counts": []
+    },
+    {
+      "entity": {
+        "entity_id": "STOCK:美光",
+        "name": "美光",
+        "category": "STOCK",
+        "ticker": null,
+        "ts_code": null,
+        "layer": "CONCEPT"
+      },
+      "mentions": 1,
+      "explicit_recommendation_count": 0,
+      "context_recommendation_count": 0,
+      "recommendation_count": 0,
+      "self_position_count": 0,
+      "self_position_buy_count": 0,
+      "hold_count": 0,
+      "watch_count": 0,
+      "avoid_count": 0,
+      "sell_count": 0,
+      "unique_text_mentions": 1,
+      "near_duplicate_cluster_mentions": 1,
+      "video_count": 1,
+      "video_total": 3,
+      "bullish_index": 0.0,
+      "directional_count": 0,
+      "bull_ratio": null,
+      "disagreement": null,
+      "engagement_adjusted_bull_ratio": null,
+      "engagement_observed_comments": 1,
+      "video_balanced_score": 0.00013451708366962604,
+      "stances": {
+        "UNKNOWN": 1
+      },
+      "actions": {
+        "NONE": 1
+      },
+      "speech_acts": {},
+      "reason_counts": []
+    },
+    {
+      "entity": {
+        "entity_id": "STOCK:英伟达",
+        "name": "英伟达",
+        "category": "STOCK",
+        "ticker": null,
+        "ts_code": null,
+        "layer": "CONCEPT"
+      },
+      "mentions": 1,
+      "explicit_recommendation_count": 0,
+      "context_recommendation_count": 0,
+      "recommendation_count": 0,
+      "self_position_count": 0,
+      "self_position_buy_count": 0,
+      "hold_count": 0,
+      "watch_count": 0,
+      "avoid_count": 0,
+      "sell_count": 0,
+      "unique_text_mentions": 1,
+      "near_duplicate_cluster_mentions": 1,
+      "video_count": 1,
+      "video_total": 3,
+      "bullish_index": 0.0,
+      "directional_count": 0,
+      "bull_ratio": null,
+      "disagreement": null,
+      "engagement_adjusted_bull_ratio": null,
+      "engagement_observed_comments": 1,
+      "video_balanced_score": 0.00013451708366962604,
+      "stances": {
+        "UNKNOWN": 1
+      },
+      "actions": {
+        "NONE": 1
+      },
+      "speech_acts": {},
+      "reason_counts": []
+    }
+  ],
+  "other": [
+    {
+      "entity": {
+        "entity_id": "CONCEPT:个股",
+        "name": "个股",
+        "category": "ASSET",
+        "ticker": null,
+        "ts_code": null,
+        "layer": "CONCEPT"
+      },
+      "mentions": 62,
+      "explicit_recommendation_count": 5,
+      "context_recommendation_count": 0,
+      "recommendation_count": 5,
+      "self_position_count": 6,
+      "self_position_buy_count": 4,
+      "hold_count": 0,
+      "watch_count": 0,
+      "avoid_count": 2,
+      "sell_count": 0,
+      "unique_text_mentions": 60,
+      "near_duplicate_cluster_mentions": 60,
+      "video_count": 3,
+      "video_total": 3,
+      "bullish_index": 0.6931,
+      "directional_count": 7,
+      "bull_ratio": 0.7142857142857143,
+      "disagreement": 0.5714285714285714,
+      "engagement_adjusted_bull_ratio": 0.7274609141916306,
+      "engagement_observed_comments": 62,
+      "video_balanced_score": 0.016510906864215764,
+      "stances": {
+        "BULLISH": 5,
+        "UNKNOWN": 55,
+        "BEARISH": 2
+      },
+      "actions": {
+        "BUY": 9,
+        "NONE": 41,
+        "AVOID": 2,
+        "UNKNOWN": 10
+      },
+      "speech_acts": {
+        "OBSERVATION": 42,
+        "HISTORY": 2,
+        "RECOMMENDATION": 7,
+        "QUESTION": 5,
+        "SELF_POSITION": 6
+      },
+      "reason_counts": [
+        {
+          "reason_code": "OTHER",
+          "stance": "UNKNOWN",
+          "mentions": 16
+        },
+        {
+          "reason_code": "EARNINGS_GROWTH",
+          "stance": "UNKNOWN",
+          "mentions": 2
+        },
+        {
+          "reason_code": "OTHER",
+          "stance": "BEARISH",
+          "mentions": 2
+        },
+        {
+          "reason_code": "OTHER",
+          "stance": "BULLISH",
+          "mentions": 2
+        },
+        {
+          "reason_code": "VALUATION_LOW",
+          "stance": "BULLISH",
+          "mentions": 2
+        },
+        {
+          "reason_code": "VALUATION_LOW",
+          "stance": "UNKNOWN",
+          "mentions": 2
+        },
+        {
+          "reason_code": "TECHNICAL_BREAKOUT",
+          "stance": "BULLISH",
+          "mentions": 1
+        },
+        {
+          "reason_code": "TECHNICAL_BREAKOUT",
+          "stance": "UNKNOWN",
+          "mentions": 1
+        },
+        {
+          "reason_code": "VALUATION_HIGH",
+          "stance": "UNKNOWN",
+          "mentions": 1
+        }
+      ]
+    }
+  ],
+  "methods": {
+    "denominator": 3829,
+    "method_bearing_comments": 676,
+    "multi_label": true,
+    "ranking": [
+      {
+        "method": "CASH_WAIT",
+        "method_name": "现金等待",
+        "count": 190,
+        "percentage": 4.962131104727082,
+        "attitudes": {
+          "SELF_PRACTICE": 163,
+          "SUPPORT": 25,
+          "MENTION": 1,
+          "UNKNOWN": 1
+        },
+        "net_support_rate": 1.0,
+        "directional_count": 25,
+        "sample_status": "SUFFICIENT"
+      },
+      {
+        "method": "TREND",
+        "method_name": "趋势交易",
+        "count": 133,
+        "percentage": 3.473491773308958,
+        "attitudes": {
+          "SUPPORT": 19,
+          "SELF_PRACTICE": 82,
+          "OPPOSE": 13,
+          "MENTION": 18,
+          "QUESTION": 1
+        },
+        "net_support_rate": 0.1875,
+        "directional_count": 32,
+        "sample_status": "SUFFICIENT"
+      },
+      {
+        "method": "SWING_T",
+        "method_name": "波段/做T",
+        "count": 92,
+        "percentage": 2.4027161138678506,
+        "attitudes": {
+          "SELF_PRACTICE": 75,
+          "MENTION": 6,
+          "OPPOSE": 4,
+          "SUPPORT": 5,
+          "UNKNOWN": 1,
+          "QUESTION": 1
+        },
+        "net_support_rate": 0.1111111111111111,
+        "directional_count": 9,
+        "sample_status": "INSUFFICIENT"
+      },
+      {
+        "method": "POSITION_RISK",
+        "method_name": "仓位风控",
+        "count": 87,
+        "percentage": 2.272133716375033,
+        "attitudes": {
+          "SELF_PRACTICE": 58,
+          "SUPPORT": 21,
+          "MENTION": 5,
+          "QUESTION": 2,
+          "OPPOSE": 1
+        },
+        "net_support_rate": 0.9090909090909091,
+        "directional_count": 22,
+        "sample_status": "SUFFICIENT"
+      },
+      {
+        "method": "CYCLE_DIP",
+        "method_name": "周期低吸",
+        "count": 66,
+        "percentage": 1.7236876469051972,
+        "attitudes": {
+          "SELF_PRACTICE": 49,
+          "SUPPORT": 11,
+          "MENTION": 2,
+          "UNKNOWN": 1,
+          "OPPOSE": 2,
+          "QUESTION": 1
+        },
+        "net_support_rate": 0.6923076923076923,
+        "directional_count": 13,
+        "sample_status": "SUFFICIENT"
+      },
+      {
+        "method": "EXIT",
+        "method_name": "退出交易",
+        "count": 66,
+        "percentage": 1.7236876469051972,
+        "attitudes": {
+          "SELF_PRACTICE": 43,
+          "SUPPORT": 20,
+          "MENTION": 1,
+          "OPPOSE": 2
+        },
+        "net_support_rate": 0.8181818181818182,
+        "directional_count": 22,
+        "sample_status": "SUFFICIENT"
+      },
+      {
+        "method": "OTHER",
+        "method_name": "其他",
+        "count": 54,
+        "percentage": 1.4102898929224341,
+        "attitudes": {
+          "SUPPORT": 13,
+          "SELF_PRACTICE": 28,
+          "QUESTION": 1,
+          "MENTION": 8,
+          "OPPOSE": 4
+        },
+        "net_support_rate": 0.5294117647058824,
+        "directional_count": 17,
+        "sample_status": "SUFFICIENT"
+      },
+      {
+        "method": "VALUE",
+        "method_name": "价值投资",
+        "count": 41,
+        "percentage": 1.0707756594411073,
+        "attitudes": {
+          "SELF_PRACTICE": 25,
+          "SUPPORT": 15,
+          "QUESTION": 1
+        },
+        "net_support_rate": 1.0,
+        "directional_count": 15,
+        "sample_status": "SUFFICIENT"
+      },
+      {
+        "method": "INDEX_DCA",
+        "method_name": "指数定投",
+        "count": 31,
+        "percentage": 0.8096108644554714,
+        "attitudes": {
+          "SELF_PRACTICE": 19,
+          "SUPPORT": 12
+        },
+        "net_support_rate": 1.0,
+        "directional_count": 12,
+        "sample_status": "SUFFICIENT"
+      },
+      {
+        "method": "HIGH_DIVIDEND",
+        "method_name": "高股息",
+        "count": 16,
+        "percentage": 0.4178636719770175,
+        "attitudes": {
+          "SUPPORT": 5,
+          "SELF_PRACTICE": 11
+        },
+        "net_support_rate": 1.0,
+        "directional_count": 5,
+        "sample_status": "INSUFFICIENT"
+      },
+      {
+        "method": "SECTOR_ROTATION",
+        "method_name": "行业轮动",
+        "count": 12,
+        "percentage": 0.31339775398276315,
+        "attitudes": {
+          "SELF_PRACTICE": 10,
+          "MENTION": 1,
+          "SUPPORT": 1
+        },
+        "net_support_rate": 1.0,
+        "directional_count": 1,
+        "sample_status": "INSUFFICIENT"
+      },
+      {
+        "method": "ASSET_ALLOCATION",
+        "method_name": "资产配置",
+        "count": 10,
+        "percentage": 0.26116479498563594,
+        "attitudes": {
+          "SELF_PRACTICE": 7,
+          "SUPPORT": 3
+        },
+        "net_support_rate": 1.0,
+        "directional_count": 3,
+        "sample_status": "INSUFFICIENT"
+      },
+      {
+        "method": "GRID",
+        "method_name": "网格交易",
+        "count": 3,
+        "percentage": 0.07834943849569079,
+        "attitudes": {
+          "SELF_PRACTICE": 3
+        },
+        "net_support_rate": null,
+        "directional_count": 0,
+        "sample_status": "INSUFFICIENT"
+      },
+      {
+        "method": "TECH_GROWTH",
+        "method_name": "科技成长",
+        "count": 3,
+        "percentage": 0.07834943849569079,
+        "attitudes": {
+          "SELF_PRACTICE": 3
+        },
+        "net_support_rate": null,
+        "directional_count": 0,
+        "sample_status": "INSUFFICIENT"
+      }
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "report_version": "3.1.0",
+  "schema_version": "3.0",
+  "source_run_id": "20261005T111901191947",
+  "report_revision_id": "20261005T111901191947-v3.1",
+  "maturity_level": "RESEARCH_ASSIST",
+  "promotion_state": "RESEARCH_ONLY",
+  "acceptance": "PENDING_HUMAN_ANNOTATION",
+  "valid_comments": 3829,
+  "status_counts": {
+    "SUCCESS": 2629,
+    "PARTIAL": 1200
+  },
+  "report_revision_api_calls": 0,
+  "report_revision_tokens": 0,
+  "frozen_extraction_unchanged": true,
+  "underlying_statistics_match": {
+    "ticker_consensus": true,
+    "strategy_ranking": true,
+    "timeline": true
+  },
+  "analyzed_comments_hash_match": true,
+  "board_counts": {
+    "securities": 16,
+    "assets": 23,
+    "sectors": 8,
+    "unbound_companies": 3,
+    "other": 1
+  },
+  "local_evidence_anchors": "PASS",
+  "public_redaction": "PASS",
+  "tests_python310": 81,
+  "tests_python312": 81,
+  "human_complete": 0,
+  "frozen_test_samples": 300,
+  "video_context_verified": 0,
+  "legacy_backup_verified_files": 123
+}

@@ -310,6 +310,8 @@ async def run(args):
         and topics["status"] in ("SUCCESS", "INSUFFICIENT_DATA", "DISABLED")
         else "PARTIAL",
         "promotion_state": "RESEARCH_ONLY",
+        "maturity_level": "RESEARCH_ASSIST",
+        "report_version": "3.1.0",
         "catalog_coverage": resolver.dictionary.get("coverage", {}),
         "catalog_gaps": resolver.dictionary.get("gaps", []),
         "context_verified_videos": sum(

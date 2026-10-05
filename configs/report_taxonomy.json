@@ -1,0 +1,8 @@
+{
+  "version": "3.1",
+  "generic_entity_ids": ["CONCEPT:个股"],
+  "security_layer": "SECURITY",
+  "security_categories": ["STOCK", "ETF", "REIT"],
+  "category_routes": {"ASSET": "assets", "INDEX": "assets", "ETF": "assets", "REIT": "assets", "SECTOR": "sectors", "STOCK": "unbound_companies"},
+  "titles": {"securities": "具体证券", "assets": "资产／指数", "sectors": "行业／板块", "unbound_companies": "未绑定标准证券代码的公司", "other": "其他讨论对象"}
+}

@@ -1,6 +1,6 @@
-# MentalAnalysis 3.0
+# MentalAnalysis v3.1 3.0
 
-可追溯的中文投资评论批量分析：分别识别推荐、本人持仓、询问、预测、方法态度和理由，提供本地原文报告与公开脱敏结果。当前状态为 **RESEARCH_ONLY / PENDING_HUMAN_ANNOTATION**，测试通过不代表模型准确率达标。
+可追溯的中文投资评论批量分析：分别识别推荐、本人持仓、询问、预测、方法态度和理由，提供本地原文报告与公开脱敏结果。当前用途为 **RESEARCH_ASSIST（研究辅助可用）**，保留 **RESEARCH_ONLY / PENDING_HUMAN_ANNOTATION**，测试通过不代表模型准确率达标。
 
 ## 安装与运行
 
@@ -73,7 +73,7 @@ cp .env.example .env
 
 公开 `output/public/RUN` 仅保留受控实体聚合、理由代码计数、方法态度、候选主题数量、质量、结论和脱敏HTML；不包含评论原文、昵称、评论／用户ID、来源明细、自由文本理由或本机绝对路径。
 
-**此前公开的 `output/runs` 与Git历史仍含旧评论原文和元数据。此次升级只改变新结果发布方式，不删除旧文件或重写Git历史。** README的原始输入忽略规则不意味着历史输出已脱敏。
+**v3.1 已将当前分支的旧 `output/runs/` 原文输出移出，123 个文件经 SHA-256 核对后备份至本地忽略目录 `local/legacy_public_backup/daaba8b/`。Git 历史未重写，历史提交仍可访问旧评论原文和元数据。** README的原始输入忽略规则不意味着历史输出已脱敏。
 
 3.0输出字段与2.0不兼容：`recommend_count`移除，使用明确／上下文推荐计数；`NEEDS_REVIEW`对应新版字段级`PARTIAL`，不是同口径数量。旧结果保留用于比较；回滚可使用2.0提交及其独立结果，不把3.0缓存交给2.0。始终保持RESEARCH_ONLY，直至人工验收完成。
 
@@ -84,3 +84,24 @@ cp .env.example .env
 - [公开报告文件](output/public/20261005T111901191947/report.html)（下载后离线打开）
 
 3,829条有效评论全部取得结构化结果：2,629条SUCCESS、1,200条PARTIAL；167条空白／纯表情SKIPPED，未处理有效评论和请求失败均为0。缓存复跑0次API调用、0新增token，标的、方法、时间统计一致。四类主题全部完成，仍待人工确认。两个Python版本的回归测试通过；人工gold为0／300，视频上下文未获取，不能把运行完成等同于研究准确率验收。
+
+
+## v3.1 报告收尾
+
+- [最新公开结论](output/public/20261005T111901191947-v3.1/conclusions.md)
+- [最新公开报告](output/public/20261005T111901191947-v3.1/report.html)（下载后离线打开）
+- [修订验证记录](output/public/20261005T111901191947-v3.1/verification.json)
+
+首页按具体证券、资产／指数、行业／板块、投资方法展示。证券榜仅含 SECURITY 层的股票、ETF、REIT；指数单列资产／指数，全球基金区分具体产品与泛化基金概念。泛指“个股”等进入其他讨论对象附录，尚未绑定标准证券代码的公司名称单列。分类配置唯一来源为 `configs/report_taxonomy.json`，不改变实体解析结果。
+
+软件版本 3.1.0；语义 schema 仍为 3.0，提示词、目录、校验与缓存保持冻结。本次仅重建报告，新增 API 调用和 token 为零，底层统计与原运行一致。独立本地报告位于 `local/report_revisions/20261005T111901191947-v3.1/`，源 v3.0 结果保留。
+
+```bash
+.venv/bin/python -m scripts.rebuild_report local/runs/RUN --revision-output local/report_revisions/NEW_REVISION --public output/public/NEW_REVISION
+```
+
+修订目录必须是新目录；记录源运行 ID、报告版本、修订时间及代码哈希。方法净支持率显示支持＋反对的实际分母，小于10条标明样本不足。公开版只发布聚合，原文证据在本地报告；HTML和Markdown使用同一四榜布局。
+
+工程就绪、研究辅助可用，**模型准确率未验证、投资信号未就绪、ASDC因子未就绪**。成熟度描述用途，不表示精度已达标。400条标注集（100开发／300冻结验收）尚待人工填写；旧200条验收占位结果归档为 `evaluation/legacy_v2_metrics.json`。
+
+当前仅分析已采集一级评论；视频提问仍缺失，单独标的名等短回复的推荐属性可能低估，具体证券推荐数量尚未定稿。补齐有出处的视频问题后需要重新抽取；完成真实人工验收后才考虑 RESEARCH_READY。不以评论结论预测收益。

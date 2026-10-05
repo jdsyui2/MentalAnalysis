@@ -1,7 +1,0 @@
-{
-  "model": "BAAI/bge-small-zh-v1.5",
-  "unique_documents": 16,
-  "topics": [],
-  "status": "INSUFFICIENT_DATA",
-  "topic_ids_scope": "CURRENT_RUN"
-}

@@ -1,0 +1,351 @@
+{
+  "schema_version": "3.0",
+  "valid_comments": 3829,
+  "structured_comments": 3829,
+  "status_counts": {
+    "SUCCESS": 2629,
+    "PARTIAL": 1200
+  },
+  "video_count": 3,
+  "acceptance": "PENDING_HUMAN_ANNOTATION",
+  "promotion_state": "RESEARCH_ONLY",
+  "narrative": [
+    "[具体证券] 药石科技：推荐表达1条（明确1、上下文0），涉及1个视频；全部提及按唯一文本折叠后1条，近重复分组后1组。",
+    "[资产／指数] 纳斯达克100：推荐表达13条（明确13、上下文0），涉及3个视频；全部提及按唯一文本折叠后22条，近重复分组后22组。",
+    "[资产／指数] 美股市场：推荐表达6条（明确6、上下文0），涉及3个视频；全部提及按唯一文本折叠后41条，近重复分组后41组。",
+    "[资产／指数] 黄金：推荐表达3条（明确3、上下文0），涉及3个视频；全部提及按唯一文本折叠后100条，近重复分组后100组。",
+    "[行业／板块] 银行板块：推荐表达3条（明确3、上下文0），涉及1个视频；全部提及按唯一文本折叠后4条，近重复分组后4组。",
+    "[行业／板块] 科技板块：推荐表达1条（明确1、上下文0），涉及2个视频；全部提及按唯一文本折叠后16条，近重复分组后16组。",
+    "A股市场：回避动作18条、卖出动作5条；动作不一定是向他人建议。",
+    "纳斯达克100：回避动作0条、卖出动作1条；动作不一定是向他人建议。",
+    "标普500：回避动作0条、卖出动作1条；动作不一定是向他人建议。",
+    "黄金：有效方向样本33条，分歧度0.61；方向分布{'UNKNOWN': 67, 'BEARISH': 23, 'BULLISH': 10}。",
+    "纳斯达克100：有效方向样本21条，分歧度0.10；方向分布{'BULLISH': 20, 'UNKNOWN': 9, 'BEARISH': 1}。",
+    "A股市场：有效方向样本39条，分歧度0.05；方向分布{'BEARISH': 38, 'UNKNOWN': 57, 'BULLISH': 1}。",
+    "A股市场：有效方向样本39条，看多占方向样本2.6%。这描述评论观点，不预测收益。",
+    "纳斯达克100：有效方向样本21条，看多占方向样本95.2%。这描述评论观点，不预测收益。",
+    "黄金：有效方向样本33条，看多占方向样本30.3%。这描述评论观点，不预测收益。",
+    "现金等待：支持25、反对0、自用163条，净支持率100.0%（分母：支持＋反对 25 条）；多标签统计。",
+    "仓位风控：支持21、反对1、自用58条，净支持率90.9%（分母：支持＋反对 22 条）；多标签统计。",
+    "退出交易：支持20、反对2、自用43条，净支持率81.8%（分母：支持＋反对 22 条）；多标签统计。",
+    "趋势交易：支持19、反对13、自用82条，净支持率18.8%（分母：支持＋反对 32 条）；多标签统计。",
+    "价值投资：支持15、反对0、自用25条，净支持率100.0%（分母：支持＋反对 15 条）；多标签统计。"
+  ],
+  "claims_verified": false,
+  "maturity_level": "RESEARCH_ASSIST",
+  "engineering_ready": true,
+  "research_assist_ready": true,
+  "model_accuracy_validated": false,
+  "investment_signal_ready": false,
+  "asdc_factor_ready": false,
+  "report_version": "3.1.0",
+  "insights": [
+    {
+      "kind": "RECOMMENDED",
+      "board": "securities",
+      "entity_id": "300725.SZ",
+      "name": "药石科技",
+      "metrics": {
+        "recommendation_count": 1,
+        "explicit_recommendation_count": 1,
+        "context_recommendation_count": 0,
+        "mentions": 1,
+        "video_count": 1,
+        "unique_text_mentions": 1,
+        "near_duplicate_cluster_mentions": 1
+      },
+      "verification": "UGC_UNVERIFIED"
+    },
+    {
+      "kind": "RECOMMENDED",
+      "board": "assets",
+      "entity_id": "INDEX:纳斯达克100",
+      "name": "纳斯达克100",
+      "metrics": {
+        "recommendation_count": 13,
+        "explicit_recommendation_count": 13,
+        "context_recommendation_count": 0,
+        "mentions": 30,
+        "video_count": 3,
+        "unique_text_mentions": 22,
+        "near_duplicate_cluster_mentions": 22
+      },
+      "verification": "UGC_UNVERIFIED"
+    },
+    {
+      "kind": "RECOMMENDED",
+      "board": "assets",
+      "entity_id": "ASSET:美股市场",
+      "name": "美股市场",
+      "metrics": {
+        "recommendation_count": 6,
+        "explicit_recommendation_count": 6,
+        "context_recommendation_count": 0,
+        "mentions": 42,
+        "video_count": 3,
+        "unique_text_mentions": 41,
+        "near_duplicate_cluster_mentions": 41
+      },
+      "verification": "UGC_UNVERIFIED"
+    },
+    {
+      "kind": "RECOMMENDED",
+      "board": "assets",
+      "entity_id": "ASSET:黄金",
+      "name": "黄金",
+      "metrics": {
+        "recommendation_count": 3,
+        "explicit_recommendation_count": 3,
+        "context_recommendation_count": 0,
+        "mentions": 100,
+        "video_count": 3,
+        "unique_text_mentions": 100,
+        "near_duplicate_cluster_mentions": 100
+      },
+      "verification": "UGC_UNVERIFIED"
+    },
+    {
+      "kind": "RECOMMENDED",
+      "board": "sectors",
+      "entity_id": "SECTOR:银行板块",
+      "name": "银行板块",
+      "metrics": {
+        "recommendation_count": 3,
+        "explicit_recommendation_count": 3,
+        "context_recommendation_count": 0,
+        "mentions": 4,
+        "video_count": 1,
+        "unique_text_mentions": 4,
+        "near_duplicate_cluster_mentions": 4
+      },
+      "verification": "UGC_UNVERIFIED"
+    },
+    {
+      "kind": "RECOMMENDED",
+      "board": "sectors",
+      "entity_id": "CONCEPT:科技板块",
+      "name": "科技板块",
+      "metrics": {
+        "recommendation_count": 1,
+        "explicit_recommendation_count": 1,
+        "context_recommendation_count": 0,
+        "mentions": 16,
+        "video_count": 2,
+        "unique_text_mentions": 16,
+        "near_duplicate_cluster_mentions": 16
+      },
+      "verification": "UGC_UNVERIFIED"
+    },
+    {
+      "kind": "AVOIDED",
+      "board": "assets",
+      "entity_id": "CONCEPT:A股市场",
+      "name": "A股市场",
+      "metrics": {
+        "avoid_count": 18,
+        "sell_count": 5,
+        "mentions": 96
+      },
+      "verification": "UGC_UNVERIFIED"
+    },
+    {
+      "kind": "AVOIDED",
+      "board": "assets",
+      "entity_id": "INDEX:纳斯达克100",
+      "name": "纳斯达克100",
+      "metrics": {
+        "avoid_count": 0,
+        "sell_count": 1,
+        "mentions": 30
+      },
+      "verification": "UGC_UNVERIFIED"
+    },
+    {
+      "kind": "AVOIDED",
+      "board": "assets",
+      "entity_id": "INDEX:标普500",
+      "name": "标普500",
+      "metrics": {
+        "avoid_count": 0,
+        "sell_count": 1,
+        "mentions": 4
+      },
+      "verification": "UGC_UNVERIFIED"
+    },
+    {
+      "kind": "DISAGREEMENT",
+      "board": "assets",
+      "entity_id": "ASSET:黄金",
+      "name": "黄金",
+      "metrics": {
+        "directional_count": 33,
+        "disagreement": 0.6060606060606061,
+        "bull_ratio": 0.30303030303030304,
+        "stances": {
+          "UNKNOWN": 67,
+          "BEARISH": 23,
+          "BULLISH": 10
+        }
+      },
+      "verification": "UGC_UNVERIFIED"
+    },
+    {
+      "kind": "DISAGREEMENT",
+      "board": "assets",
+      "entity_id": "INDEX:纳斯达克100",
+      "name": "纳斯达克100",
+      "metrics": {
+        "directional_count": 21,
+        "disagreement": 0.09523809523809523,
+        "bull_ratio": 0.9523809523809523,
+        "stances": {
+          "BULLISH": 20,
+          "UNKNOWN": 9,
+          "BEARISH": 1
+        }
+      },
+      "verification": "UGC_UNVERIFIED"
+    },
+    {
+      "kind": "DISAGREEMENT",
+      "board": "assets",
+      "entity_id": "CONCEPT:A股市场",
+      "name": "A股市场",
+      "metrics": {
+        "directional_count": 39,
+        "disagreement": 0.05128205128205128,
+        "bull_ratio": 0.02564102564102564,
+        "stances": {
+          "BEARISH": 38,
+          "UNKNOWN": 57,
+          "BULLISH": 1
+        }
+      },
+      "verification": "UGC_UNVERIFIED"
+    },
+    {
+      "kind": "DIRECTION",
+      "board": "assets",
+      "entity_id": "CONCEPT:A股市场",
+      "name": "A股市场",
+      "metrics": {
+        "directional_count": 39,
+        "bull_ratio": 0.02564102564102564,
+        "stances": {
+          "BEARISH": 38,
+          "UNKNOWN": 57,
+          "BULLISH": 1
+        }
+      },
+      "verification": "UGC_UNVERIFIED"
+    },
+    {
+      "kind": "DIRECTION",
+      "board": "assets",
+      "entity_id": "INDEX:纳斯达克100",
+      "name": "纳斯达克100",
+      "metrics": {
+        "directional_count": 21,
+        "bull_ratio": 0.9523809523809523,
+        "stances": {
+          "BULLISH": 20,
+          "UNKNOWN": 9,
+          "BEARISH": 1
+        }
+      },
+      "verification": "UGC_UNVERIFIED"
+    },
+    {
+      "kind": "DIRECTION",
+      "board": "assets",
+      "entity_id": "ASSET:黄金",
+      "name": "黄金",
+      "metrics": {
+        "directional_count": 33,
+        "bull_ratio": 0.30303030303030304,
+        "stances": {
+          "UNKNOWN": 67,
+          "BEARISH": 23,
+          "BULLISH": 10
+        }
+      },
+      "verification": "UGC_UNVERIFIED"
+    },
+    {
+      "kind": "METHOD_SUPPORT",
+      "name": "现金等待",
+      "metrics": {
+        "attitudes": {
+          "SELF_PRACTICE": 163,
+          "SUPPORT": 25,
+          "MENTION": 1,
+          "UNKNOWN": 1
+        },
+        "net_support_rate": 1.0,
+        "count": 190,
+        "directional_count": 25
+      }
+    },
+    {
+      "kind": "METHOD_SUPPORT",
+      "name": "仓位风控",
+      "metrics": {
+        "attitudes": {
+          "SELF_PRACTICE": 58,
+          "SUPPORT": 21,
+          "MENTION": 5,
+          "QUESTION": 2,
+          "OPPOSE": 1
+        },
+        "net_support_rate": 0.9090909090909091,
+        "count": 87,
+        "directional_count": 22
+      }
+    },
+    {
+      "kind": "METHOD_SUPPORT",
+      "name": "退出交易",
+      "metrics": {
+        "attitudes": {
+          "SELF_PRACTICE": 43,
+          "SUPPORT": 20,
+          "MENTION": 1,
+          "OPPOSE": 2
+        },
+        "net_support_rate": 0.8181818181818182,
+        "count": 66,
+        "directional_count": 22
+      }
+    },
+    {
+      "kind": "METHOD_SUPPORT",
+      "name": "趋势交易",
+      "metrics": {
+        "attitudes": {
+          "SUPPORT": 19,
+          "SELF_PRACTICE": 82,
+          "OPPOSE": 13,
+          "MENTION": 18,
+          "QUESTION": 1
+        },
+        "net_support_rate": 0.1875,
+        "count": 133,
+        "directional_count": 32
+      }
+    },
+    {
+      "kind": "METHOD_SUPPORT",
+      "name": "价值投资",
+      "metrics": {
+        "attitudes": {
+          "SELF_PRACTICE": 25,
+          "SUPPORT": 15,
+          "QUESTION": 1
+        },
+        "net_support_rate": 1.0,
+        "count": 41,
+        "directional_count": 15
+      }
+    }
+  ]
+}

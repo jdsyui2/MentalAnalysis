@@ -1,0 +1,8 @@
+{
+  "status": "PENDING_HUMAN_ANNOTATION",
+  "test_samples": 200,
+  "completed": 0,
+  "schema_version": "2.0",
+  "legacy": true,
+  "scope": "Legacy v2: 200 frozen test samples; not the current v3 evaluation"
+}

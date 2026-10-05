@@ -4,6 +4,14 @@ import json
 import html
 from pathlib import Path
 from .report import write_json, write_csv
+from .presentation import (
+    render_boards,
+    markdown_boards,
+    MATURITY,
+    REPORT_VERSION,
+    LIMITATIONS,
+    group_ranks,
+)
 
 
 def publish_redacted(run, output):
@@ -95,6 +103,11 @@ def publish_redacted(run, output):
         "pilot": manifest["pilot"],
         "run_status": manifest["run_status"],
         "promotion_state": "RESEARCH_ONLY",
+        **MATURITY,
+        "report_version": REPORT_VERSION,
+        "source_run_id": manifest.get("source_run_id"),
+        "report_revision_id": manifest.get("report_revision_id"),
+        "report_code_hashes": manifest.get("report_code_hashes", {}),
         "catalog_coverage": manifest["catalog_coverage"],
         "catalog_gaps": manifest["catalog_gaps"],
         "input_hashes": [
@@ -149,6 +162,7 @@ def publish_redacted(run, output):
             "claims_verified",
         ]
     }
+    public_summary.update(MATURITY, report_version=REPORT_VERSION)
     public_summary["insights"] = [
         {k: v for k, v in f.items() if k != "evidence_keys"}
         for f in summary["insights"]
@@ -171,8 +185,11 @@ def publish_redacted(run, output):
             for i, t in enumerate(topics["topics"])
         ],
     }
+    public_boards = group_ranks(public_ranks)
+    public_boards["methods"] = public_methods
     for name, data in [
         ("ticker_consensus", public_ranks),
+        ("boards", public_boards),
         ("strategy_ranking", public_methods),
         ("quality", public_quality),
         ("manifest", public_manifest),
@@ -186,7 +203,10 @@ def publish_redacted(run, output):
         [
             "# 投资评论分析（公开脱敏版）",
             "",
-            "RESEARCH_ONLY · PENDING_HUMAN_ANNOTATION",
+            "RESEARCH_ASSIST · RESEARCH_ONLY · PENDING_HUMAN_ANNOTATION",
+            "",
+            LIMITATIONS,
+            "工程就绪、研究辅助可用；模型准确率未验证，投资信号与ASDC因子未就绪。",
             "",
             f"有效评论 {summary['valid_comments']} 条，来自 {summary['video_count']} 个视频。",
             "",
@@ -197,15 +217,14 @@ def publish_redacted(run, output):
             "仅含聚合与质量指标；不包含原文、昵称、评论或用户ID、来源明细及本机路径。历史公开提交仍含旧评论明细。",
         ]
     )
+    lines += ["", markdown_boards(public_ranks, public_methods, local=False)]
     (output / "conclusions.md").write_text("\n".join(lines) + "\n")
-    sections = "<h1>投资评论分析（公开脱敏版）</h1>" + "".join(
-        "<p>" + html.escape(t) + "</p>" for t in lines[2:]
+    sections = (
+        "<h1>投资评论分析（公开脱敏版）</h1>"
+        + "".join("<p>" + html.escape(t) + "</p>" for t in lines[2:-2])
+        + render_boards(public_ranks, public_methods, local=False)
     )
-    for title, data in [
-        ("投资选择", public_ranks),
-        ("投资方法", public_methods),
-        ("质量", public_quality),
-    ]:
+    for title, data in [("质量", public_quality)]:
         sections += (
             "<h2>"
             + title

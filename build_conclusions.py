@@ -6,6 +6,16 @@ import json
 from pathlib import Path
 from collections import Counter
 from core.report import write_json
+from core.presentation import (
+    group_name,
+    group_ranks,
+    MATURITY,
+    REPORT_VERSION,
+    LIMITATIONS,
+    TAXONOMY,
+    markdown_boards,
+    methods_with_evidence,
+)
 
 
 def insights(ranks, methods):
@@ -24,6 +34,7 @@ def insights(ranks, methods):
             )
         return {
             "kind": kind,
+            "board": group_name(a["entity"]),
             "entity_id": a["entity"]["entity_id"],
             "name": a["entity"]["name"],
             "metrics": {k: a[k] for k in fields},
@@ -31,34 +42,40 @@ def insights(ranks, methods):
             "verification": "UGC_UNVERIFIED",
         }
 
-    recommended = sorted(
-        (a for a in ranks if a["recommendation_count"]),
-        key=lambda a: (-a["recommendation_count"], a["entity"]["entity_id"]),
-    )
-    for a in recommended[:5]:
-        facts.append(
-            entity_fact(
-                "RECOMMENDED",
-                a,
-                [
-                    "recommendation_count",
-                    "explicit_recommendation_count",
-                    "context_recommendation_count",
-                    "mentions",
-                    "video_count",
-                    "unique_text_mentions",
-                    "near_duplicate_cluster_mentions",
-                ],
-            )
+    for board in ("securities", "assets", "sectors"):
+        recommended = sorted(
+            (a for a in group_ranks(ranks)[board] if a["recommendation_count"]),
+            key=lambda a: (-a["recommendation_count"], a["entity"]["entity_id"]),
         )
+        for a in recommended[:3]:
+            facts.append(
+                entity_fact(
+                    "RECOMMENDED",
+                    a,
+                    [
+                        "recommendation_count",
+                        "explicit_recommendation_count",
+                        "context_recommendation_count",
+                        "mentions",
+                        "video_count",
+                        "unique_text_mentions",
+                        "near_duplicate_cluster_mentions",
+                    ],
+                )
+            )
+    headline_ranks = [
+        a
+        for a in ranks
+        if group_name(a["entity"]) in ("securities", "assets", "sectors")
+    ]
     for a in sorted(
-        (a for a in ranks if a["avoid_count"] + a["sell_count"]),
+        (a for a in headline_ranks if a["avoid_count"] + a["sell_count"]),
         key=lambda a: -(a["avoid_count"] + a["sell_count"]),
     )[:3]:
         facts.append(
             entity_fact("AVOIDED", a, ["avoid_count", "sell_count", "mentions"])
         )
-    sufficient = [a for a in ranks if a["directional_count"] >= 10]
+    sufficient = [a for a in headline_ranks if a["directional_count"] >= 10]
     for a in sorted(
         sufficient, key=lambda a: (-(a["disagreement"] or 0), a["entity"]["entity_id"])
     )[:3]:
@@ -105,7 +122,7 @@ def narrative(facts):
         m = f["metrics"]
         name = f["name"]
         if f["kind"] == "RECOMMENDED":
-            text = f"{name}：推荐表达{m['recommendation_count']}条（明确{m['explicit_recommendation_count']}、上下文{m['context_recommendation_count']}），涉及{m['video_count']}个视频；全部提及按唯一文本折叠后{m['unique_text_mentions']}条，近重复分组后{m['near_duplicate_cluster_mentions']}组。"
+            text = f"[{TAXONOMY['titles'][f['board']]}] {name}：推荐表达{m['recommendation_count']}条（明确{m['explicit_recommendation_count']}、上下文{m['context_recommendation_count']}），涉及{m['video_count']}个视频；全部提及按唯一文本折叠后{m['unique_text_mentions']}条，近重复分组后{m['near_duplicate_cluster_mentions']}组。"
         elif f["kind"] == "AVOIDED":
             text = f"{name}：回避动作{m['avoid_count']}条、卖出动作{m['sell_count']}条；动作不一定是向他人建议。"
         elif f["kind"] == "DISAGREEMENT":
@@ -120,7 +137,7 @@ def narrative(facts):
                 else "无方向样本"
             )
             text = (
-                f"{name}：支持{attitudes.get('SUPPORT', 0)}、反对{attitudes.get('OPPOSE', 0)}、自用{attitudes.get('SELF_PRACTICE', 0)}条，净支持率{rate}；"
+                f"{name}：支持{attitudes.get('SUPPORT', 0)}、反对{attitudes.get('OPPOSE', 0)}、自用{attitudes.get('SELF_PRACTICE', 0)}条，净支持率{rate}（分母：支持＋反对 {m['directional_count']} 条）；"
                 + (
                     "方向样本不足10条。"
                     if m["directional_count"] < 10
@@ -146,6 +163,8 @@ def build(run):
     facts = insights(ranks, methods)
     summary = {
         "schema_version": "3.0",
+        "report_version": REPORT_VERSION,
+        **MATURITY,
         "valid_comments": len(valid),
         "structured_comments": sum(bool(r.get("analysis")) for r in valid),
         "status_counts": dict(Counter(r["status"] for r in valid)),
@@ -163,6 +182,10 @@ def build(run):
         f"有效评论 {len(valid):,} 条；处理状态 {summary['status_counts']}；来自 {summary['video_count']} 个视频。",
         "",
         "状态计数不是准确率。以下结论基于通过字段校验的表达，待复核字段不参与相应统计。",
+        "",
+        "RESEARCH_ASSIST · RESEARCH_ONLY · PENDING_HUMAN_ANNOTATION",
+        "",
+        LIMITATIONS,
         "",
         "## 数据支持的发现",
         "",
@@ -188,9 +211,10 @@ def build(run):
         "",
         "[完整报告](report.html) · [质量指标](quality.json)",
     ]
+    lines += ["", markdown_boards(ranks, methods_with_evidence(methods, rows))]
     (run / "conclusions.md").write_text("\n".join(lines) + "\n")
     intro = (
-        '<section id="conclusions"><h2>主要结论</h2><p>RESEARCH_ONLY · 人工准确性待验收</p><ul>'
+        '<section id="conclusions"><h2>主要结论</h2><p>RESEARCH_ASSIST · RESEARCH_ONLY · 人工准确性待验收</p><ul>'
         + "".join("<li>" + html.escape(t) + "</li>" for t in summary["narrative"])
         + "</ul></section>"
     )

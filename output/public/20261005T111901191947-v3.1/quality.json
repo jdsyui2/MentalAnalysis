@@ -1,0 +1,42 @@
+{
+  "raw_rows": 3996,
+  "identity_records": 3996,
+  "valid_records": 3829,
+  "noise_records": 167,
+  "merged_observations": 0,
+  "missing_time": 0,
+  "missing_user_id": 3996,
+  "reply_rows": 0,
+  "status_counts": {
+    "SUCCESS": 2629,
+    "PARTIAL": 1200,
+    "SKIPPED": 167
+  },
+  "calls": 3564,
+  "tokens": 8877285,
+  "cache_hits": 0,
+  "acceptance": "PENDING_HUMAN_ANNOTATION",
+  "field_status_counts": {
+    "PASS": 3325,
+    "NOT_APPLICABLE": 2027,
+    "REVIEW": 918,
+    "FAIL": 2
+  },
+  "semantic_processed": 3829,
+  "field_usable_comments": 3829,
+  "v2_comparison": {
+    "old_valid": 3839,
+    "new_valid": 3829,
+    "old_status_counts": {
+      "SUCCESS": 2637,
+      "NEEDS_REVIEW": 1201,
+      "SKIPPED": 171,
+      "FAILED": 1
+    },
+    "new_status_counts": {
+      "SUCCESS": 2629,
+      "PARTIAL": 1200,
+      "SKIPPED": 167
+    }
+  }
+}
