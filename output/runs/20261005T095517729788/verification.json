@@ -1,0 +1,9 @@
+{
+  "unit_tests_passed": 30,
+  "record_conservation": true,
+  "csv_rows": 4010,
+  "html_comment_sections": 4010,
+  "topic_infrastructure_smoke": "SUCCESS, 3 candidate groups from 70 real texts; not semantic acceptance",
+  "live_api": "NOT_RUN_MODEL_CONFIGURATION_MISSING",
+  "human_acceptance": "PENDING"
+}

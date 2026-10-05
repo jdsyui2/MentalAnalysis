@@ -1,0 +1,144 @@
+{
+  "timezone": "Asia/Shanghai",
+  "daily_analyzed_comments": {
+    "2026-09-29": 17,
+    "2026-09-30": 834,
+    "2026-10-01": 848,
+    "2026-10-02": 566,
+    "2026-10-03": 175,
+    "2026-10-04": 178,
+    "2026-10-05": 13
+  },
+  "missing_time": 6,
+  "entities": [
+    {
+      "entity_id": "STOCK:深物业A",
+      "daily": {
+        "2026-10-02": 1
+      },
+      "momentum": null,
+      "trend_status": "SAMPLE_DISTRIBUTION_ONLY"
+    },
+    {
+      "entity_id": "STOCK:雪龙集团",
+      "daily": {
+        "2026-10-02": 1
+      },
+      "momentum": null,
+      "trend_status": "SAMPLE_DISTRIBUTION_ONLY"
+    },
+    {
+      "entity_id": "ASSET:白银",
+      "daily": {
+        "2026-09-30": 1,
+        "2026-10-01": 1
+      },
+      "momentum": null,
+      "trend_status": "SAMPLE_DISTRIBUTION_ONLY"
+    },
+    {
+      "entity_id": "ASSET:橡胶",
+      "daily": {
+        "2026-09-30": 1
+      },
+      "momentum": null,
+      "trend_status": "SAMPLE_DISTRIBUTION_ONLY"
+    },
+    {
+      "entity_id": "INDEX:大盘",
+      "daily": {
+        "2026-09-30": 3,
+        "2026-10-02": 2,
+        "2026-10-03": 2
+      },
+      "momentum": null,
+      "trend_status": "SAMPLE_DISTRIBUTION_ONLY"
+    },
+    {
+      "entity_id": "ASSET:黄金",
+      "daily": {
+        "2026-10-01": 25,
+        "2026-10-02": 28,
+        "2026-10-03": 3,
+        "2026-10-04": 1,
+        "2026-10-05": 2
+      },
+      "momentum": null,
+      "trend_status": "SAMPLE_DISTRIBUTION_ONLY"
+    },
+    {
+      "entity_id": "ASSET:美股市场",
+      "daily": {
+        "2026-09-30": 4,
+        "2026-10-01": 5,
+        "2026-10-02": 2,
+        "2026-10-03": 1,
+        "2026-10-04": 1
+      },
+      "momentum": null,
+      "trend_status": "SAMPLE_DISTRIBUTION_ONLY"
+    },
+    {
+      "entity_id": "INDEX:纳斯达克100",
+      "daily": {
+        "2026-09-30": 11,
+        "2026-10-01": 3,
+        "2026-10-02": 6,
+        "2026-10-04": 1
+      },
+      "momentum": null,
+      "trend_status": "SAMPLE_DISTRIBUTION_ONLY"
+    },
+    {
+      "entity_id": "SECTOR:银行板块",
+      "daily": {
+        "2026-09-30": 3
+      },
+      "momentum": null,
+      "trend_status": "SAMPLE_DISTRIBUTION_ONLY"
+    },
+    {
+      "entity_id": "INDEX:标普500",
+      "daily": {
+        "2026-10-01": 1,
+        "2026-10-02": 1
+      },
+      "momentum": null,
+      "trend_status": "SAMPLE_DISTRIBUTION_ONLY"
+    },
+    {
+      "entity_id": "STOCK:寒武纪",
+      "daily": {
+        "2026-09-30": 1
+      },
+      "momentum": null,
+      "trend_status": "SAMPLE_DISTRIBUTION_ONLY"
+    },
+    {
+      "entity_id": "ETF:QQQ",
+      "daily": {
+        "2026-09-30": 1
+      },
+      "momentum": null,
+      "trend_status": "SAMPLE_DISTRIBUTION_ONLY"
+    },
+    {
+      "entity_id": "ASSET:原油",
+      "daily": {
+        "2026-10-01": 2,
+        "2026-10-02": 2,
+        "2026-10-05": 1
+      },
+      "momentum": null,
+      "trend_status": "SAMPLE_DISTRIBUTION_ONLY"
+    },
+    {
+      "entity_id": "SECTOR:半导体芯片",
+      "daily": {
+        "2026-10-02": 1
+      },
+      "momentum": null,
+      "trend_status": "SAMPLE_DISTRIBUTION_ONLY"
+    }
+  ]
+}

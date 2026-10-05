@@ -79,4 +79,4 @@ DeepSeek 默认使用 deepseek-flash，thinking.type=disabled，减少推理耗�
 
 ## 公开仓库与本地数据
 
-原始评论 JSON、分析输出、人工标注数据和 `.env` 不纳入版本管理。克隆后在根目录放入自己的评论 JSON，并根据 `.env.example` 配置模型凭据。
+原始评论 JSON、人工标注数据、API 缓存和 `.env` 不纳入版本管理；分析结果已纳入 `output/`，包含历史试运行和全量结果。最新全量结论见 [conclusions.md](output/runs/20261005T102506056983/conclusions.md)，离线报告见同目录的 `report.html`。克隆后在根目录放入自己的评论 JSON，并根据 `.env.example` 配置模型凭据。

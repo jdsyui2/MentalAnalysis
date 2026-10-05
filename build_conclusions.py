@@ -133,7 +133,7 @@ def build(run):
     report = (run / "report.html").resolve()
 
     def evidence_link(row):
-        return f"[原文]({report.as_uri()}#{row['comment_key']})"
+        return f"[原文](report.html#{row['comment_key']})"
 
     def md(text):
         return str(text).replace("|", "\\|").replace("\n", " ").replace("`", "\\`")
@@ -248,7 +248,7 @@ def build(run):
         "- 缺少可比的完整时间窗口，因此仅有样本内日期分布，没有可靠的热度增长或衰退判断。",
         "- 人工准确率验收尚未完成；未知名称、反讽和信息不足内容仍需复核；待复核评论不会进入严格标的榜，词典覆盖缺口使榜单只是保守子集。",
         "",
-        "[完整原文与结构化报告](" + report.as_uri() + ")",
+        "[完整原文与结构化报告](" + "report.html" + ")",
     ]
     (run / "conclusions.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
     intro = '<section id="conclusions"><h2>本批评论的主要结论</h2>'

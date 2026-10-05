@@ -1,0 +1,318 @@
+[
+  {
+    "entity": "黄金",
+    "ticker": "AU.SHFE",
+    "category": "commodities",
+    "mentions": 100,
+    "bull_count": 10,
+    "bear_count": 21,
+    "bullish_index": -0.693,
+    "sentiment_label": "看空/预警",
+    "rationales": [
+      "地缘避险属性/分批做T降低持仓成本",
+      "宏观商品讨论",
+      "警惕死多头忽悠/前期涨幅过大回调风险"
+    ],
+    "sample_comments": [
+      "其实普通人就好好上班，然后等，手里筹码分为10，10个点打进去10分之一，每次下调5个点，打进10分之一，然后打满10分之5就等，如果在下跌就用剩下的筹码做t，拉低均价，黄金1120被套100克，后来3000做t，每天做几波，后来太忙就没做了，现在均价1050，100克，虽然还是亏，但是感觉赚了7000，后面还会继续做t",
+      "黄金指标MACD"
+    ]
+  },
+  {
+    "entity": "美股市场",
+    "ticker": "US.MARKET",
+    "category": "indices_etf",
+    "mentions": 42,
+    "bull_count": 39,
+    "bear_count": 3,
+    "bullish_index": 2.303,
+    "sentiment_label": "看多",
+    "rationales": [
+      "美股高位估值回撤风险",
+      "海外资产定投建议",
+      "长期成长逻辑与海外资产配置/定投策略"
+    ],
+    "sample_comments": [
+      "离开，去美股。去价值存在的地方。",
+      "谁可以教我美股"
+    ]
+  },
+  {
+    "entity": "纳斯达克100",
+    "ticker": "QQQ / 513100.SH",
+    "category": "indices_etf",
+    "mentions": 29,
+    "bull_count": 29,
+    "bear_count": 0,
+    "bullish_index": 3.401,
+    "sentiment_label": "看多",
+    "rationales": [
+      "海外资产定投建议",
+      "长期成长逻辑与海外资产配置/定投策略"
+    ],
+    "sample_comments": [
+      "英伟达 amd 迈威尔 aaoi 海力士美光 spacex qqq tqqq",
+      "买红利低波的时候。我的悟道是快就是慢。买纳指和标普的时候，我的悟道就是相信国运，定投纳指"
+    ]
+  },
+  {
+    "entity": "大盘",
+    "ticker": "000001.SH",
+    "category": "indices_etf",
+    "mentions": 25,
+    "bull_count": 25,
+    "bear_count": 0,
+    "bullish_index": 3.258,
+    "sentiment_label": "看多",
+    "rationales": [
+      "海外资产定投建议",
+      "长期成长逻辑与海外资产配置/定投策略"
+    ],
+    "sample_comments": [
+      "普通人，想赚钱，等，等股灾，灾的很厉害的时候，可以梭一把大盘！",
+      "一句话，离开量化基金的赛道。例如，量化做小盘股，你得做大盘股。"
+    ]
+  },
+  {
+    "entity": "原油",
+    "ticker": "SC.INE",
+    "category": "commodities",
+    "mentions": 25,
+    "bull_count": 0,
+    "bear_count": 0,
+    "bullish_index": 0.0,
+    "sentiment_label": "中性/分歧",
+    "rationales": [
+      "中性提及"
+    ],
+    "sample_comments": [
+      "石油越是高涨，越是证明我们的新能源路线正确，太阳能、核电、储能将获得一波新的支持",
+      "全仓做多原油[赞]"
+    ]
+  },
+  {
+    "entity": "银行板块",
+    "ticker": "BANK_SECTOR",
+    "category": "sectors",
+    "mentions": 17,
+    "bull_count": 0,
+    "bear_count": 0,
+    "bullish_index": 0.0,
+    "sentiment_label": "中性/分歧",
+    "rationales": [
+      "中性提及"
+    ],
+    "sample_comments": [
+      "经济困难重重时，股市会涨，救银行，央国企，从开始涨12个月内一定要岀手，持股不动是最好的办法。",
+      "离开！！！  剩的一点存银行，十年跑赢90%股民！！！"
+    ]
+  },
+  {
+    "entity": "半导体芯片",
+    "ticker": "CHIP_SECTOR",
+    "category": "sectors",
+    "mentions": 6,
+    "bull_count": 0,
+    "bear_count": 0,
+    "bullish_index": 0.0,
+    "sentiment_label": "中性/分歧",
+    "rationales": [
+      "中性提及"
+    ],
+    "sample_comments": [
+      "半导体跟光，连续跌了几天了。[衰]",
+      "要么费城半导体  要低位纳指拿住     要么空仓等机会   机会一直都有永远不会踏空"
+    ]
+  },
+  {
+    "entity": "房地产",
+    "ticker": "REAL_ESTATE",
+    "category": "sectors",
+    "mentions": 5,
+    "bull_count": 0,
+    "bear_count": 1,
+    "bullish_index": -0.693,
+    "sentiment_label": "看空/预警",
+    "rationales": [
+      "中性提及",
+      "消息面不及预期，资金踩踏抢跑",
+      "主力拉高诱多出货风险",
+      "恐慌跌停翘板存在接盘风险"
+    ],
+    "sample_comments": [
+      "恕我直言，那天买深物业a的，不是赌狗就是什么都不懂的，不是赚了钱就等于厉害，前一晚房地产消息出来了，不及预期，资金第二天肯定抢跑的，当天开盘房地产相关的全部杀到跌停，大批跌停的地方，买是去接盘的，这种情况，就算盘中翘板，大概率也是为了出货，懂的人根本不会跟，你还追进去了，什么水平心里有数，你是运气好，开盘跌太快主力没跑掉要自救，量化也拉了一把，下一次你就没这么好运了，雪龙的走势才是常态。",
+      "现阶段是强美元，重塑美元地位的过程，这个周期里美元美债走强，美股不能崩但可以接受阶段性回撤。下个阶段是弱势美元，那个阶段美股才有可能走一波强力的行情。至于我们国家股市，流动性会被不断抽取，国家出台了刺激房地产政策也是为了维稳市场，所以这个阶段别抱太大期望。虽不至于腰斩你账户，但是也要抗压一段时间。"
+    ]
+  },
+  {
+    "entity": "红利ETF",
+    "ticker": "510880.SH",
+    "category": "indices_etf",
+    "mentions": 5,
+    "bull_count": 5,
+    "bear_count": 0,
+    "bullish_index": 1.792,
+    "sentiment_label": "看多",
+    "rationales": [
+      "海外资产定投建议",
+      "长期成长逻辑与海外资产配置/定投策略"
+    ],
+    "sample_comments": [
+      "买红利低波的时候。我的悟道是快就是慢。买纳指和标普的时候，我的悟道就是相信国运，定投纳指",
+      "只买水电，红利"
+    ]
+  },
+  {
+    "entity": "白银",
+    "ticker": "AG.SHFE",
+    "category": "commodities",
+    "mentions": 4,
+    "bull_count": 1,
+    "bear_count": 0,
+    "bullish_index": 0.693,
+    "sentiment_label": "看多",
+    "rationales": [
+      "提前埋伏下一阶段景气度或事件预期",
+      "中性提及"
+    ],
+    "sample_comments": [
+      "提前做下一个有预期的票，甚至提前买下一个月板块的票，比如白银，昨天买的橡胶[呲牙]，昨天就跌不动了，吃的满嘴流油",
+      "记得入股市那天是白银暴跌前一天"
+    ]
+  },
+  {
+    "entity": "标普500",
+    "ticker": "SPY / 513500.SH",
+    "category": "indices_etf",
+    "mentions": 4,
+    "bull_count": 4,
+    "bear_count": 0,
+    "bullish_index": 1.609,
+    "sentiment_label": "看多",
+    "rationales": [
+      "海外资产定投建议",
+      "长期成长逻辑与海外资产配置/定投策略"
+    ],
+    "sample_comments": [
+      "买红利低波的时候。我的悟道是快就是慢。买纳指和标普的时候，我的悟道就是相信国运，定投纳指",
+      "从此以后定投纳指和标普。。。。评论区的任何图形皆是像。。没屁用。。"
+    ]
+  },
+  {
+    "entity": "券商板块",
+    "ticker": "BROKER_SECTOR",
+    "category": "sectors",
+    "mentions": 3,
+    "bull_count": 0,
+    "bear_count": 0,
+    "bullish_index": 0.0,
+    "sentiment_label": "中性/分歧",
+    "rationales": [
+      "中性提及"
+    ],
+    "sample_comments": [
+      "先把券商费率给降下来吧，\n这样至少手续费能少亏一半。",
+      "开户哪个券商佣金低点"
+    ]
+  },
+  {
+    "entity": "深物业A",
+    "ticker": "000011.SZ",
+    "category": "stocks",
+    "mentions": 1,
+    "bull_count": 0,
+    "bear_count": 1,
+    "bullish_index": -0.693,
+    "sentiment_label": "看空/预警",
+    "rationales": [
+      "消息面不及预期，资金踩踏抢跑",
+      "主力拉高诱多出货风险",
+      "恐慌跌停翘板存在接盘风险"
+    ],
+    "sample_comments": [
+      "恕我直言，那天买深物业a的，不是赌狗就是什么都不懂的，不是赚了钱就等于厉害，前一晚房地产消息出来了，不及预期，资金第二天肯定抢跑的，当天开盘房地产相关的全部杀到跌停，大批跌停的地方，买是去接盘的，这种情况，就算盘中翘板，大概率也是为了出货，懂的人根本不会跟，你还追进去了，什么水平心里有数，你是运气好，开盘跌太快主力没跑掉要自救，量化也拉了一把，下一次你就没这么好运了，雪龙的走势才是常态。"
+    ]
+  },
+  {
+    "entity": "雪龙集团",
+    "ticker": "603949.SH",
+    "category": "stocks",
+    "mentions": 1,
+    "bull_count": 0,
+    "bear_count": 1,
+    "bullish_index": -0.693,
+    "sentiment_label": "看空/预警",
+    "rationales": [
+      "消息面不及预期，资金踩踏抢跑",
+      "主力拉高诱多出货风险",
+      "恐慌跌停翘板存在接盘风险"
+    ],
+    "sample_comments": [
+      "恕我直言，那天买深物业a的，不是赌狗就是什么都不懂的，不是赚了钱就等于厉害，前一晚房地产消息出来了，不及预期，资金第二天肯定抢跑的，当天开盘房地产相关的全部杀到跌停，大批跌停的地方，买是去接盘的，这种情况，就算盘中翘板，大概率也是为了出货，懂的人根本不会跟，你还追进去了，什么水平心里有数，你是运气好，开盘跌太快主力没跑掉要自救，量化也拉了一把，下一次你就没这么好运了，雪龙的走势才是常态。"
+    ]
+  },
+  {
+    "entity": "橡胶",
+    "ticker": "RU.SHFE",
+    "category": "commodities",
+    "mentions": 1,
+    "bull_count": 1,
+    "bear_count": 0,
+    "bullish_index": 0.693,
+    "sentiment_label": "看多",
+    "rationales": [
+      "提前埋伏下一阶段景气度或事件预期"
+    ],
+    "sample_comments": [
+      "提前做下一个有预期的票，甚至提前买下一个月板块的票，比如白银，昨天买的橡胶[呲牙]，昨天就跌不动了，吃的满嘴流油"
+    ]
+  },
+  {
+    "entity": "沈阳机床",
+    "ticker": "000410.SZ",
+    "category": "stocks",
+    "mentions": 1,
+    "bull_count": 0,
+    "bear_count": 1,
+    "bullish_index": -0.693,
+    "sentiment_label": "看空/预警",
+    "rationales": [
+      "主力拉高诱多出货风险"
+    ],
+    "sample_comments": [
+      "沈股冲八那天，我从头看到尾，一股没买！判断是拉高出货，次日必低开！"
+    ]
+  },
+  {
+    "entity": "宁德时代",
+    "ticker": "300750.SZ",
+    "category": "stocks",
+    "mentions": 1,
+    "bull_count": 0,
+    "bear_count": 0,
+    "bullish_index": 0.0,
+    "sentiment_label": "中性/分歧",
+    "rationales": [
+      "中性提及"
+    ],
+    "sample_comments": [
+      "07年入市。只能说，心态放好，管住手，看量跟资金热度。这条路不是常人能走的路。重生之我在宁德长兴城卖麻辣烫。有空来捧场。我给你们打折！"
+    ]
+  },
+  {
+    "entity": "寒武纪",
+    "ticker": "688256.SH",
+    "category": "stocks",
+    "mentions": 1,
+    "bull_count": 0,
+    "bear_count": 0,
+    "bullish_index": 0.0,
+    "sentiment_label": "中性/分歧",
+    "rationales": [
+      "中性提及"
+    ],
+    "sample_comments": [
+      "50个梭哈寒武纪"
+    ]
+  }
+]

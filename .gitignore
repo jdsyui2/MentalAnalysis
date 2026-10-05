@@ -7,9 +7,7 @@ __pycache__/
 .env
 .env.*
 !.env.example
-output/
+output/runs/cache/
 /comments_video_*.json
 /sample_comments.json
 evaluation/dataset/
-evaluation/metrics.json
-evaluation/topic_smoke.json

@@ -1,0 +1,75 @@
+[
+  {
+    "entity": {
+      "entity_id": "ASSET:黄金",
+      "name": "黄金",
+      "category": "ASSET",
+      "ticker": null,
+      "resolution": "RESOLVED",
+      "source": "legacy asset_dictionary.json; manually review before expansion",
+      "source_date": "2026-10-05",
+      "dictionary_version": "2.0"
+    },
+    "mentions": 1,
+    "recommend_count": 0,
+    "oppose_count": 0,
+    "stances": {
+      "BEARISH": 1
+    },
+    "actions": {
+      "NONE": 1
+    },
+    "video_count": 1,
+    "unique_users": null,
+    "user_id_coverage": 0.0,
+    "bullish_index": -0.6931,
+    "directional_count": 1,
+    "bull_ratio": 0.0,
+    "disagreement": 0.0,
+    "sample_status": "INSUFFICIENT",
+    "weighted_directional_ratio": 0.0,
+    "rationales": [
+      {
+        "category": "RISK",
+        "summary": "认为长期唱多黄金的博主误导了很多人，跟随者受损",
+        "mentions": 1,
+        "evidence": [
+          {
+            "comment_key": "douyin:7691691695994880826",
+            "stance": "BEARISH",
+            "action": "NONE",
+            "evidence": {
+              "quote": "那些唱多的博主不知道害了多少人",
+              "start": 80,
+              "end": 95,
+              "category": "RISK",
+              "summary": "认为长期唱多黄金的博主误导了很多人，跟随者受损"
+            }
+          }
+        ]
+      },
+      {
+        "category": "TECHNICAL",
+        "summary": "以去年同期870、现在仅900的价格对比，认为涨幅有限甚至可能回落到870以下",
+        "mentions": 1,
+        "evidence": [
+          {
+            "comment_key": "douyin:7691691695994880826",
+            "stance": "BEARISH",
+            "action": "NONE",
+            "evidence": {
+              "quote": "去年同期黄金870现在才900弄不好还会低于870",
+              "start": 54,
+              "end": 79,
+              "category": "TECHNICAL",
+              "summary": "以去年同期870、现在仅900的价格对比，认为涨幅有限甚至可能回落到870以下"
+            }
+          }
+        ]
+      }
+    ],
+    "representative_comments": [
+      "douyin:7691691695994880826"
+    ]
+  }
+]

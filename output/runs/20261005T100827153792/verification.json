@@ -1,0 +1,13 @@
+{
+  "model": "deepseek-flash",
+  "pilot_comments": 100,
+  "success": 58,
+  "needs_review": 42,
+  "failed": 0,
+  "unit_tests_passed": 33,
+  "pipeline_api_calls_including_retries": 122,
+  "pipeline_tokens_including_retries": 333605,
+  "full_analysis": "NOT_RUN",
+  "human_acceptance": "PENDING",
+  "credential_storage": "ignored .env with mode 0600"
+}
