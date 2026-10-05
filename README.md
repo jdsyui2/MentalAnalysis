@@ -1,4 +1,4 @@
-# MentalAnalysis v3.1 3.0
+# MentalAnalysis v3.1
 
 可追溯的中文投资评论批量分析：分别识别推荐、本人持仓、询问、预测、方法态度和理由，提供本地原文报告与公开脱敏结果。当前用途为 **RESEARCH_ASSIST（研究辅助可用）**，保留 **RESEARCH_ONLY / PENDING_HUMAN_ANNOTATION**，测试通过不代表模型准确率达标。
 
