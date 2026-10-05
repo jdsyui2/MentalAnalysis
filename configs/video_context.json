@@ -1,0 +1,38 @@
+{
+  "version": "3.0",
+  "videos": {
+    "7690929651414356410": {
+      "video_text": "",
+      "video_title": null,
+      "video_caption": null,
+      "video_question": null,
+      "source_url": "https://www.douyin.com/note/7690929651414356410",
+      "retrieved_at": "2026-10-05T11:03:14.511375+08:00",
+      "retrieval_status": "UNAVAILABLE",
+      "retrieval_reason": "Web fetch inaccessible; Chrome context fetch timed out; exact-ID search returned no result",
+      "solicitation_verified": false
+    },
+    "7691647147561834170": {
+      "video_text": "",
+      "video_title": null,
+      "video_caption": null,
+      "video_question": null,
+      "source_url": "https://www.douyin.com/video/7691647147561834170",
+      "retrieved_at": "2026-10-05T11:03:14.511720+08:00",
+      "retrieval_status": "UNAVAILABLE",
+      "retrieval_reason": "Web fetch inaccessible; Chrome context fetch timed out; exact-ID search returned no result",
+      "solicitation_verified": false
+    },
+    "7692261282455945097": {
+      "video_text": "",
+      "video_title": null,
+      "video_caption": null,
+      "video_question": null,
+      "source_url": "https://www.douyin.com/video/7692261282455945097",
+      "retrieved_at": "2026-10-05T11:03:14.511721+08:00",
+      "retrieval_status": "UNAVAILABLE",
+      "retrieval_reason": "Web fetch inaccessible; Chrome context fetch timed out; exact-ID search returned no result",
+      "solicitation_verified": false
+    }
+  }
+}

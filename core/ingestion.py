@@ -113,7 +113,27 @@ def ingest(paths):
         matches = (
             candidates.get((o["video"], o["normalized"]), []) if o["video"] else []
         )
-        if len(matches) == 1:
+
+        def identity_matches(target):
+            left, right = o["raw"], target["raw"]
+            aliases = [
+                ("nickname",),
+                ("create_time",),
+                ("parent_comment_id", "reply_id"),
+                ("digg_count",),
+                ("reply_comment_total", "reply_count"),
+            ]
+            equal = 0
+            for names in aliases:
+                lv = next((left[k] for k in names if left.get(k) is not None), None)
+                rv = next((right[k] for k in names if right.get(k) is not None), None)
+                if lv is not None and rv is not None:
+                    if str(lv) != str(rv):
+                        return False
+                    equal += 1
+            return equal >= 2
+
+        if len(matches) == 1 and identity_matches(matches[0]):
             matches[0]["sources"].append(o["source"])
             merged += 1
         else:

@@ -1,31 +1,4 @@
 {
-  "strategy_styles": {
-    "CASH_DEFENSE": {
-      "name": "空仓防御与择时派",
-      "description": "主张空仓等待确定性机会、等待股灾或极端恐慌，顺势而为，不盲目出手",
-      "keywords": ["空仓", "等股灾", "等待时机", "顺势而为", "静候天时", "等…", "忍", "熬", "等跌", "等"]
-    },
-    "POSITION_RISK_CONTROL": {
-      "name": "仓位管理与严控回撤派",
-      "description": "严格控制仓位、绝不上杠杆、阶段性分批补仓、回撤控制、防范巨亏",
-      "keywords": ["杠杆", "控制仓位", "回撤", "留后手", "补仓", "慢富", "止损", "不能硬扛"]
-    },
-    "LEFT_SIDE_CYCLE": {
-      "name": "左侧潜伏与周期低吸派",
-      "description": "买在无人问津处，底部埋伏等待大涨，提前埋伏下一个有预期的板块",
-      "keywords": ["无人问津", "人声鼎沸", "底部埋伏", "低吸", "做时间的主人", "提前买", "有预期"]
-    },
-    "PRICE_ACTION_SCALPING": {
-      "name": "极简裸K与超短量价派",
-      "description": "不看消息与复杂指标，只看裸K和成交量，做波段、高换手超短线、赚了就跑",
-      "keywords": ["蜡烛图", "成交量", "死亡换手", "赚了就跑", "做t", "做波段", "早上一十点前", "追涨"]
-    },
-    "CAPITULATION_EXIT": {
-      "name": "销户离场与反思止损派",
-      "description": "认清股市残酷性，交学费后彻底销户离场或认亏离场，认为不炒即是赚钱",
-      "keywords": ["销户", "注销", "收手", "不炒", "认亏", "学费"]
-    }
-  },
   "risk_rules": {
     "NO_LEVERAGE": {
       "name": "严禁杠杆",
@@ -42,6 +15,51 @@
     "DISCIPLINE_EXECUTION": {
       "name": "严守纪律与等待",
       "rule": "不盲目预测，耐心等待市场给出的确定性信号"
+    }
+  },
+  "version": "3.0",
+  "methods": {
+    "INDEX_DCA": {
+      "name": "指数定投"
+    },
+    "HIGH_DIVIDEND": {
+      "name": "高股息"
+    },
+    "VALUE": {
+      "name": "价值投资"
+    },
+    "TECH_GROWTH": {
+      "name": "科技成长"
+    },
+    "TREND": {
+      "name": "趋势交易"
+    },
+    "SWING_T": {
+      "name": "波段/做T"
+    },
+    "GRID": {
+      "name": "网格交易"
+    },
+    "SECTOR_ROTATION": {
+      "name": "行业轮动"
+    },
+    "CYCLE_DIP": {
+      "name": "周期低吸"
+    },
+    "CASH_WAIT": {
+      "name": "现金等待"
+    },
+    "ASSET_ALLOCATION": {
+      "name": "资产配置"
+    },
+    "POSITION_RISK": {
+      "name": "仓位风控"
+    },
+    "EXIT": {
+      "name": "退出交易"
+    },
+    "OTHER": {
+      "name": "其他"
     }
   }
 }

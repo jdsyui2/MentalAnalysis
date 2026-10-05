@@ -1,6 +1,5 @@
 import asyncio
 import json
-from pathlib import Path
 import httpx
 import pytest
 from core.preprocessor import CommentCleaner
@@ -26,6 +25,10 @@ def view(text, name, action="NONE", stance="NEUTRAL", category="STOCK"):
     start = text.index(name)
     ev = {"quote": name, "start": start, "end": start + len(name)}
     return {
+        "speech_act": "OBSERVATION",
+        "intent_basis": "EXPLICIT_COMMENT",
+        "explicit_action": action not in ("NONE", "UNKNOWN"),
+        "stance_evidence": dict(ev) if stance != "UNKNOWN" else None,
         "entity": name,
         "category": category,
         "evidence": ev,
@@ -90,8 +93,8 @@ def test_unique_idless(tmp_path):
         )
     )
     rows, _, quality, _ = ingest([p])
-    assert len(rows) == 1
-    assert quality["idless_matched"] == 1
+    assert len(rows) == 2
+    assert quality["idless_matched"] == 0
 
 
 def test_evidence():
@@ -184,7 +187,14 @@ def test_csv_escape():
 
 def test_aggregate_distinct_and_unknown():
     a = output("茅台", [view("茅台", "茅台")])
-    a["views"][0]["resolved_entity"] = {"entity_id": "STOCK:茅台", "name": "茅台"}
+    from core.validation import validate_fields
+
+    a, _ = validate_fields(Analysis.model_validate(a), {"raw_comment": "茅台"})
+    a["views"][0]["resolved_entity"] = {
+        "entity_id": "STOCK:茅台",
+        "name": "茅台",
+        "resolution": "RESOLVED",
+    }
     rows = [
         {
             "comment_key": str(i),
@@ -253,8 +263,8 @@ def test_fabricated_evidence_is_failure(tmp_path, monkeypatch):
 
     ex = SemanticExtractor({"max_attempts": 1}, tmp_path, httpx.MockTransport(respond))
     r = asyncio.run(ex.analyze({"raw_comment": "黄金"}))
-    assert r["status"] == "FAILED"
-    assert not list(tmp_path.glob("*.json"))
+    assert r["status"] == "PARTIAL"
+    assert r["analysis"]["views"][0]["field_status"]["entity"] == "FAIL"
 
 
 def test_no_leverage_attitude():
@@ -322,8 +332,8 @@ def test_url_idless_identity(tmp_path):
         )
     )
     rows, _, q, _ = ingest([p])
-    assert len(rows) == 1
-    assert q["idless_matched"] == 1
+    assert len(rows) == 2
+    assert q["idless_matched"] == 0
 
 
 def test_topics_insufficient():

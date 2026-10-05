@@ -4,58 +4,36 @@ import re
 from typing import Literal
 from pydantic import BaseModel, ConfigDict, Field, PrivateAttr
 
-SCHEMA_VERSION = "2.0"
-METHOD_NAMES = dict(
-    zip(
-        [
-            "INDEX_DCA",
-            "HIGH_DIVIDEND",
-            "VALUE",
-            "TECH_GROWTH",
-            "TREND",
-            "SWING_T",
-            "GRID",
-            "SECTOR_ROTATION",
-            "CYCLE_DIP",
-            "CASH_WAIT",
-            "ASSET_ALLOCATION",
-            "POSITION_RISK",
-            "EXIT",
-            "OTHER",
-        ],
-        [
-            "指数定投",
-            "高股息",
-            "价值投资",
-            "科技成长",
-            "趋势交易",
-            "波段/做T",
-            "网格交易",
-            "行业轮动",
-            "周期低吸",
-            "现金等待",
-            "资产配置",
-            "仓位风控",
-            "退出交易",
-            "其他",
-        ],
-    )
+SCHEMA_VERSION = "3.0"
+from pathlib import Path
+import json
+
+TAXONOMY = json.loads(
+    (
+        Path(__file__).resolve().parent.parent / "configs/strategy_taxonomy.json"
+    ).read_text()
 )
-PROMPT_VERSION = "investment-2.0"
-METHODS = [
-    "INDEX_DCA",
-    "HIGH_DIVIDEND",
-    "VALUE",
-    "TECH_GROWTH",
-    "TREND",
-    "SWING_T",
-    "GRID",
-    "SECTOR_ROTATION",
-    "CYCLE_DIP",
-    "CASH_WAIT",
-    "ASSET_ALLOCATION",
-    "POSITION_RISK",
-    "EXIT",
+METHOD_NAMES = {k: v["name"] for k, v in TAXONOMY["methods"].items()}
+METHODS = list(METHOD_NAMES)
+PROMPT_VERSION = "investment-3.0"
+REASON_CODES = [
+    "VALUATION_LOW",
+    "VALUATION_HIGH",
+    "DIVIDEND_YIELD",
+    "DIVIDEND_STABILITY",
+    "EARNINGS_GROWTH",
+    "CAPACITY_EXPANSION",
+    "ORDER_GROWTH",
+    "DOMESTIC_SUBSTITUTION",
+    "AI_CAPEX",
+    "POLICY_SUPPORT",
+    "TECHNICAL_BREAKOUT",
+    "OVERSOLD_REBOUND",
+    "RATE_CUT",
+    "RATE_HIKE",
+    "STRONG_DOLLAR",
+    "WEAK_DOLLAR",
+    "GEOPOLITICAL_RISK",
     "OTHER",
 ]
 
@@ -65,12 +43,14 @@ class StrictModel(BaseModel):
 
 
 class Evidence(StrictModel):
+    source: Literal["COMMENT", "VIDEO", "PARENT", "ROOT"] = "COMMENT"
     quote: str = Field(min_length=1)
     start: int = Field(ge=0)
     end: int = Field(gt=0)
 
 
 class Rationale(Evidence):
+    reason_code: Literal[tuple(REASON_CODES)] = "OTHER"
     category: Literal[
         "VALUATION",
         "FUNDAMENTALS",
@@ -87,8 +67,24 @@ class Rationale(Evidence):
 
 
 class View(StrictModel):
+    speech_act: Literal[
+        "RECOMMENDATION",
+        "SELF_POSITION",
+        "QUESTION",
+        "FORECAST",
+        "OBSERVATION",
+        "COMPARISON",
+        "HISTORY",
+        "UNKNOWN",
+    ]
+    intent_basis: Literal[
+        "EXPLICIT_COMMENT", "VIDEO_PROMPT_CONTEXT", "PARENT_CONTEXT", "UNKNOWN"
+    ]
+    explicit_action: bool
+    context_evidence: Evidence | None = None
+    stance_evidence: Evidence | None = None
     entity: str = Field(min_length=1)
-    category: Literal["STOCK", "ETF", "INDEX", "SECTOR", "ASSET"]
+    category: Literal["STOCK", "ETF", "REIT", "INDEX", "SECTOR", "ASSET"]
     evidence: Evidence
     stance: Literal["BULLISH", "BEARISH", "NEUTRAL", "UNKNOWN"]
     action: Literal["BUY", "HOLD", "WATCH", "WAIT", "AVOID", "SELL", "NONE", "UNKNOWN"]
@@ -100,23 +96,13 @@ class View(StrictModel):
 
 
 class Method(StrictModel):
-    method: Literal[
-        "INDEX_DCA",
-        "HIGH_DIVIDEND",
-        "VALUE",
-        "TECH_GROWTH",
-        "TREND",
-        "SWING_T",
-        "GRID",
-        "SECTOR_ROTATION",
-        "CYCLE_DIP",
-        "CASH_WAIT",
-        "ASSET_ALLOCATION",
-        "POSITION_RISK",
-        "EXIT",
-        "OTHER",
+    method: Literal[tuple(METHODS)]
+    attitude: Literal[
+        "SUPPORT", "OPPOSE", "SELF_PRACTICE", "QUESTION", "MENTION", "UNKNOWN"
     ]
+    strength: Literal["STRONG", "NORMAL", "WEAK"] = "NORMAL"
     evidence: Evidence
+    rationales: list[Rationale] = Field(default_factory=list)
 
 
 class Risk(StrictModel):

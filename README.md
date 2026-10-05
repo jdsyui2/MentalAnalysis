@@ -1,82 +1,86 @@
-# MentalAnalysis 2.0
+# MentalAnalysis 3.0
 
-可追溯的中文投资评论分析。所有输出保持实验状态，直到人工验收通过。现有 `output/*.json` 是旧规则结果，运行不覆盖它们。
+可追溯的中文投资评论批量分析：分别识别推荐、本人持仓、询问、预测、方法态度和理由，提供本地原文报告与公开脱敏结果。当前状态为 **RESEARCH_ONLY / PENDING_HUMAN_ANNOTATION**，测试通过不代表模型准确率达标。
 
 ## 安装与运行
 
-Python 3.10+（本次使用 3.12）。
+需要 Python 3.10+。推荐创建虚拟环境后安装：
 
 ```bash
-uv venv --python python3.12 .venv
-uv pip install --python .venv/bin/python 'pydantic>=2.7,<3' 'httpx>=0.27,<1' 'pytest>=8,<10'
-.venv/bin/python run_pipeline.py --dry-run
-export MENTAL_BASE_URL=https://api.deepseek.com
-export MENTAL_API_KEY=your-key
-export MENTAL_MODEL=deepseek-flash
-.venv/bin/python run_pipeline.py --resume
+python -m venv .venv
+.venv/bin/python -m pip install -e '.[test,topics,catalog]'
+cp .env.example .env
 ```
 
-根目录 `.env` 自动加载 MENTAL_BASE_URL / MENTAL_API_KEY / MENTAL_MODEL；进程环境变量优先。`.env.example` 提供模板。不要将凭据写入配置、报告或版本控制。支持 OPENAI_BASE_URL / OPENAI_API_KEY / OPENAI_MODEL 别名。
-
-默认先分析按固定散列顺序选择的 100 条有效评论，记录调用与 token。确认配置配额足够后，用 `--full --resume` 运行所有评论。默认最多 300 次请求和 2,000,000 token，包含重试；全量须在 `configs/pipeline.json` 中配置足够额度。缺凭据时生成 PARTIAL 报告，所有待分析记录明确失败，无伪造的中性结果。
-
-`--input` 接受多个文件或目录；目录只扫描顶层 JSON。默认包括根目录样例，经身份匹配后合并，所有来源保留。`--output-dir` 指定运行根目录，每次运行生成独立子目录。`--resume` 使用该根目录的共享持久缓存，不重复请求已通过证据校验的结果；不使用该选项时缓存仅属于本次运行。失败不缓存。校验 schema、提示词、模型或上下文变化会使缓存失效。
-
-## 中文主题发现
+在 `.env` 填写 `MENTAL_BASE_URL`、`MENTAL_API_KEY`、`MENTAL_MODEL`；默认 DeepSeek、`deepseek-flash`、关闭 thinking。凭据不会写入报告或 Git。没有价格配置时只记录 token，不估算金额。
 
 ```bash
-uv pip install --python .venv/bin/python 'bertopic>=0.16,<1' 'sentence-transformers>=3,<6' 'jieba>=0.42' 'umap-learn>=0.5' 'hdbscan>=0.8'
+# 输入检查：不调用模型或写报告
+.venv/bin/python run_pipeline.py --input-manifest configs/input_manifest.json --dry-run
+# 分视频抽取100条真实评论，试运行不会发布公开结果
+.venv/bin/python run_pipeline.py --input-manifest configs/input_manifest.json --resume
+# 全量：本地完整结果位于 local/runs，公开脱敏版位于 output/public
+.venv/bin/python run_pipeline.py --input-manifest configs/input_manifest.json --config configs/full_analysis.json --full --resume
+# 仅重建3.0报告与统计，无API调用
+.venv/bin/python -m scripts.rebuild_report local/runs/RUN --public output/public/RUN
 ```
 
-首次运行需要下载 `BAAI/bge-small-zh-v1.5` 权重。模型卡许可证 MIT，版本与许可见 https://huggingface.co/BAAI/bge-small-zh-v1.5 。主题仅针对成功识别投资方法的文本；不足 50 条为 INSUFFICIENT_DATA，依赖或模型不可用为 FAILED。离群主题保留。主题名称为候选，人工评审通过才可确认。
+保留 `--input`、`--output-dir`、`--config`、`--resume`、`--dry-run`、`--full`、`--analysis-cutoff`；新增 `--input-manifest`、`--context-file`、`--entity-catalog`。显式清单优先于 `--input`。默认仅扫描根目录 JSON，排除 `sample_* / fixture_* / test_*`。`is_sample` 描述采集范围，不控制是否导入。本批三个正式视频均带采样标记；样例和31条摘录通过清单明确排除。
 
-## 数据口径与报告
+默认并发2、60秒超时、最多3次尝试；全量配置并发8、12,000次调用／30,000,000 token上限。结构解析失败重试；字段证据失败隔离相应字段。达到配额保存缓存与进度，未处理任务不填为中性。恢复仍在新的独立运行目录生成报告。
 
-每次运行输出 normalized_comments、analyzed_comments、ticker_consensus、strategy_ranking、topics、timeline、quality、manifest、review_queue、failures，另附 CSV 和离线 report.html。HTML 的原文链接定位到身份记录，包含源文件、行号和原元数据。CSV 对公式触发文本转义。
+## 数据口径与字段校验
 
-源文件 `row` 为 comments 数组的零起始位置。cid 全局按 douyin 平台去重；无 ID 数据只在同视频规范文本唯一匹配时合并，不确定身份保留。缺用户 ID 不用昵称替代。相同文本不同 cid 分别计数。相同 cid 的原文/视频冲突进入复核。点赞、回复等观察值全部保留在 sources；展示取第一个有 ID 的观察，缺失值不推测。
+- 同平台评论ID合并；无ID只有同视频、规范文本唯一对应并且至少两个附加元数据一致才合并，缺失值不算匹配、存在冲突不合并。短投资建议保留，空白与纯表情过滤。
+- 原文、来源观察和时间保留在本地；昵称不充当独立用户ID，缺时间不从文件名推断。身份内容冲突阻止整条正式统计。
+- 字段状态为 `PASS / REVIEW / FAIL / NOT_APPLICABLE`。评论为 `SUCCESS / PARTIAL / FAILED / SKIPPED`；`PARTIAL`中的合法实体、方法和风险独立参与统计。整条JSON非法仍失败。
+- 引文带 `COMMENT / VIDEO / PARENT / ROOT` 来源、字符位置；仅唯一原文引文允许修复偏移并留记录。实体、明确动作、立场与理由的证据来自评论。
+- `configs/video_context.json` 保存逐视频来源、标题、提问、原文与读取状态。只有来源、时间和原文问题齐全并经验证的投资征集才能支持上下文推荐。当前三个视频网页及浏览器访问失败，上下文留空，短回复不自动补BUY。之后补上下文会使缓存自动失效。
+- `configs/entity_catalog.json` 合并交易所证券、全球资产及概念三层目录；模型不能自行生成代码。证券候选仅供消歧，“我爱我家”“老百姓”“机器人”等普通短语不能仅凭字面映射股票。泛指黄金、纳指ETF等概念不指定某个金融产品。
+- 已归档深交所A股／基金名录、上交所官网证券名称数据；目录记录来源、摘要和覆盖。北交所、全球证券、历史简称及部分上市日期不完整，指数仅为已核实子集；不是完整全球证券库。
+- `scripts/build_catalog.py --import-snapshot FILE` 支持带来源与日期的标准化ASDC快照，输入为 `{"entities": [...]}`，条目采用当前目录格式。不会修改ASDC。无导入参数时使用本地归档的交易所名录，所需文件和URL见目录 sources。
+- 方法分类以 `configs/strategy_taxonomy.json` 为唯一来源，不用关键词直接分类。理由按 `reason_code` 与观点方向聚合；公司事实、传闻与预测均未经外部核验。
 
-代码解析仅来自 `configs/entities.json`。原词典证券代码标注为 legacy 来源，需人工核查；新增词条无已验证代码时 ticker=null。泛指黄金、指数等不自动映射具体产品。未解析实体进入复核队列；其原始意见仍保留在明细，正式方向聚合只包含 SUCCESS。
+## 统计与主题
 
-指数与方向分布均显示样本数。推荐数包括 BUY/HOLD/WATCH，反对数包括 AVOID/SELL，不表示投资收益。分歧度与情绪强度分别计算；少于 10 个方向样本标为不足。多标签方法比例分母为成功分析评论数，允许合计超过 100%。点赞加权仅为辅助视图。
+推荐按逐标的 `speech_act` 判断，区分明确／上下文推荐、自持、关注、回避、卖出；不再用BUY/HOLD/WATCH合计当推荐。一个评论可对同一实体有多种言语行为；提及只计一次，相互冲突的方向计UNKNOWN。
 
-趋势必须配置带时区的 `analysis_cutoff` 和 `comparable_complete_windows=true`，且每个纳入输入的 coverage 同时声明 `window_complete=true`、`comparable=true`。当前原始数据无此证据，因此仅展示样本内时间分布。缺失评论时间不从文件名推算。原输入一级评论与平台报告总量、未采集回复差额在 manifest 保留；这些数据无法证明完整评论区覆盖。
+方法统计区分支持、反对、自用、询问、提及与未知。净支持率为 `(支持−反对)/(支持+反对)`；无方向样本时为空，少于10条标明不足。比例注明分母，多标签可超过100%。强度和模型自报置信度不作为投票权重。
 
-## 人工标注与验收
+同时输出评论次数、唯一文本次数、相似度0.9的确定性近重复组、逐视频提及率及其均值（没有提及的视频计零）。这些都不是独立用户数。点赞辅助采用视频内百分位并以 `1+percentile` 加权，缺失点赞不补零，不合成单一最终分数。
+
+主题分方法、标的、理由、风险四个空间，分别用通过校验的字段选样本；每空间不足50种文本不聚类。BGE中文向量、固定种子42、中文1–3词组合及领域停用词，使用MMR代表词、中心原文和缓存的DeepSeek名称；命名失败退回关键词，保留离群项。所有主题人工确认前均为候选。
+
+趋势只有在显式截止时间、输入声明完整且可比的窗口、配置开启三者同时满足时生成；否则仅输出上海时区的样本日期分布。没有时间覆盖证据不生成新出现／衰退主题。
+
+## 人工标注与测试
 
 ```bash
-.venv/bin/python -m evaluation.manage prepare --input comments_video_*.json sample_comments.json
-.venv/bin/python -m evaluation.manage evaluate --annotations evaluation/dataset/annotations.json --predictions output/runs/RUN/analyzed_comments.json --output evaluation/metrics.json
+.venv/bin/python -m evaluation.manage prepare --input comments_video_1791117359379.json comments_video_1791131714769.json comments_video_1791162762327.json --output evaluation/dataset_v3
+.venv/bin/python -m evaluation.manage evaluate --annotations evaluation/dataset_v3/annotations.json --predictions local/runs/RUN/analyzed_comments.json --output local/evaluation_v3.json
 .venv/bin/python -m pytest -q
 ```
 
-生成 200 条跨视频分层样本与 100 条复杂样本，近重复组内取一条代表，固定 seed=42，100 dev + 200 test。人工按 annotation_manifest 中 schema 填写 gold、annotator 和 COMPLETE。冻结测试集只用于验收，不能把标签放进提示词。模型不会代替人工填写 gold；未完成人工标注时评测返回 PENDING_HUMAN_ANNOTATION。
+400条真实评论：200条分层随机、200条挑战样本，100开发／300冻结验收；同一近重复组不跨集合。50条准备双人标注，`gold`与`second_annotation`必须由人工填写，完成后可计算多标签意图的一致性。`canonical_ids`用view序号字符串映射到目录ID，无法解析项人工填写明确的UNRESOLVED标记。原标注集保留；准备工具拒绝覆盖已有完整gold。
 
-指标采用实体表面名与类别的匹配；标注者使用同一规范名称。未成功处理的测试评论视为空预测，纳入漏检；报告每类支持数、未知观点数与自动覆盖率。理由支持率按人工标注的所属实体、原文引文与理由类别匹配。无理由预测时该指标为空，不能通过门槛。目标为实体 P≥95%/R≥85%，意图与实体动作 macro-F1≥85%，方法 micro-F1≥85%，理由支持率≥95%。阈值不是已实现的模型成绩。
+评测分别报告实体span、标准ID、意图、言语行为、立场、动作、方法类型／态度和理由precision／recall／F1；失败和被拒绝字段作为漏检，同时报告类别样本量、未知率和自动覆盖。实体P≥95%／R≥85%；意图、动作、言语行为、立场F1≥85%；方法与态度micro-F1≥85%；理由支持率≥95%。这些是目标，不是已达到成绩。人工标注不足不输出假精度，模型不会替代人工gold。
 
-主题抽查表在报告生成时提供；每主题最多 10 条，最多 10 个主题，需人工填相关/不相关，相关率≥80%才确认。未评审主题保持候选。
+主题抽查每个最多10条、最多10个主题，相关率≥80%才确认。CI在Python3.10和3.12运行mock测试，不调用真实模型。当前未完成人工标注，不做置信度校准或研究就绪晋级。
 
-## 恢复与限制
+## 结果、公开数据与兼容
 
-原输入和旧输出保留。结果 JSON 原子写入，progress.json 展示选中任务进度；中断后 `--resume` 重建运行报告并复用已完成缓存。配额的 token 预留按 UTF-8 输入上界加最大输出保守估算；服务未返回 usage 或请求失败时按预留值计费统计，不表示精确消耗或费用。缺价格配置只报告 token。
+本地 `local/runs/RUN` 保存完整评论、字段、证据、复核队列、失败、主题、统计、结论及质量；`local/runs/cache`存语义缓存，`resolution_cache`存目录解析缓存。缓存包含实际提示词／schema／上下文／目录候选／参数摘要，验证与解析实现也有摘要，旧2.0结果不会充当3.0缓存。
 
-目前交付为批处理分析、静态报告和验收工具；无自动交易、采集器或 ASDC 接口。真实 API 语义效果与中文聚类需要有效模型配置、依赖和人工标签验证。
+公开 `output/public/RUN` 仅保留受控实体聚合、理由代码计数、方法态度、候选主题数量、质量、结论和脱敏HTML；不包含评论原文、昵称、评论／用户ID、来源明细、自由文本理由或本机绝对路径。
 
-DeepSeek 默认使用 deepseek-flash，thinking.type=disabled，减少推理耗尽输出额度后出现空正文的情况。缓存仍按模型、提示词、schema 与上下文复用；已通过校验的结果保留。
+**此前公开的 `output/runs` 与Git历史仍含旧评论原文和元数据。此次升级只改变新结果发布方式，不删除旧文件或重写Git历史。** README的原始输入忽略规则不意味着历史输出已脱敏。
 
-引文位置校正仅在引文在原文中唯一出现时启用；修正前后位置记于 evidence_offset_repairs。重复或原文中不存在的引文不自动校正。
+3.0输出字段与2.0不兼容：`recommend_count`移除，使用明确／上下文推荐计数；`NEEDS_REVIEW`对应新版字段级`PARTIAL`，不是同口径数量。旧结果保留用于比较；回滚可使用2.0提交及其独立结果，不把3.0缓存交给2.0。始终保持RESEARCH_ONLY，直至人工验收完成。
 
-## 全量分析与结论
+## 已完成的3.0运行
 
-本次全量任务使用 configs/full_analysis.json（并发8，上限12,000次请求/30,000,000 token），默认试跑配置保持不变。
+- [公开结论](output/public/20261005T111901191947/conclusions.md)
+- [公开质量与验证](output/public/20261005T111901191947/verification.json)
+- [公开报告文件](output/public/20261005T111901191947/report.html)（下载后离线打开）
 
-```bash
-.venv/bin/python run_pipeline.py --config configs/full_analysis.json --full --resume
-.venv/bin/python build_conclusions.py output/runs/RUN
-```
-
-结论分为严格通过结果与包含待复核的探索性视图；按视频拆分，所有结论附原文链接。生成 conclusions.md / conclusions.json 并在 report.html 顶部加入摘要。不能用100条试跑结果生成全量结论。
-
-## 公开仓库与本地数据
-
-原始评论 JSON、人工标注数据、API 缓存和 `.env` 不纳入版本管理；分析结果已纳入 `output/`，包含历史试运行和全量结果。最新全量结论见 [conclusions.md](output/runs/20261005T102506056983/conclusions.md)，离线报告见同目录的 `report.html`。克隆后在根目录放入自己的评论 JSON，并根据 `.env.example` 配置模型凭据。
+3,829条有效评论全部取得结构化结果：2,629条SUCCESS、1,200条PARTIAL；167条空白／纯表情SKIPPED，未处理有效评论和请求失败均为0。缓存复跑0次API调用、0新增token，标的、方法、时间统计一致。四类主题全部完成，仍待人工确认。两个Python版本的回归测试通过；人工gold为0／300，视频上下文未获取，不能把运行完成等同于研究准确率验收。

@@ -1,0 +1,210 @@
+{
+  "denominator": 3829,
+  "method_bearing_comments": 676,
+  "multi_label": true,
+  "ranking": [
+    {
+      "method": "CASH_WAIT",
+      "method_name": "现金等待",
+      "count": 190,
+      "percentage": 4.962131104727082,
+      "attitudes": {
+        "SELF_PRACTICE": 163,
+        "SUPPORT": 25,
+        "MENTION": 1,
+        "UNKNOWN": 1
+      },
+      "net_support_rate": 1.0,
+      "directional_count": 25,
+      "sample_status": "SUFFICIENT"
+    },
+    {
+      "method": "TREND",
+      "method_name": "趋势交易",
+      "count": 133,
+      "percentage": 3.473491773308958,
+      "attitudes": {
+        "SUPPORT": 19,
+        "SELF_PRACTICE": 82,
+        "OPPOSE": 13,
+        "MENTION": 18,
+        "QUESTION": 1
+      },
+      "net_support_rate": 0.1875,
+      "directional_count": 32,
+      "sample_status": "SUFFICIENT"
+    },
+    {
+      "method": "SWING_T",
+      "method_name": "波段/做T",
+      "count": 92,
+      "percentage": 2.4027161138678506,
+      "attitudes": {
+        "SELF_PRACTICE": 75,
+        "MENTION": 6,
+        "OPPOSE": 4,
+        "SUPPORT": 5,
+        "UNKNOWN": 1,
+        "QUESTION": 1
+      },
+      "net_support_rate": 0.1111111111111111,
+      "directional_count": 9,
+      "sample_status": "INSUFFICIENT"
+    },
+    {
+      "method": "POSITION_RISK",
+      "method_name": "仓位风控",
+      "count": 87,
+      "percentage": 2.272133716375033,
+      "attitudes": {
+        "SELF_PRACTICE": 58,
+        "SUPPORT": 21,
+        "MENTION": 5,
+        "QUESTION": 2,
+        "OPPOSE": 1
+      },
+      "net_support_rate": 0.9090909090909091,
+      "directional_count": 22,
+      "sample_status": "SUFFICIENT"
+    },
+    {
+      "method": "CYCLE_DIP",
+      "method_name": "周期低吸",
+      "count": 66,
+      "percentage": 1.7236876469051972,
+      "attitudes": {
+        "SELF_PRACTICE": 49,
+        "SUPPORT": 11,
+        "MENTION": 2,
+        "UNKNOWN": 1,
+        "OPPOSE": 2,
+        "QUESTION": 1
+      },
+      "net_support_rate": 0.6923076923076923,
+      "directional_count": 13,
+      "sample_status": "SUFFICIENT"
+    },
+    {
+      "method": "EXIT",
+      "method_name": "退出交易",
+      "count": 66,
+      "percentage": 1.7236876469051972,
+      "attitudes": {
+        "SELF_PRACTICE": 43,
+        "SUPPORT": 20,
+        "MENTION": 1,
+        "OPPOSE": 2
+      },
+      "net_support_rate": 0.8181818181818182,
+      "directional_count": 22,
+      "sample_status": "SUFFICIENT"
+    },
+    {
+      "method": "OTHER",
+      "method_name": "其他",
+      "count": 54,
+      "percentage": 1.4102898929224341,
+      "attitudes": {
+        "SUPPORT": 13,
+        "SELF_PRACTICE": 28,
+        "QUESTION": 1,
+        "MENTION": 8,
+        "OPPOSE": 4
+      },
+      "net_support_rate": 0.5294117647058824,
+      "directional_count": 17,
+      "sample_status": "SUFFICIENT"
+    },
+    {
+      "method": "VALUE",
+      "method_name": "价值投资",
+      "count": 41,
+      "percentage": 1.0707756594411073,
+      "attitudes": {
+        "SELF_PRACTICE": 25,
+        "SUPPORT": 15,
+        "QUESTION": 1
+      },
+      "net_support_rate": 1.0,
+      "directional_count": 15,
+      "sample_status": "SUFFICIENT"
+    },
+    {
+      "method": "INDEX_DCA",
+      "method_name": "指数定投",
+      "count": 31,
+      "percentage": 0.8096108644554714,
+      "attitudes": {
+        "SELF_PRACTICE": 19,
+        "SUPPORT": 12
+      },
+      "net_support_rate": 1.0,
+      "directional_count": 12,
+      "sample_status": "SUFFICIENT"
+    },
+    {
+      "method": "HIGH_DIVIDEND",
+      "method_name": "高股息",
+      "count": 16,
+      "percentage": 0.4178636719770175,
+      "attitudes": {
+        "SUPPORT": 5,
+        "SELF_PRACTICE": 11
+      },
+      "net_support_rate": 1.0,
+      "directional_count": 5,
+      "sample_status": "INSUFFICIENT"
+    },
+    {
+      "method": "SECTOR_ROTATION",
+      "method_name": "行业轮动",
+      "count": 12,
+      "percentage": 0.31339775398276315,
+      "attitudes": {
+        "SELF_PRACTICE": 10,
+        "MENTION": 1,
+        "SUPPORT": 1
+      },
+      "net_support_rate": 1.0,
+      "directional_count": 1,
+      "sample_status": "INSUFFICIENT"
+    },
+    {
+      "method": "ASSET_ALLOCATION",
+      "method_name": "资产配置",
+      "count": 10,
+      "percentage": 0.26116479498563594,
+      "attitudes": {
+        "SELF_PRACTICE": 7,
+        "SUPPORT": 3
+      },
+      "net_support_rate": 1.0,
+      "directional_count": 3,
+      "sample_status": "INSUFFICIENT"
+    },
+    {
+      "method": "GRID",
+      "method_name": "网格交易",
+      "count": 3,
+      "percentage": 0.07834943849569079,
+      "attitudes": {
+        "SELF_PRACTICE": 3
+      },
+      "net_support_rate": null,
+      "directional_count": 0,
+      "sample_status": "INSUFFICIENT"
+    },
+    {
+      "method": "TECH_GROWTH",
+      "method_name": "科技成长",
+      "count": 3,
+      "percentage": 0.07834943849569079,
+      "attitudes": {
+        "SELF_PRACTICE": 3
+      },
+      "net_support_rate": null,
+      "directional_count": 0,
+      "sample_status": "INSUFFICIENT"
+    }
+  ]
+}

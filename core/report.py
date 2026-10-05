@@ -13,6 +13,8 @@ def write_json(path, data):
 
 
 def csv_value(v):
+    if isinstance(v, (int, float)):
+        return str(v)
     s = (
         json.dumps(v, ensure_ascii=False)
         if isinstance(v, (dict, list))
@@ -39,49 +41,117 @@ def write_csv(path, rows):
 def make_report(directory, rows, ranks, strategies, topics, quality, manifest):
     escape = lambda x: html.escape(str(x))
     parts = [
-        '<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>投资评论分析</title><style>body{max-width:1100px;margin:36px auto;font:16px/1.6 sans-serif}pre{white-space:pre-wrap}table{border-collapse:collapse}td,th{border:1px solid #ddd;padding:8px}article{border-top:1px solid #ddd;padding:15px}a{color:#1261a0}</style><h1>投资评论分析报告</h1><p>实验状态；人工准确性验收尚未完成。方向统计仅包含 SUCCESS，待复核与失败记录单列。</p>'
+        '<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>投资评论分析</title><style>body{max-width:1100px;margin:36px auto;font:16px/1.6 sans-serif}pre{white-space:pre-wrap}table{border-collapse:collapse}td,th{border:1px solid #ddd;padding:8px}article{border-top:1px solid #ddd;padding:15px}a{color:#1261a0}</style><h1>投资评论分析报告</h1><p>实验状态；人工准确性验收尚未完成。按字段校验统计，PARTIAL中的合法字段独立纳入；待复核与失败字段单列。</p>'
     ]
-    for title, data in [
-        ("运行与输入", manifest),
-        ("质量与旧新差异", quality),
-        ("方法分布", strategies),
-        ("主题发现", topics),
-    ]:
-        parts.extend(
-            [
-                "<h2>"
-                + title
-                + "</h2><pre>"
-                + escape(json.dumps(data, ensure_ascii=False, indent=2))
-                + "</pre>"
-            ]
-        )
     parts.append(
-        "<h2>标的榜</h2><table><tr><th>标的</th><th>提及</th><th>推荐</th><th>反对</th><th>方向样本</th><th>证据</th></tr>"
+        "<h2>投资选择</h2><table><tr><th>标的／类别</th><th>提及</th><th>明确推荐</th><th>上下文推荐</th><th>本人持仓</th><th>回避</th><th>卖出</th><th>方向样本</th><th>视频覆盖</th><th>证据</th></tr>"
     )
-    for a in ranks:
+    for asset in ranks:
         links = " ".join(
             '<a href="#' + escape(k) + '">原文</a>'
-            for k in a["representative_comments"]
+            for k in asset["representative_comments"]
         )
-        parts.append(
-            "<tr><td>"
-            + escape(a["entity"]["name"])
-            + "</td>"
-            + "".join(
-                "<td>" + escape(a[k]) + "</td>"
+        cells = (
+            [asset["entity"]["name"] + " / " + asset["entity"]["category"]]
+            + [
+                asset[k]
                 for k in [
                     "mentions",
-                    "recommend_count",
-                    "oppose_count",
+                    "explicit_recommendation_count",
+                    "context_recommendation_count",
+                    "self_position_count",
+                    "avoid_count",
+                    "sell_count",
                     "directional_count",
                 ]
-            )
+            ]
+            + [str(asset["video_count"]) + "/" + str(asset["video_total"])]
+        )
+        parts.append(
+            "<tr>"
+            + "".join("<td>" + escape(v) + "</td>" for v in cells)
             + "<td>"
             + links
             + "</td></tr>"
         )
-    parts.append("</table><h2>逐条原文及结构化分析</h2>")
+    parts.append(
+        "</table><h2>投资方法与态度</h2><p>多标签讨论；自用、提及和支持分别统计。净支持率分母为支持＋反对。</p><table><tr><th>方法</th><th>讨论</th><th>支持</th><th>反对</th><th>自用</th><th>询问</th><th>提及</th><th>未知</th><th>净支持率</th><th>方向样本</th></tr>"
+    )
+    for m in strategies.get("ranking", []):
+        cells = (
+            [m["method_name"], m["count"]]
+            + [
+                m["attitudes"].get(k, 0)
+                for k in [
+                    "SUPPORT",
+                    "OPPOSE",
+                    "SELF_PRACTICE",
+                    "QUESTION",
+                    "MENTION",
+                    "UNKNOWN",
+                ]
+            ]
+            + [
+                f"{m['net_support_rate']:.1%}"
+                if m["net_support_rate"] is not None
+                else "—",
+                "样本不足" if m["directional_count"] < 10 else m["directional_count"],
+            ]
+        )
+        parts.append(
+            "<tr>" + "".join("<td>" + escape(v) + "</td>" for v in cells) + "</tr>"
+        )
+    parts.append(
+        "</table><h2>理由与分歧</h2><p>以下均为评论者陈述，未经外部核验；不足10个方向样本不作稳定共识判断。</p>"
+    )
+    for asset in ranks:
+        if not asset["rationales"]:
+            continue
+        parts.append("<h3>" + escape(asset["entity"]["name"]) + "</h3><ul>")
+        for rr in asset["rationales"][:6]:
+            refs = " ".join(
+                '<a href="#' + escape(ev["comment_key"]) + '">证据</a>'
+                for ev in rr["evidence"][:3]
+            )
+            parts.append(
+                "<li>"
+                + escape(
+                    rr["reason_code"] + " / " + rr["stance"] + "：" + rr["summary"]
+                )
+                + "（"
+                + escape(rr["mentions"])
+                + "条） "
+                + refs
+                + "</li>"
+            )
+        parts.append("</ul>")
+    parts.append(
+        "<h2>候选主题</h2><p>四个主题空间；自动主题尚待人工相关率验收。</p><ul>"
+    )
+    for t in topics.get("topics", []):
+        parts.append(
+            "<li>"
+            + escape(t["space"] + " / " + t["name"])
+            + "："
+            + escape(t["comment_count"])
+            + "条</li>"
+        )
+    parts.append("</ul><h2>质量与复现信息</h2>")
+    for title, data in [
+        ("运行与输入", manifest),
+        ("质量与旧新差异", quality),
+        ("完整方法统计", strategies),
+        ("完整主题结果", topics),
+    ]:
+        parts.append(
+            "<details><summary>"
+            + escape(title)
+            + "</summary><pre>"
+            + escape(json.dumps(data, ensure_ascii=False, indent=2))
+            + "</pre></details>"
+        )
+    parts.append("<h2>逐条原文及结构化分析</h2>")
+
     for r in rows:
         url = r.get("video_url")
         link = ""

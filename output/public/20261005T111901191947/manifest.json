@@ -1,0 +1,50 @@
+{
+  "schema_version": "3.0",
+  "prompt_version": "investment-3.0",
+  "generated_at": "2026-10-05T11:27:43.491952+08:00",
+  "model": "deepseek-flash",
+  "pilot": false,
+  "run_status": "COMPLETE",
+  "promotion_state": "RESEARCH_ONLY",
+  "catalog_coverage": {
+    "ASSET": 13,
+    "INDEX": 9,
+    "ETF": 1799,
+    "SECTOR": 8,
+    "STOCK": 5268,
+    "REIT": 101
+  },
+  "catalog_gaps": [
+    "BSE full security list unavailable",
+    "Index coverage is curated, not a full all-index master",
+    "Historical aliases and SSE listing dates incomplete",
+    "Global stock coverage remains curated; not a full global security master"
+  ],
+  "input_hashes": [
+    {
+      "logical_source_id": "source_1",
+      "sha256": "f2571d93da223a5a751fbf37fdb59b98fb3f6c7a9d868f79b5bb2e7a4dc64d96",
+      "status": "INCLUDED"
+    },
+    {
+      "logical_source_id": "source_2",
+      "sha256": "98a065892074937435db260285e4fedfc1309f22dc4c9cc811381b92c81bb313",
+      "status": "INCLUDED"
+    },
+    {
+      "logical_source_id": "source_3",
+      "sha256": "d305036aee128b38e5248f3c56f1e3cbcd2a22a584aebf88db25154ae95f2533",
+      "status": "INCLUDED"
+    },
+    {
+      "logical_source_id": "source_4",
+      "sha256": null,
+      "status": "EXCLUDED"
+    },
+    {
+      "logical_source_id": "source_5",
+      "sha256": null,
+      "status": "EXCLUDED"
+    }
+  ]
+}

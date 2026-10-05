@@ -1,0 +1,33 @@
+{
+  "schema_version": "3.0",
+  "raw_rows": 3996,
+  "valid_rows": 3829,
+  "noise_rows": 167,
+  "all_valid_processed": true,
+  "failed_valid": 0,
+  "status_counts": {
+    "SUCCESS": 2629,
+    "PARTIAL": 1200,
+    "SKIPPED": 167
+  },
+  "cache_repeat_calls": 0,
+  "cache_repeat_tokens": 0,
+  "cache_hits": 3512,
+  "aggregation_matches": {
+    "ticker_consensus": true,
+    "strategy_ranking": true,
+    "timeline": true
+  },
+  "annotation_samples": 400,
+  "dev_samples": 100,
+  "test_samples": 300,
+  "human_complete": 0,
+  "double_annotation_samples": 50,
+  "near_duplicate_cross_split_leaks": 0,
+  "public_allowlist_scan": "PASS",
+  "tests_python312": 62,
+  "tests_python310": 62,
+  "human_acceptance": "PENDING_HUMAN_ANNOTATION",
+  "video_context_verified": 0,
+  "bge_revision": "7999e1d3359715c523056ef9478215996d62a620"
+}

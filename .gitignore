@@ -11,3 +11,8 @@ output/runs/cache/
 /comments_video_*.json
 /sample_comments.json
 evaluation/dataset/
+local/
+evaluation/dataset_v3/
+*.egg-info/
+build/
+dist/

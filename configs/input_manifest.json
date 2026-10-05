@@ -1,0 +1,8 @@
+{
+  "version": "3.0",
+  "inputs": ["comments_video_1791117359379.json", "comments_video_1791131714769.json", "comments_video_1791162762327.json"],
+  "excluded": [
+    {"file": "sample_comments.json", "reason": "EXAMPLE_DUPLICATE_INPUT"},
+    {"file": "comments_video_1791115706378.json", "reason": "SUPERSEDED_31_ROW_EXCERPT"}
+  ]
+}
