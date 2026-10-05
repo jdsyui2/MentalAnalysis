@@ -1,0 +1,26 @@
+{
+  "api": {
+    "concurrency": 8,
+    "timeout_seconds": 60,
+    "max_attempts": 3,
+    "max_calls": 12000,
+    "max_tokens": 30000000,
+    "max_output_tokens": 4096,
+    "base_url": "https://api.deepseek.com",
+    "model": "deepseek-flash",
+    "thinking": {
+      "type": "disabled"
+    }
+  },
+  "pilot_size": 100,
+  "topics": {
+    "enabled": true,
+    "model": "BAAI/bge-small-zh-v1.5",
+    "min_documents": 50,
+    "min_cluster_size": 10,
+    "min_samples": 5,
+    "seed": 42
+  },
+  "analysis_cutoff": null,
+  "comparable_complete_windows": false
+}

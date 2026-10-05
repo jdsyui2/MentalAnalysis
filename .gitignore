@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.DS_Store
+.idea/
+.env
+.env.*
+!.env.example
+output/
+/comments_video_*.json
+/sample_comments.json
+evaluation/dataset/
+evaluation/metrics.json
+evaluation/topic_smoke.json

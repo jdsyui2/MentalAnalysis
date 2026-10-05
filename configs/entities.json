@@ -1,0 +1,385 @@
+{
+  "version": "2.0",
+  "entities": [
+    {
+      "id": "STOCK:深物业A",
+      "name": "深物业A",
+      "aliases": [
+        "深物业a",
+        "深物业",
+        "000011"
+      ],
+      "category": "STOCK",
+      "ticker": "000011.SZ",
+      "source": "legacy asset_dictionary.json; manually review before expansion",
+      "source_date": "2026-10-05"
+    },
+    {
+      "id": "STOCK:雪龙集团",
+      "name": "雪龙集团",
+      "aliases": [
+        "雪龙",
+        "雪龙股份",
+        "603949"
+      ],
+      "category": "STOCK",
+      "ticker": "603949.SH",
+      "source": "legacy asset_dictionary.json; manually review before expansion",
+      "source_date": "2026-10-05"
+    },
+    {
+      "id": "STOCK:沈阳机床",
+      "name": "沈阳机床",
+      "aliases": [
+        "沈股",
+        "沈机",
+        "沈阳机床"
+      ],
+      "category": "STOCK",
+      "ticker": "000410.SZ",
+      "source": "legacy asset_dictionary.json; manually review before expansion",
+      "source_date": "2026-10-05"
+    },
+    {
+      "id": "STOCK:贵州茅台",
+      "name": "贵州茅台",
+      "aliases": [
+        "茅台",
+        "贵州茅台",
+        "600519"
+      ],
+      "category": "STOCK",
+      "ticker": "600519.SH",
+      "source": "legacy asset_dictionary.json; manually review before expansion",
+      "source_date": "2026-10-05"
+    },
+    {
+      "id": "STOCK:宁德时代",
+      "name": "宁德时代",
+      "aliases": [
+        "宁德",
+        "宁德时代",
+        "300750"
+      ],
+      "category": "STOCK",
+      "ticker": "300750.SZ",
+      "source": "legacy asset_dictionary.json; manually review before expansion",
+      "source_date": "2026-10-05"
+    },
+    {
+      "id": "STOCK:比亚迪",
+      "name": "比亚迪",
+      "aliases": [
+        "比亚迪",
+        "002594"
+      ],
+      "category": "STOCK",
+      "ticker": "002594.SZ",
+      "source": "legacy asset_dictionary.json; manually review before expansion",
+      "source_date": "2026-10-05"
+    },
+    {
+      "id": "STOCK:寒武纪",
+      "name": "寒武纪",
+      "aliases": [
+        "寒武纪",
+        "688256"
+      ],
+      "category": "STOCK",
+      "ticker": "688256.SH",
+      "source": "legacy asset_dictionary.json; manually review before expansion",
+      "source_date": "2026-10-05"
+    },
+    {
+      "id": "STOCK:中际旭创",
+      "name": "中际旭创",
+      "aliases": [
+        "旭创",
+        "中际",
+        "300308"
+      ],
+      "category": "STOCK",
+      "ticker": "300308.SZ",
+      "source": "legacy asset_dictionary.json; manually review before expansion",
+      "source_date": "2026-10-05"
+    },
+    {
+      "id": "STOCK:路维光电",
+      "name": "路维光电",
+      "aliases": [
+        "路维",
+        "688401"
+      ],
+      "category": "STOCK",
+      "ticker": "688401.SH",
+      "source": "legacy asset_dictionary.json; manually review before expansion",
+      "source_date": "2026-10-05"
+    },
+    {
+      "id": "STOCK:安集科技",
+      "name": "安集科技",
+      "aliases": [
+        "安集",
+        "688019"
+      ],
+      "category": "STOCK",
+      "ticker": "688019.SH",
+      "source": "legacy asset_dictionary.json; manually review before expansion",
+      "source_date": "2026-10-05"
+    },
+    {
+      "id": "STOCK:农业银行",
+      "name": "农业银行",
+      "aliases": [
+        "农行",
+        "农业银行",
+        "601288"
+      ],
+      "category": "STOCK",
+      "ticker": "601288.SH",
+      "source": "legacy asset_dictionary.json; manually review before expansion",
+      "source_date": "2026-10-05"
+    },
+    {
+      "id": "ASSET:黄金",
+      "name": "黄金",
+      "aliases": [
+        "黄金",
+        "小黄鱼",
+        "金价",
+        "现货黄金",
+        "金条"
+      ],
+      "category": "ASSET",
+      "ticker": null,
+      "source": "legacy asset_dictionary.json; manually review before expansion",
+      "source_date": "2026-10-05"
+    },
+    {
+      "id": "ASSET:白银",
+      "name": "白银",
+      "aliases": [
+        "白银",
+        "现货白银",
+        "白银期货"
+      ],
+      "category": "ASSET",
+      "ticker": null,
+      "source": "legacy asset_dictionary.json; manually review before expansion",
+      "source_date": "2026-10-05"
+    },
+    {
+      "id": "ASSET:橡胶",
+      "name": "橡胶",
+      "aliases": [
+        "橡胶",
+        "天然橡胶",
+        "橡胶期货"
+      ],
+      "category": "ASSET",
+      "ticker": null,
+      "source": "legacy asset_dictionary.json; manually review before expansion",
+      "source_date": "2026-10-05"
+    },
+    {
+      "id": "ASSET:原油",
+      "name": "原油",
+      "aliases": [
+        "原油",
+        "石油",
+        "美原油"
+      ],
+      "category": "ASSET",
+      "ticker": null,
+      "source": "legacy asset_dictionary.json; manually review before expansion",
+      "source_date": "2026-10-05"
+    },
+    {
+      "id": "INDEX:纳斯达克100",
+      "name": "纳斯达克100",
+      "aliases": [
+        "纳指",
+        "纳斯达克"
+      ],
+      "category": "INDEX",
+      "ticker": null,
+      "source": "legacy asset_dictionary.json; manually review before expansion",
+      "source_date": "2026-10-05"
+    },
+    {
+      "id": "INDEX:标普500",
+      "name": "标普500",
+      "aliases": [
+        "标普",
+        "标普500"
+      ],
+      "category": "INDEX",
+      "ticker": null,
+      "source": "legacy asset_dictionary.json; manually review before expansion",
+      "source_date": "2026-10-05"
+    },
+    {
+      "id": "INDEX:大盘",
+      "name": "大盘",
+      "aliases": [
+        "大盘",
+        "上证指数",
+        "A股大盘"
+      ],
+      "category": "INDEX",
+      "ticker": null,
+      "source": "legacy asset_dictionary.json; manually review before expansion",
+      "source_date": "2026-10-05"
+    },
+    {
+      "id": "ETF:红利ETF",
+      "name": "红利ETF",
+      "aliases": [
+        "红利",
+        "红利ETF",
+        "高股息ETF"
+      ],
+      "category": "ETF",
+      "ticker": null,
+      "source": "legacy asset_dictionary.json; manually review before expansion",
+      "source_date": "2026-10-05"
+    },
+    {
+      "id": "ASSET:美股市场",
+      "name": "美股市场",
+      "aliases": [
+        "美股"
+      ],
+      "category": "ASSET",
+      "ticker": null,
+      "source": "legacy asset_dictionary.json; manually review before expansion",
+      "source_date": "2026-10-05"
+    },
+    {
+      "id": "SECTOR:银行板块",
+      "name": "银行板块",
+      "aliases": [
+        "银行股"
+      ],
+      "category": "SECTOR",
+      "ticker": null,
+      "source": "legacy asset_dictionary.json; manually review before expansion",
+      "source_date": "2026-10-05"
+    },
+    {
+      "id": "SECTOR:半导体芯片",
+      "name": "半导体芯片",
+      "aliases": [
+        "半导体",
+        "芯片"
+      ],
+      "category": "SECTOR",
+      "ticker": null,
+      "source": "legacy asset_dictionary.json; manually review before expansion",
+      "source_date": "2026-10-05"
+    },
+    {
+      "id": "SECTOR:房地产",
+      "name": "房地产",
+      "aliases": [
+        "房地产",
+        "地产股"
+      ],
+      "category": "SECTOR",
+      "ticker": null,
+      "source": "legacy asset_dictionary.json; manually review before expansion",
+      "source_date": "2026-10-05"
+    },
+    {
+      "id": "SECTOR:券商板块",
+      "name": "券商板块",
+      "aliases": [
+        "券商",
+        "券商股"
+      ],
+      "category": "SECTOR",
+      "ticker": null,
+      "source": "legacy asset_dictionary.json; manually review before expansion",
+      "source_date": "2026-10-05"
+    },
+    {
+      "id": "ETF:QQQ",
+      "name": "QQQ",
+      "aliases": [
+        "qqq"
+      ],
+      "category": "ETF",
+      "ticker": null,
+      "source": "reviewed lexical concept; security code unverified",
+      "source_date": "2026-10-05"
+    },
+    {
+      "id": "ETF:TQQQ",
+      "name": "TQQQ",
+      "aliases": [
+        "tqqq"
+      ],
+      "category": "ETF",
+      "ticker": null,
+      "source": "reviewed lexical concept; security code unverified",
+      "source_date": "2026-10-05"
+    },
+    {
+      "id": "ETF:SPY",
+      "name": "SPY",
+      "aliases": [
+        "spy"
+      ],
+      "category": "ETF",
+      "ticker": null,
+      "source": "reviewed lexical concept; security code unverified",
+      "source_date": "2026-10-05"
+    },
+    {
+      "id": "ASSET:银行存款",
+      "name": "银行存款",
+      "aliases": [
+        "存银行",
+        "存款"
+      ],
+      "category": "ASSET",
+      "ticker": null,
+      "source": "reviewed lexical concept; security code unverified",
+      "source_date": "2026-10-05"
+    },
+    {
+      "id": "STOCK:英伟达",
+      "name": "英伟达",
+      "aliases": [
+        "NVIDIA",
+        "NVDA"
+      ],
+      "category": "STOCK",
+      "ticker": null,
+      "source": "reviewed lexical concept; security code unverified",
+      "source_date": "2026-10-05"
+    },
+    {
+      "id": "STOCK:AMD",
+      "name": "AMD",
+      "aliases": [
+        "amd"
+      ],
+      "category": "STOCK",
+      "ticker": null,
+      "source": "reviewed lexical concept; security code unverified",
+      "source_date": "2026-10-05"
+    },
+    {
+      "id": "STOCK:美光",
+      "name": "美光",
+      "aliases": [
+        "Micron"
+      ],
+      "category": "STOCK",
+      "ticker": null,
+      "source": "reviewed lexical concept; security code unverified",
+      "source_date": "2026-10-05"
+    }
+  ]
+}
