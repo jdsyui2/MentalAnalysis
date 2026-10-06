@@ -113,3 +113,32 @@ def test_judge_request_concurrency_limit(monkeypatch,tmp_path):
         return await asyncio.gather(*(judge.request({'index':i},{}) for i in range(8)))
     assert len(asyncio.run(run()))==8
     assert peak==2 and ledger['successful_requests']==8
+
+
+def test_unknown_publication_is_legal_but_invalid_or_future_is_not():
+    r=record(1,0,'a');r['point_in_time']['published_at']=None
+    f=extract_features([r],config())[0]
+    assert f['pit_state']=='PASS' and f['publication_time_state']=='UNKNOWN'
+    assert f['author_comment_count_1h']==1
+    for bad in ('invalid', '2026-10-06T11:00:00+08:00'):
+        r['point_in_time']['published_at']=bad
+        assert extract_features([r],config())[0]['pit_state'].startswith('FAIL')
+
+
+def test_pit_temporal_features_use_availability_clock():
+    rows=[record(i,i,'same') for i in range(3)]
+    for r in rows:r['point_in_time']['published_at']='2026-10-01T00:00:00+08:00'
+    f=extract_features(rows,config())[-1]
+    assert f['author_comment_count_1h']==3
+    assert f['burst_window_count']==3
+    assert f['cluster']['temporal_concentration']==120
+    assert f['temporal_clock']=='available_at'
+
+
+def test_same_cutoff_snapshot_reuse_is_isolated():
+    rows=[record(i,0,str(i)) for i in range(3)]
+    rows[-1]['point_in_time']['available_at']='2026-10-06T10:01:00+08:00'
+    actual=extract_features(rows,config())
+    assert actual[:2]==extract_features(rows[:2],config())
+    assert actual[0]['cluster_members']==[1,2]
+    assert actual[-1]['cluster_members']==[1,2,3]

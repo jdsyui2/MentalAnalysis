@@ -1,0 +1,36 @@
+{
+  "software_version": "3.2.2",
+  "contract_name": "equity-social-corpus",
+  "contract_version": "1.0.0",
+  "producer": {
+    "name": "EquityCrawler",
+    "version": "0.2.3.1"
+  },
+  "record_count": 787,
+  "platform_counts": {
+    "eastmoney": 559,
+    "taoguba": 208,
+    "xueqiu": 20
+  },
+  "pit_states": {
+    "PASS": 787
+  },
+  "publication_states": {
+    "KNOWN": 786,
+    "UNKNOWN": 1
+  },
+  "feature_sample_count": 30,
+  "feature_sample_pit_states": {
+    "PASS": 30
+  },
+  "future_append_invariant": true,
+  "input_maturity": "CORPUS_PIT_VALIDATED",
+  "validation_scope": "PACKAGE_INTEGRITY_AND_TEMPORAL_FEATURES_ONLY",
+  "temporal_clock": "available_at",
+  "api_calls": 0,
+  "human_completed": 0,
+  "promotion_state": "RESEARCH_ONLY",
+  "annotation_status": "PENDING_HUMAN_ANNOTATION",
+  "semantic_accuracy_validated": false,
+  "investment_signal_ready": false
+}

@@ -1,6 +1,10 @@
-# MentalAnalysis v3.2.1
+# MentalAnalysis v3.2.2
 
 可追溯的中文投资评论批量分析：分别识别推荐、本人持仓、询问、预测、方法态度和理由，提供本地原文报告与公开脱敏结果。当前用途为 **RESEARCH_ASSIST（研究辅助可用）**，保留 **RESEARCH_ONLY / PENDING_HUMAN_ANNOTATION**，测试通过不代表模型准确率达标。
+
+## JEV v3.2.2
+
+本轮仅修订 PIT 接入：发布时间可未知，时间统计使用 `available_at`，新增正规语料离线验证。见 [v3.2.2 说明](docs/JEV_322.md)。语义精度仍待人工验收。
 
 ## JEV v3.2.1
 
