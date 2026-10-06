@@ -1,0 +1,272 @@
+{
+  "report_version": "jev-judge-v2.0",
+  "date": "2026-10-06",
+  "scope": "Three input files; 320-record dataset is wholly included in 464-record dataset. Coordination features for subset use full 464-record context.",
+  "unique_nonempty_records": 464,
+  "notes": [
+    "No comment text, nicknames, user/comment IDs, source details or local paths published.",
+    "Probabilities and gates are experimental and uncalibrated. ACCEPT is not verified organic identity.",
+    "All nonempty records lack stable author IDs. Suspected coordination is not proof of bots.",
+    "Human Gold remains pending; no accuracy or investment-return claim."
+  ],
+  "reports": [
+    {
+      "stock_code": "301251",
+      "name": "威尔高",
+      "dataset": "301251",
+      "state": "RESEARCH_ONLY / PENDING_HUMAN_ANNOTATION",
+      "total": 0,
+      "processed": 0,
+      "complete": 0,
+      "failed_or_partial": 0,
+      "unprocessed": 0,
+      "authenticity_labels": {},
+      "gate_counts_complete": {},
+      "relevant_complete": 0,
+      "direction_counts_relevant": {},
+      "default_weighted_score": {
+        "score": null,
+        "denominator_weight": 0,
+        "comments": 0
+      },
+      "unfiltered_soft_weighted_score": {
+        "score": null,
+        "denominator_weight": 0,
+        "comments": 0
+      },
+      "review_count": 0,
+      "stable_author_id_missing": 0,
+      "thresholds": {
+        "version": "jev-judge-v2.0",
+        "model": "jev-latest",
+        "exclude_threshold": 0.8,
+        "review_threshold": 0.5,
+        "similarity_threshold": 0.9,
+        "burst_window_minutes": 15,
+        "relevance_threshold": 0.5,
+        "minimum_group_size": 10,
+        "threshold_status": "EXPERIMENTAL_PENDING_GOLD"
+      },
+      "human_completed": 0,
+      "metrics_state": "PENDING_HUMAN_GOLD",
+      "manipulation_divergence": null,
+      "divergence_note": "Only displayed when both groups have minimum_group_size relevant complete records; not proof of manipulation.",
+      "gate_note": "ACCEPT means below experimental p_bot cut, not verified organic identity; UNCERTAIN records remain flagged even in ACCEPT.",
+      "probabilities_status": "UNVALIDATED_MODEL_ESTIMATES",
+      "weighted_direction_counts": {
+        "BULLISH": 0,
+        "BEARISH": 0,
+        "NEUTRAL": 0,
+        "UNCLEAR": 0,
+        "NOT_APPLICABLE": 0
+      },
+      "cut_sensitivity": {
+        "0.5": {
+          "score": null,
+          "denominator_weight": 0,
+          "comments": 0
+        },
+        "0.6": {
+          "score": null,
+          "denominator_weight": 0,
+          "comments": 0
+        },
+        "0.7": {
+          "score": null,
+          "denominator_weight": 0,
+          "comments": 0
+        },
+        "0.8": {
+          "score": null,
+          "denominator_weight": 0,
+          "comments": 0
+        },
+        "0.9": {
+          "score": null,
+          "denominator_weight": 0,
+          "comments": 0
+        }
+      }
+    },
+    {
+      "stock_code": "002008",
+      "name": "大族激光完整样本",
+      "dataset": "002008_464",
+      "state": "RESEARCH_ONLY / PENDING_HUMAN_ANNOTATION",
+      "total": 464,
+      "processed": 464,
+      "complete": 464,
+      "failed_or_partial": 0,
+      "unprocessed": 0,
+      "authenticity_labels": {
+        "UNCERTAIN": 459,
+        "SUSPECTED_COORDINATED": 5
+      },
+      "gate_counts_complete": {
+        "ACCEPT": 460,
+        "DOWNWEIGHT_REVIEW": 4
+      },
+      "relevant_complete": 304,
+      "direction_counts_relevant": {
+        "NOT_APPLICABLE": 41,
+        "BULLISH": 47,
+        "BEARISH": 177,
+        "UNCLEAR": 38,
+        "NEUTRAL": 1
+      },
+      "default_weighted_score": {
+        "score": -0.35031154634479617,
+        "denominator_weight": 219.54999999999998,
+        "comments": 304
+      },
+      "unfiltered_soft_weighted_score": {
+        "score": -0.35031154634479617,
+        "denominator_weight": 219.54999999999998,
+        "comments": 304
+      },
+      "review_count": 464,
+      "stable_author_id_missing": 464,
+      "thresholds": {
+        "version": "jev-judge-v2.0",
+        "model": "jev-latest",
+        "exclude_threshold": 0.8,
+        "review_threshold": 0.5,
+        "similarity_threshold": 0.9,
+        "burst_window_minutes": 15,
+        "relevance_threshold": 0.5,
+        "minimum_group_size": 10,
+        "threshold_status": "EXPERIMENTAL_PENDING_GOLD"
+      },
+      "human_completed": 0,
+      "metrics_state": "PENDING_HUMAN_GOLD",
+      "manipulation_divergence": null,
+      "divergence_note": "Only displayed when both groups have minimum_group_size relevant complete records; not proof of manipulation.",
+      "gate_note": "ACCEPT means below experimental p_bot cut, not verified organic identity; UNCERTAIN records remain flagged even in ACCEPT.",
+      "probabilities_status": "UNVALIDATED_MODEL_ESTIMATES",
+      "weighted_direction_counts": {
+        "BULLISH": 34.0,
+        "BEARISH": 125.89999999999999,
+        "NEUTRAL": 0.83,
+        "UNCLEAR": 28.919999999999998,
+        "NOT_APPLICABLE": 29.9
+      },
+      "cut_sensitivity": {
+        "0.5": {
+          "score": -0.3531654873316595,
+          "denominator_weight": 219.04999999999998,
+          "comments": 303
+        },
+        "0.6": {
+          "score": -0.35031154634479617,
+          "denominator_weight": 219.54999999999998,
+          "comments": 304
+        },
+        "0.7": {
+          "score": -0.35031154634479617,
+          "denominator_weight": 219.54999999999998,
+          "comments": 304
+        },
+        "0.8": {
+          "score": -0.35031154634479617,
+          "denominator_weight": 219.54999999999998,
+          "comments": 304
+        },
+        "0.9": {
+          "score": -0.35031154634479617,
+          "denominator_weight": 219.54999999999998,
+          "comments": 304
+        }
+      }
+    },
+    {
+      "stock_code": "002008",
+      "name": "大族激光子集",
+      "dataset": "002008_320",
+      "state": "RESEARCH_ONLY / PENDING_HUMAN_ANNOTATION",
+      "total": 320,
+      "processed": 320,
+      "complete": 320,
+      "failed_or_partial": 0,
+      "unprocessed": 0,
+      "authenticity_labels": {
+        "UNCERTAIN": 317,
+        "SUSPECTED_COORDINATED": 3
+      },
+      "gate_counts_complete": {
+        "ACCEPT": 317,
+        "DOWNWEIGHT_REVIEW": 3
+      },
+      "relevant_complete": 264,
+      "direction_counts_relevant": {
+        "UNCLEAR": 26,
+        "BEARISH": 166,
+        "BULLISH": 40,
+        "NOT_APPLICABLE": 31,
+        "NEUTRAL": 1
+      },
+      "default_weighted_score": {
+        "score": -0.39453733551762404,
+        "denominator_weight": 189.23,
+        "comments": 264
+      },
+      "unfiltered_soft_weighted_score": {
+        "score": -0.39453733551762404,
+        "denominator_weight": 189.23,
+        "comments": 264
+      },
+      "review_count": 320,
+      "stable_author_id_missing": 320,
+      "thresholds": {
+        "version": "jev-judge-v2.0",
+        "model": "jev-latest",
+        "exclude_threshold": 0.8,
+        "review_threshold": 0.5,
+        "similarity_threshold": 0.9,
+        "burst_window_minutes": 15,
+        "relevance_threshold": 0.5,
+        "minimum_group_size": 10,
+        "threshold_status": "EXPERIMENTAL_PENDING_GOLD"
+      },
+      "human_completed": 0,
+      "metrics_state": "PENDING_HUMAN_GOLD",
+      "manipulation_divergence": null,
+      "divergence_note": "Only displayed when both groups have minimum_group_size relevant complete records; not proof of manipulation.",
+      "gate_note": "ACCEPT means below experimental p_bot cut, not verified organic identity; UNCERTAIN records remain flagged even in ACCEPT.",
+      "probabilities_status": "UNVALIDATED_MODEL_ESTIMATES",
+      "weighted_direction_counts": {
+        "BULLISH": 28.87,
+        "BEARISH": 117.32,
+        "NEUTRAL": 0.83,
+        "UNCLEAR": 19.64,
+        "NOT_APPLICABLE": 22.57
+      },
+      "cut_sensitivity": {
+        "0.5": {
+          "score": -0.39796693689397555,
+          "denominator_weight": 188.73,
+          "comments": 263
+        },
+        "0.6": {
+          "score": -0.39453733551762404,
+          "denominator_weight": 189.23,
+          "comments": 264
+        },
+        "0.7": {
+          "score": -0.39453733551762404,
+          "denominator_weight": 189.23,
+          "comments": 264
+        },
+        "0.8": {
+          "score": -0.39453733551762404,
+          "denominator_weight": 189.23,
+          "comments": 264
+        },
+        "0.9": {
+          "score": -0.39453733551762404,
+          "denominator_weight": 189.23,
+          "comments": 264
+        }
+      }
+    }
+  ]
+}

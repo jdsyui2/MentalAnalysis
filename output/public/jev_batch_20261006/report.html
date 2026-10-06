@@ -1,0 +1,297 @@
+<!doctype html><meta charset="utf-8"><title>JEV三文件脱敏汇总</title><style>body{max-width:1100px;margin:32px auto;font-family:system-ui}pre{white-space:pre-wrap}</style><h1>JEV三文件脱敏汇总</h1><pre># 三文件 JEV 两层检测汇总
+
+日期：2026-10-06。状态：RESEARCH_ONLY / PENDING_HUMAN_ANNOTATION。
+
+| 样本 | 输入 | 相关 | 看多 | 看空 | 中性 | 方向不明 | 无适用价格观点 | 加权方向 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| 威尔高 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 数据不足 |
+| 大族激光完整样本 | 464 | 304 | 47 | 177 | 1 | 38 | 41 | -0.3503 |
+| 大族激光子集 | 320 | 264 | 40 | 166 | 1 | 26 | 31 | -0.3945 |
+
+所有非空输入处理成功，无失败或未处理记录。320条全部为464条的子集，不合计为784条独立记录；子集汇总沿用完整样本的协同特征。
+
+## 第一层与解释边界
+
+464条完整样本：459条 UNCERTAIN、5条 SUSPECTED_COORDINATED。按实验概率阈值，460条 ACCEPT、4条 DOWNWEIGHT_REVIEW，无 EXCLUDE；类别与概率 gate 分别保留。
+
+320条子集：317条 UNCERTAIN、3条 SUSPECTED_COORDINATED；317条 ACCEPT、3条 DOWNWEIGHT_REVIEW。
+
+全部非空记录缺少稳定作者ID，不能认定账号是水军或真实用户。概率及阈值尚未校准，人工标注未完成。加权方向描述这批评论的表达分布，不预测股票收益。威尔高文件为空，不能推断无人讨论。
+
+方向计数的分母是与目标相关且两层均成功的记录；UNCLEAR与NOT_APPLICABLE不合并为中性。加权方向为相关、两层成功且未达到排除阈值样本的 Σ[(1−p_bot)×(p_bull−p_bear)] / Σ(1−p_bot)。
+
+## 发布范围
+
+这里只发布聚合结果及质量摘要。原文、评论/用户ID、来源明细、密钥与本机路径均保留在本地忽略目录。详细配置和阈值敏感性结果见 summary.json。
+</pre><details><summary>聚合数据与质量指标</summary><pre>{
+  &quot;report_version&quot;: &quot;jev-judge-v2.0&quot;,
+  &quot;date&quot;: &quot;2026-10-06&quot;,
+  &quot;scope&quot;: &quot;Three input files; 320-record dataset is wholly included in 464-record dataset. Coordination features for subset use full 464-record context.&quot;,
+  &quot;unique_nonempty_records&quot;: 464,
+  &quot;notes&quot;: [
+    &quot;No comment text, nicknames, user/comment IDs, source details or local paths published.&quot;,
+    &quot;Probabilities and gates are experimental and uncalibrated. ACCEPT is not verified organic identity.&quot;,
+    &quot;All nonempty records lack stable author IDs. Suspected coordination is not proof of bots.&quot;,
+    &quot;Human Gold remains pending; no accuracy or investment-return claim.&quot;
+  ],
+  &quot;reports&quot;: [
+    {
+      &quot;stock_code&quot;: &quot;301251&quot;,
+      &quot;name&quot;: &quot;威尔高&quot;,
+      &quot;dataset&quot;: &quot;301251&quot;,
+      &quot;state&quot;: &quot;RESEARCH_ONLY / PENDING_HUMAN_ANNOTATION&quot;,
+      &quot;total&quot;: 0,
+      &quot;processed&quot;: 0,
+      &quot;complete&quot;: 0,
+      &quot;failed_or_partial&quot;: 0,
+      &quot;unprocessed&quot;: 0,
+      &quot;authenticity_labels&quot;: {},
+      &quot;gate_counts_complete&quot;: {},
+      &quot;relevant_complete&quot;: 0,
+      &quot;direction_counts_relevant&quot;: {},
+      &quot;default_weighted_score&quot;: {
+        &quot;score&quot;: null,
+        &quot;denominator_weight&quot;: 0,
+        &quot;comments&quot;: 0
+      },
+      &quot;unfiltered_soft_weighted_score&quot;: {
+        &quot;score&quot;: null,
+        &quot;denominator_weight&quot;: 0,
+        &quot;comments&quot;: 0
+      },
+      &quot;review_count&quot;: 0,
+      &quot;stable_author_id_missing&quot;: 0,
+      &quot;thresholds&quot;: {
+        &quot;version&quot;: &quot;jev-judge-v2.0&quot;,
+        &quot;model&quot;: &quot;jev-latest&quot;,
+        &quot;exclude_threshold&quot;: 0.8,
+        &quot;review_threshold&quot;: 0.5,
+        &quot;similarity_threshold&quot;: 0.9,
+        &quot;burst_window_minutes&quot;: 15,
+        &quot;relevance_threshold&quot;: 0.5,
+        &quot;minimum_group_size&quot;: 10,
+        &quot;threshold_status&quot;: &quot;EXPERIMENTAL_PENDING_GOLD&quot;
+      },
+      &quot;human_completed&quot;: 0,
+      &quot;metrics_state&quot;: &quot;PENDING_HUMAN_GOLD&quot;,
+      &quot;manipulation_divergence&quot;: null,
+      &quot;divergence_note&quot;: &quot;Only displayed when both groups have minimum_group_size relevant complete records; not proof of manipulation.&quot;,
+      &quot;gate_note&quot;: &quot;ACCEPT means below experimental p_bot cut, not verified organic identity; UNCERTAIN records remain flagged even in ACCEPT.&quot;,
+      &quot;probabilities_status&quot;: &quot;UNVALIDATED_MODEL_ESTIMATES&quot;,
+      &quot;weighted_direction_counts&quot;: {
+        &quot;BULLISH&quot;: 0,
+        &quot;BEARISH&quot;: 0,
+        &quot;NEUTRAL&quot;: 0,
+        &quot;UNCLEAR&quot;: 0,
+        &quot;NOT_APPLICABLE&quot;: 0
+      },
+      &quot;cut_sensitivity&quot;: {
+        &quot;0.5&quot;: {
+          &quot;score&quot;: null,
+          &quot;denominator_weight&quot;: 0,
+          &quot;comments&quot;: 0
+        },
+        &quot;0.6&quot;: {
+          &quot;score&quot;: null,
+          &quot;denominator_weight&quot;: 0,
+          &quot;comments&quot;: 0
+        },
+        &quot;0.7&quot;: {
+          &quot;score&quot;: null,
+          &quot;denominator_weight&quot;: 0,
+          &quot;comments&quot;: 0
+        },
+        &quot;0.8&quot;: {
+          &quot;score&quot;: null,
+          &quot;denominator_weight&quot;: 0,
+          &quot;comments&quot;: 0
+        },
+        &quot;0.9&quot;: {
+          &quot;score&quot;: null,
+          &quot;denominator_weight&quot;: 0,
+          &quot;comments&quot;: 0
+        }
+      }
+    },
+    {
+      &quot;stock_code&quot;: &quot;002008&quot;,
+      &quot;name&quot;: &quot;大族激光完整样本&quot;,
+      &quot;dataset&quot;: &quot;002008_464&quot;,
+      &quot;state&quot;: &quot;RESEARCH_ONLY / PENDING_HUMAN_ANNOTATION&quot;,
+      &quot;total&quot;: 464,
+      &quot;processed&quot;: 464,
+      &quot;complete&quot;: 464,
+      &quot;failed_or_partial&quot;: 0,
+      &quot;unprocessed&quot;: 0,
+      &quot;authenticity_labels&quot;: {
+        &quot;UNCERTAIN&quot;: 459,
+        &quot;SUSPECTED_COORDINATED&quot;: 5
+      },
+      &quot;gate_counts_complete&quot;: {
+        &quot;ACCEPT&quot;: 460,
+        &quot;DOWNWEIGHT_REVIEW&quot;: 4
+      },
+      &quot;relevant_complete&quot;: 304,
+      &quot;direction_counts_relevant&quot;: {
+        &quot;NOT_APPLICABLE&quot;: 41,
+        &quot;BULLISH&quot;: 47,
+        &quot;BEARISH&quot;: 177,
+        &quot;UNCLEAR&quot;: 38,
+        &quot;NEUTRAL&quot;: 1
+      },
+      &quot;default_weighted_score&quot;: {
+        &quot;score&quot;: -0.35031154634479617,
+        &quot;denominator_weight&quot;: 219.54999999999998,
+        &quot;comments&quot;: 304
+      },
+      &quot;unfiltered_soft_weighted_score&quot;: {
+        &quot;score&quot;: -0.35031154634479617,
+        &quot;denominator_weight&quot;: 219.54999999999998,
+        &quot;comments&quot;: 304
+      },
+      &quot;review_count&quot;: 464,
+      &quot;stable_author_id_missing&quot;: 464,
+      &quot;thresholds&quot;: {
+        &quot;version&quot;: &quot;jev-judge-v2.0&quot;,
+        &quot;model&quot;: &quot;jev-latest&quot;,
+        &quot;exclude_threshold&quot;: 0.8,
+        &quot;review_threshold&quot;: 0.5,
+        &quot;similarity_threshold&quot;: 0.9,
+        &quot;burst_window_minutes&quot;: 15,
+        &quot;relevance_threshold&quot;: 0.5,
+        &quot;minimum_group_size&quot;: 10,
+        &quot;threshold_status&quot;: &quot;EXPERIMENTAL_PENDING_GOLD&quot;
+      },
+      &quot;human_completed&quot;: 0,
+      &quot;metrics_state&quot;: &quot;PENDING_HUMAN_GOLD&quot;,
+      &quot;manipulation_divergence&quot;: null,
+      &quot;divergence_note&quot;: &quot;Only displayed when both groups have minimum_group_size relevant complete records; not proof of manipulation.&quot;,
+      &quot;gate_note&quot;: &quot;ACCEPT means below experimental p_bot cut, not verified organic identity; UNCERTAIN records remain flagged even in ACCEPT.&quot;,
+      &quot;probabilities_status&quot;: &quot;UNVALIDATED_MODEL_ESTIMATES&quot;,
+      &quot;weighted_direction_counts&quot;: {
+        &quot;BULLISH&quot;: 34.0,
+        &quot;BEARISH&quot;: 125.89999999999999,
+        &quot;NEUTRAL&quot;: 0.83,
+        &quot;UNCLEAR&quot;: 28.919999999999998,
+        &quot;NOT_APPLICABLE&quot;: 29.9
+      },
+      &quot;cut_sensitivity&quot;: {
+        &quot;0.5&quot;: {
+          &quot;score&quot;: -0.3531654873316595,
+          &quot;denominator_weight&quot;: 219.04999999999998,
+          &quot;comments&quot;: 303
+        },
+        &quot;0.6&quot;: {
+          &quot;score&quot;: -0.35031154634479617,
+          &quot;denominator_weight&quot;: 219.54999999999998,
+          &quot;comments&quot;: 304
+        },
+        &quot;0.7&quot;: {
+          &quot;score&quot;: -0.35031154634479617,
+          &quot;denominator_weight&quot;: 219.54999999999998,
+          &quot;comments&quot;: 304
+        },
+        &quot;0.8&quot;: {
+          &quot;score&quot;: -0.35031154634479617,
+          &quot;denominator_weight&quot;: 219.54999999999998,
+          &quot;comments&quot;: 304
+        },
+        &quot;0.9&quot;: {
+          &quot;score&quot;: -0.35031154634479617,
+          &quot;denominator_weight&quot;: 219.54999999999998,
+          &quot;comments&quot;: 304
+        }
+      }
+    },
+    {
+      &quot;stock_code&quot;: &quot;002008&quot;,
+      &quot;name&quot;: &quot;大族激光子集&quot;,
+      &quot;dataset&quot;: &quot;002008_320&quot;,
+      &quot;state&quot;: &quot;RESEARCH_ONLY / PENDING_HUMAN_ANNOTATION&quot;,
+      &quot;total&quot;: 320,
+      &quot;processed&quot;: 320,
+      &quot;complete&quot;: 320,
+      &quot;failed_or_partial&quot;: 0,
+      &quot;unprocessed&quot;: 0,
+      &quot;authenticity_labels&quot;: {
+        &quot;UNCERTAIN&quot;: 317,
+        &quot;SUSPECTED_COORDINATED&quot;: 3
+      },
+      &quot;gate_counts_complete&quot;: {
+        &quot;ACCEPT&quot;: 317,
+        &quot;DOWNWEIGHT_REVIEW&quot;: 3
+      },
+      &quot;relevant_complete&quot;: 264,
+      &quot;direction_counts_relevant&quot;: {
+        &quot;UNCLEAR&quot;: 26,
+        &quot;BEARISH&quot;: 166,
+        &quot;BULLISH&quot;: 40,
+        &quot;NOT_APPLICABLE&quot;: 31,
+        &quot;NEUTRAL&quot;: 1
+      },
+      &quot;default_weighted_score&quot;: {
+        &quot;score&quot;: -0.39453733551762404,
+        &quot;denominator_weight&quot;: 189.23,
+        &quot;comments&quot;: 264
+      },
+      &quot;unfiltered_soft_weighted_score&quot;: {
+        &quot;score&quot;: -0.39453733551762404,
+        &quot;denominator_weight&quot;: 189.23,
+        &quot;comments&quot;: 264
+      },
+      &quot;review_count&quot;: 320,
+      &quot;stable_author_id_missing&quot;: 320,
+      &quot;thresholds&quot;: {
+        &quot;version&quot;: &quot;jev-judge-v2.0&quot;,
+        &quot;model&quot;: &quot;jev-latest&quot;,
+        &quot;exclude_threshold&quot;: 0.8,
+        &quot;review_threshold&quot;: 0.5,
+        &quot;similarity_threshold&quot;: 0.9,
+        &quot;burst_window_minutes&quot;: 15,
+        &quot;relevance_threshold&quot;: 0.5,
+        &quot;minimum_group_size&quot;: 10,
+        &quot;threshold_status&quot;: &quot;EXPERIMENTAL_PENDING_GOLD&quot;
+      },
+      &quot;human_completed&quot;: 0,
+      &quot;metrics_state&quot;: &quot;PENDING_HUMAN_GOLD&quot;,
+      &quot;manipulation_divergence&quot;: null,
+      &quot;divergence_note&quot;: &quot;Only displayed when both groups have minimum_group_size relevant complete records; not proof of manipulation.&quot;,
+      &quot;gate_note&quot;: &quot;ACCEPT means below experimental p_bot cut, not verified organic identity; UNCERTAIN records remain flagged even in ACCEPT.&quot;,
+      &quot;probabilities_status&quot;: &quot;UNVALIDATED_MODEL_ESTIMATES&quot;,
+      &quot;weighted_direction_counts&quot;: {
+        &quot;BULLISH&quot;: 28.87,
+        &quot;BEARISH&quot;: 117.32,
+        &quot;NEUTRAL&quot;: 0.83,
+        &quot;UNCLEAR&quot;: 19.64,
+        &quot;NOT_APPLICABLE&quot;: 22.57
+      },
+      &quot;cut_sensitivity&quot;: {
+        &quot;0.5&quot;: {
+          &quot;score&quot;: -0.39796693689397555,
+          &quot;denominator_weight&quot;: 188.73,
+          &quot;comments&quot;: 263
+        },
+        &quot;0.6&quot;: {
+          &quot;score&quot;: -0.39453733551762404,
+          &quot;denominator_weight&quot;: 189.23,
+          &quot;comments&quot;: 264
+        },
+        &quot;0.7&quot;: {
+          &quot;score&quot;: -0.39453733551762404,
+          &quot;denominator_weight&quot;: 189.23,
+          &quot;comments&quot;: 264
+        },
+        &quot;0.8&quot;: {
+          &quot;score&quot;: -0.39453733551762404,
+          &quot;denominator_weight&quot;: 189.23,
+          &quot;comments&quot;: 264
+        },
+        &quot;0.9&quot;: {
+          &quot;score&quot;: -0.39453733551762404,
+          &quot;denominator_weight&quot;: 189.23,
+          &quot;comments&quot;: 264
+        }
+      }
+    }
+  ]
+}</pre></details>
