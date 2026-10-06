@@ -1,5 +1,6 @@
 """Closed-set confusion, class support, multiclass Brier and top-label ECE."""
 import math
+import random
 
 
 def metrics(pairs, labels, bins=10):
@@ -24,3 +25,21 @@ def metrics(pairs, labels, bins=10):
     ece = sum(len(b)/len(pairs)*abs(sum(x[0] for x in b)/len(b)-sum(x[1] for x in b)/len(b)) for b in buckets if b)
     supported = [v['f1'] or 0 for v in classes.values() if v['support']]
     return {'state': 'PARTIAL_GOLD' if any(not v['support'] for v in classes.values()) else 'MEASURED', 'n': len(pairs), 'macro_f1': sum(supported)/len(supported), 'macro_f1_denominator': 'classes with human support', 'brier': brier/len(pairs), 'brier_definition': 'mean sum squared error over all classes (0..2)', 'ece': ece, 'ece_definition': '10 equal-width bins; provider winner-label confidence', 'per_class': classes, 'confusion': confusion}
+
+
+def bootstrap95(pairs, labels, iterations=1000, seed=42):
+    if len(pairs) < 2:
+        return {'state': 'INSUFFICIENT_HUMAN_GOLD', 'macro_f1': None, 'brier': None, 'ece': None}
+    rng = random.Random(seed)
+    strata = {label: [p for p in pairs if p[0] == label] for label in labels}
+    samples = {k: [] for k in ('macro_f1', 'brier', 'ece')}
+    for _ in range(iterations):
+        resampled = [rng.choice(group) for group in strata.values() for _ in range(len(group))]
+        result = metrics(resampled, labels)
+        for k in samples:
+            samples[k].append(result[k])
+    intervals = {}
+    for k, values in samples.items():
+        values.sort()
+        intervals[k] = [values[int((iterations-1)*.025)], values[int((iterations-1)*.975)]]
+    return {'state': 'EXPERIMENTAL_INTERVAL', 'iterations': iterations, 'seed': seed, 'method': 'human-class-stratified percentile bootstrap; conditional on observed class supports', **intervals}

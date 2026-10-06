@@ -9,11 +9,13 @@ import time
 from collections import Counter
 from pathlib import Path
 
-from core.coordination.features import extract_features
+from core.coordination.features import extract_features, attach_cluster_directions
+from core.coordination.context import SocialContextAdapter
 from core.coordination.aggregator import aggregate
 from core.judges.base import JudgeContext
 from core.judges.jev import JevJudge
-from evaluation.jev_metrics import metrics
+from core.judges.pipeline_c import judge_units
+from evaluation.jev_metrics import metrics, bootstrap95
 from scripts.jev_pilot import dump
 
 COORD = ['ORGANIC', 'SUSPECTED_COORDINATED', 'UNCERTAIN']
@@ -31,6 +33,8 @@ def evaluate(rows, gold, out):
     result = {}
     errors = []
     for task, labels in [('coordination', COORD), ('direction', DIRECTION)]:
+        if task == 'coordination' and any('NO_COORDINATION_EVIDENCE' in (r.get(task) or {}).get('probabilities', {}) for r in rows):
+            labels = ['NO_COORDINATION_EVIDENCE', 'SUSPECTED_COORDINATED', 'INSUFFICIENT_EVIDENCE']
         pairs = []
         for g in gold:
             r = by_id.get(g['sample_id']); label = g.get('gold_'+task)
@@ -40,6 +44,7 @@ def evaluate(rows, gold, out):
             pred = r[task]; pairs.append((label, pred['label'], pred['probabilities']))
             if label != pred['label']: errors.append({'sample_id':g['sample_id'], 'task':task, 'gold':label, 'prediction':pred['label']})
         result[task] = metrics(pairs, labels)
+        result[task]['bootstrap_95_ci'] = bootstrap95(pairs, labels)
         dump(out/(task+'_confusion.json'), result[task])
     dump(out/'calibration.json', {k: {x: v[x] for x in ('state','n','brier','ece')} for k,v in result.items()})
     jsonl(out/'error_cases.jsonl', errors)
@@ -49,41 +54,65 @@ def evaluate(rows, gold, out):
 
 async def run(args):
     start = time.monotonic();cfg = json.loads(Path(args.config).read_text());data = json.loads(Path(args.input).read_text());comments = data['comments'];out = Path(args.output_dir);out.mkdir(parents=True,exist_ok=True)
-    manifest = {'input_sha256':hashlib.sha256(Path(args.input).read_bytes()).hexdigest(),'config':cfg,'scope':'104-comment benchmark only; no new stock expansion','promotion_state':'RESEARCH_ONLY','annotation_state':'PENDING_HUMAN_ANNOTATION'}
+    manifest = {'input_sha256':hashlib.sha256(Path(args.input).read_bytes()).hexdigest(),'config':cfg,'scope':'Local benchmark; no automatic stock expansion','atomic_units_sha256':hashlib.sha256(Path(args.atomic_units).read_bytes()).hexdigest() if args.atomic_units else None,'promotion_state':'RESEARCH_ONLY','annotation_state':'PENDING_HUMAN_ANNOTATION'}
     mf = out/'manifest.json'
     if mf.exists() and json.loads(mf.read_text()) != manifest: raise ValueError('Use a new run directory for changed input/config')
     dump(mf,manifest);fs = extract_features(comments,cfg);dump(out/'features.json',fs)
     key = os.environ.get('TYPESAFE_API_KEY') or Path('local/.jev.env').read_text().strip().split('=',1)[1]
     ledger = {'api_attempts':0,'successful_requests':0,'cache_hits':0,'reported_input_tokens':0}
-    judge = JevJudge(key,cfg,out/'cache',ledger);rows=[]
-    for i,c in enumerate(comments):
-        text = c.get('text') or c.get('comment') or '';sha=hashlib.sha256(text.encode()).hexdigest();sid=hashlib.sha256((manifest['input_sha256']+':'+str(i)).encode()).hexdigest()
-        r={'sample_id':sid,'index':i+1,'text_sha256':sha,'status':'FAILED','platform':c.get('platform',''),'text':text}
-        try:
-            coord=await judge.judge_coordination({'text':text,'platform':r['platform']},fs[i]);r['coordination']=coord.model_dump();r['status']='PARTIAL'
-            d=await judge.judge_direction({'text':text,'title':c.get('title')},JudgeContext(stock_code=data['stock_code'],stock_name=data['stock_name'],platform=r['platform']));r['direction']=d.model_dump();r['status']='SUCCESS'
-        except Exception as e:r['error']=(type(e).__name__+': '+str(e).replace(key,'[REDACTED]'))[:200]
-        rows.append(r);dump(out/'progress.json',{'processed':len(rows),'input':len(comments)});jsonl(out/'jev_predictions_104.jsonl',rows);dump(out/'ledger.json',ledger);print(i+1,r['status'],flush=True)
-        if 'STOP_HTTP_' in r.get('error',''):break
-    # Cluster direction is a post-judge diagnostic, not a circular input feature.
-    for i,f in enumerate(fs):
-        labels=[rows[j-1]['direction']['label'] for j in f['cluster_members'] if j<=len(rows) and rows[j-1]['status']=='SUCCESS']
-        f['same_direction_cluster_ratio']=Counter(labels).most_common(1)[0][1]/len(labels) if labels else None
+    judge = JevJudge(key,cfg,out/'cache',ledger)
+    adapter = SocialContextAdapter()
+    contexts = [adapter.adapt(c) for c in comments]
+    units = json.loads(Path(args.atomic_units).read_text()) if args.atomic_units else []
+    unit_lookup = {(str(r.get('cid')), r.get('platform'), r.get('text')): r for r in units}
+    rows = [None] * len(comments)
+    async def process(i, c):
+        adapted = contexts[i]
+        text = adapted['text'];sha=hashlib.sha256(text.encode()).hexdigest();sid=hashlib.sha256((manifest['input_sha256']+':'+str(i)).encode()).hexdigest()
+        r={'sample_id':sid,'index':i+1,'text_sha256':sha,'status':'FAILED','platform':adapted['platform'],'text':text,'coordination_mode':cfg.get('coordination_mode','RETROSPECTIVE')}
+        context=JudgeContext(stock_code=data['stock_code'],stock_name=data['stock_name'],platform=r['platform'])
+        if fs[i].get('pit_state','PASS').startswith('FAIL'):
+            r['error']='PIT_CONTEXT_UNAVAILABLE'
+        else:
+            outcomes=await asyncio.gather(judge.judge_coordination({'text':text,'platform':r['platform']},fs[i]),judge.judge_direction({'text':text,'title':adapted.get('title')},context),return_exceptions=True)
+            for task, result in zip(('coordination','direction'),outcomes):
+                if isinstance(result,Exception):r.setdefault('errors',[]).append(type(result).__name__+': '+str(result).replace(key,'[REDACTED]')[:200])
+                else:r[task]=result.model_dump()
+            r['status']='SUCCESS' if all(t in r for t in ('coordination','direction')) else 'PARTIAL' if any(t in r for t in ('coordination','direction')) else 'FAILED'
+            extraction = unit_lookup.get((str(c.get('cid')),r['platform'],text))
+            if extraction is not None:
+                try:
+                    r['pipeline_c_units']=await judge_units(judge,extraction,context)
+                except Exception as e:
+                    r['pipeline_c_error']=type(e).__name__+': '+str(e).replace(key,'[REDACTED]')[:200]
+        rows[i]=r
+        completed=[x for x in rows if x is not None]
+        dump(out/'progress.json',{'processed':len(completed),'input':len(comments)})
+        jsonl(out/'jev_predictions_104.jsonl',completed);dump(out/'ledger.json',ledger)
+        print(i+1,r['status'],flush=True)
+    await asyncio.gather(*(process(i,c) for i,c in enumerate(comments)))
+    attach_cluster_directions(fs,rows)
     dump(out/'features.json',fs)
     gp=out/'jev_gold_104.jsonl'
     if not gp.exists():jsonl(gp,[{'sample_id':hashlib.sha256((manifest['input_sha256']+':'+str(i)).encode()).hexdigest(),'index':i+1,'text_sha256':hashlib.sha256((c.get('text') or c.get('comment') or '').encode()).hexdigest(),'text':c.get('text') or c.get('comment'),'features':fs[i],'gold_coordination':None,'gold_direction':None,'subject_relation':None,'explicit_direction':None,'horizon':None,'annotator':None,'annotation_status':'PENDING'} for i,c in enumerate(comments)])
     gold=[json.loads(line) for line in gp.read_text().splitlines() if line];ev=evaluate(rows,gold,out)
     summary={'n':len(comments),'successful':sum(r['status']=='SUCCESS' for r in rows),'failed_or_partial':sum(r['status']!='SUCCESS' for r in rows),'unprocessed':len(comments)-len(rows),'coordination':ev['coordination'],'direction':ev['direction'],'human_completed':sum(g['annotation_status']=='COMPLETED' for g in gold),'aggregation':aggregate(rows,cfg['minimum_effective_weight']),'cost':{**ledger,'latency_seconds':time.monotonic()-start,'estimated_cost':None},'pipelines':{'A_LLM_only':'PENDING_COMPARABLE_PREDICTIONS','B_Jev_only':'PREDICTIONS_READY','C_extraction_plus_Jev':'PENDING_COMPARABLE_PREDICTIONS'},'promotion_state':'RESEARCH_ONLY','state':'PENDING_HUMAN_ANNOTATION'}
+    summary['coordination_mode']=cfg.get('coordination_mode','RETROSPECTIVE')
+    summary['asdc_signal_ready']=False
+    if args.atomic_units:
+        summary['pipelines']['C_extraction_plus_Jev']={'matched_comments':sum('pipeline_c_units' in r for r in rows),'judged_units':sum(u.get('direction') is not None for r in rows for u in r.get('pipeline_c_units',[])), 'state':'EXPERIMENTAL_VALIDATED_UNIT_JUDGE'}
+        summary['pipelines']['C_extraction_plus_Jev']['comments_with_units']=sum(bool(r.get('pipeline_c_units')) for r in rows)
+        summary['pipelines']['C_extraction_plus_Jev']['unit_gate_counts']=dict(Counter(u['gate'] for r in rows for u in r.get('pipeline_c_units',[])))
     summary['prediction_coverage']=summary['successful']/len(comments) if comments else None
     summary['prediction_counts']={task:dict(Counter(r[task]['label'] for r in rows if r['status']=='SUCCESS')) for task in ('coordination','direction')}
-    summary['unknown_rates']={task:sum(r[task]['label']==('UNCERTAIN' if task=='coordination' else 'UNCLEAR') for r in rows if r['status']=='SUCCESS')/summary['successful'] if summary['successful'] else None for task in ('coordination','direction')}
+    summary['unknown_rates']={task:sum(r[task]['label'] in (('UNCERTAIN','INSUFFICIENT_EVIDENCE') if task=='coordination' else ('UNCLEAR',)) for r in rows if r['status']=='SUCCESS')/summary['successful'] if summary['successful'] else None for task in ('coordination','direction')}
     dump(out/'summary.json',summary)
     (out/'report.html').write_text('<!doctype html><meta charset="utf-8"><title>Jev Benchmark</title><h1>Jev 可评测判定器</h1><p>Gold未标注时指标为空。启发式融合分数不是校准概率；不判断账号身份或收益。</p><pre>'+html.escape(json.dumps(summary,ensure_ascii=False,indent=2))+'</pre>',encoding='utf-8')
     print(json.dumps(summary,ensure_ascii=False),flush=True)
 
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--input',default='local/jev_input.json');p.add_argument('--config',default='configs/jev_benchmark.json');p.add_argument('--output-dir',default='local/jev_benchmark_20261006');p.add_argument('--evaluate-only',action='store_true');args=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--input',default='local/jev_input.json');p.add_argument('--config',default='configs/jev_benchmark.json');p.add_argument('--output-dir',default='local/jev_benchmark_20261006');p.add_argument('--atomic-units');p.add_argument('--evaluate-only',action='store_true');args=p.parse_args()
     if args.evaluate_only:
         out=Path(args.output_dir)
         rows=[json.loads(x) for x in (out/'jev_predictions_104.jsonl').read_text().splitlines() if x]

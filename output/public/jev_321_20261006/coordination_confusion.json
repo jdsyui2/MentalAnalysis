@@ -1,0 +1,34 @@
+{
+  "state": "PENDING_HUMAN_GOLD",
+  "n": 0,
+  "macro_f1": null,
+  "brier": null,
+  "ece": null,
+  "per_class": {
+    "NO_COORDINATION_EVIDENCE": {
+      "support": 0,
+      "precision": null,
+      "recall": null,
+      "f1": null
+    },
+    "SUSPECTED_COORDINATED": {
+      "support": 0,
+      "precision": null,
+      "recall": null,
+      "f1": null
+    },
+    "INSUFFICIENT_EVIDENCE": {
+      "support": 0,
+      "precision": null,
+      "recall": null,
+      "f1": null
+    }
+  },
+  "confusion": null,
+  "bootstrap_95_ci": {
+    "state": "INSUFFICIENT_HUMAN_GOLD",
+    "macro_f1": null,
+    "brier": null,
+    "ece": null
+  }
+}

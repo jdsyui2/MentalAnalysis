@@ -3,7 +3,7 @@ from typing import Literal, Protocol
 from pydantic import BaseModel, Field
 
 DirectionLabel = Literal['BULLISH', 'BEARISH', 'NEUTRAL', 'UNCLEAR', 'NOT_APPLICABLE']
-CoordinationLabel = Literal['ORGANIC', 'SUSPECTED_COORDINATED', 'UNCERTAIN']
+CoordinationLabel = Literal['ORGANIC', 'SUSPECTED_COORDINATED', 'UNCERTAIN', 'NO_COORDINATION_EVIDENCE', 'INSUFFICIENT_EVIDENCE']
 
 
 class JudgeContext(BaseModel):

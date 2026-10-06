@@ -1,0 +1,191 @@
+<!doctype html><meta charset="utf-8"><h1>JEV v3.2.1</h1><pre># v3.2.1 Coordination Evidence &amp; PIT Calibration
+
+104条路维光电新版分析全部成功；第一层104条均为INSUFFICIENT_EVIDENCE。本次原始243次请求（包括35个原子单元判断）耗时约59秒；缓存重放新增请求0。两层问题保持独立，默认并发4。
+
+适配EquityCrawler content / point_in_time / observation和legacy字段；簇级证据保留缺失。新标签不代表真人认证。104条缺少available_at，PIT检查全部拒绝，未补造采集时间。
+
+200条协同Gold候选准备完成：100条按证据排序、100条随机；50条开发、150条冻结，近重复簇不跨集合。人工完成0条，F1/Brier/ECE/bootstrap95%区间均未测量。校准未拟合，ASDC信号未就绪。
+
+Pipeline C通过引文位置、目标代码、主体关系门禁后，对35个本地规则提取单元进行闭集判断。全原文保留否定上下文。外部标的禁止生成目标方向，产业链关系需复核。这不是已验收LLM管线，三方精度横评仍待Gold及可比预测。
+
+本目录仅包含脱敏聚合；完整原文、作者/评论标识、来源细节、Gold候选及密钥不公开。详见docs/JEV_321.md。
+
+{
+  &quot;n&quot;: 104,
+  &quot;successful&quot;: 104,
+  &quot;failed_or_partial&quot;: 0,
+  &quot;unprocessed&quot;: 0,
+  &quot;coordination&quot;: {
+    &quot;state&quot;: &quot;PENDING_HUMAN_GOLD&quot;,
+    &quot;n&quot;: 0,
+    &quot;macro_f1&quot;: null,
+    &quot;brier&quot;: null,
+    &quot;ece&quot;: null,
+    &quot;per_class&quot;: {
+      &quot;NO_COORDINATION_EVIDENCE&quot;: {
+        &quot;support&quot;: 0,
+        &quot;precision&quot;: null,
+        &quot;recall&quot;: null,
+        &quot;f1&quot;: null
+      },
+      &quot;SUSPECTED_COORDINATED&quot;: {
+        &quot;support&quot;: 0,
+        &quot;precision&quot;: null,
+        &quot;recall&quot;: null,
+        &quot;f1&quot;: null
+      },
+      &quot;INSUFFICIENT_EVIDENCE&quot;: {
+        &quot;support&quot;: 0,
+        &quot;precision&quot;: null,
+        &quot;recall&quot;: null,
+        &quot;f1&quot;: null
+      }
+    },
+    &quot;confusion&quot;: null,
+    &quot;bootstrap_95_ci&quot;: {
+      &quot;state&quot;: &quot;INSUFFICIENT_HUMAN_GOLD&quot;,
+      &quot;macro_f1&quot;: null,
+      &quot;brier&quot;: null,
+      &quot;ece&quot;: null
+    }
+  },
+  &quot;direction&quot;: {
+    &quot;state&quot;: &quot;PENDING_HUMAN_GOLD&quot;,
+    &quot;n&quot;: 0,
+    &quot;macro_f1&quot;: null,
+    &quot;brier&quot;: null,
+    &quot;ece&quot;: null,
+    &quot;per_class&quot;: {
+      &quot;BULLISH&quot;: {
+        &quot;support&quot;: 0,
+        &quot;precision&quot;: null,
+        &quot;recall&quot;: null,
+        &quot;f1&quot;: null
+      },
+      &quot;BEARISH&quot;: {
+        &quot;support&quot;: 0,
+        &quot;precision&quot;: null,
+        &quot;recall&quot;: null,
+        &quot;f1&quot;: null
+      },
+      &quot;NEUTRAL&quot;: {
+        &quot;support&quot;: 0,
+        &quot;precision&quot;: null,
+        &quot;recall&quot;: null,
+        &quot;f1&quot;: null
+      },
+      &quot;UNCLEAR&quot;: {
+        &quot;support&quot;: 0,
+        &quot;precision&quot;: null,
+        &quot;recall&quot;: null,
+        &quot;f1&quot;: null
+      },
+      &quot;NOT_APPLICABLE&quot;: {
+        &quot;support&quot;: 0,
+        &quot;precision&quot;: null,
+        &quot;recall&quot;: null,
+        &quot;f1&quot;: null
+      }
+    },
+    &quot;confusion&quot;: null,
+    &quot;bootstrap_95_ci&quot;: {
+      &quot;state&quot;: &quot;INSUFFICIENT_HUMAN_GOLD&quot;,
+      &quot;macro_f1&quot;: null,
+      &quot;brier&quot;: null,
+      &quot;ece&quot;: null
+    }
+  },
+  &quot;human_completed&quot;: 0,
+  &quot;aggregation&quot;: {
+    &quot;relevant&quot;: 87,
+    &quot;coordinated_probability_weighted&quot;: {
+      &quot;score&quot;: null,
+      &quot;weight_sum&quot;: 0.0,
+      &quot;n&quot;: 87
+    },
+    &quot;divergence&quot;: null,
+    &quot;divergence_state&quot;: &quot;INSUFFICIENT_WEIGHT&quot;,
+    &quot;raw_difference_diagnostic&quot;: null,
+    &quot;note&quot;: &quot;Choice masses are uncalibrated. Heuristic fusion score is separate and not a calibrated probability. No account authenticity or investment-return assertion.&quot;,
+    &quot;no_coordination_evidence_weighted&quot;: {
+      &quot;score&quot;: -0.05780281690140846,
+      &quot;weight_sum&quot;: 3.55,
+      &quot;n&quot;: 87
+    }
+  },
+  &quot;cost&quot;: {
+    &quot;api_attempts&quot;: 0,
+    &quot;successful_requests&quot;: 0,
+    &quot;cache_hits&quot;: 243,
+    &quot;reported_input_tokens&quot;: 0,
+    &quot;latency_seconds&quot;: 0.17118166701402515,
+    &quot;estimated_cost&quot;: null
+  },
+  &quot;pipelines&quot;: {
+    &quot;A_LLM_only&quot;: &quot;PENDING_COMPARABLE_PREDICTIONS&quot;,
+    &quot;B_Jev_only&quot;: &quot;PREDICTIONS_READY&quot;,
+    &quot;C_extraction_plus_Jev&quot;: {
+      &quot;matched_comments&quot;: 104,
+      &quot;judged_units&quot;: 35,
+      &quot;state&quot;: &quot;EXPERIMENTAL_VALIDATED_UNIT_JUDGE&quot;,
+      &quot;comments_with_units&quot;: 22,
+      &quot;unit_gate_counts&quot;: {
+        &quot;PASS&quot;: 35
+      }
+    }
+  },
+  &quot;promotion_state&quot;: &quot;RESEARCH_ONLY&quot;,
+  &quot;state&quot;: &quot;PENDING_HUMAN_ANNOTATION&quot;,
+  &quot;coordination_mode&quot;: &quot;RETROSPECTIVE&quot;,
+  &quot;asdc_signal_ready&quot;: false,
+  &quot;prediction_coverage&quot;: 1.0,
+  &quot;prediction_counts&quot;: {
+    &quot;coordination&quot;: {
+      &quot;INSUFFICIENT_EVIDENCE&quot;: 104
+    },
+    &quot;direction&quot;: {
+      &quot;BEARISH&quot;: 30,
+      &quot;NOT_APPLICABLE&quot;: 39,
+      &quot;BULLISH&quot;: 31,
+      &quot;UNCLEAR&quot;: 4
+    }
+  },
+  &quot;unknown_rates&quot;: {
+    &quot;coordination&quot;: 1.0,
+    &quot;direction&quot;: 0.038461538461538464
+  },
+  &quot;first_live_run_cost&quot;: {
+    &quot;api_attempts&quot;: 243,
+    &quot;successful_requests&quot;: 243,
+    &quot;cache_hits&quot;: 0,
+    &quot;reported_input_tokens&quot;: 192484,
+    &quot;latency_seconds&quot;: 59.35602825006936,
+    &quot;estimated_cost&quot;: null
+  },
+  &quot;resolved_models&quot;: [
+    &quot;jev-1.13.0&quot;
+  ],
+  &quot;pit_quality&quot;: {
+    &quot;mode&quot;: &quot;PIT_CAUSAL&quot;,
+    &quot;pass&quot;: 0,
+    &quot;failed_missing_time&quot;: 104,
+    &quot;api_calls&quot;: 0
+  },
+  &quot;gold_candidates&quot;: {
+    &quot;n&quot;: 200,
+    &quot;split_counts&quot;: {
+      &quot;FROZEN&quot;: 150,
+      &quot;DEVELOPMENT&quot;: 50
+    },
+    &quot;selection_counts&quot;: {
+      &quot;HIGH_SIGNAL_CANDIDATE&quot;: 100,
+      &quot;RANDOM&quot;: 100
+    },
+    &quot;human_completed&quot;: 0,
+    &quot;seed&quot;: 42,
+    &quot;coordination_mode&quot;: &quot;RETROSPECTIVE&quot;,
+    &quot;note&quot;: &quot;Selection ranks evidence, not Gold. Same near-duplicate group never crosses splits. This deliberately selected sample is not representative prevalence.&quot;
+  },
+  &quot;calibration_state&quot;: &quot;NOT_FITTED_PENDING_HUMAN_GOLD&quot;,
+  &quot;pipeline_c_source&quot;: &quot;Existing local RULE_EXTRACTION units; evidence positions validated; not human-verified LLM extraction&quot;
+}</pre>

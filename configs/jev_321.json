@@ -1,0 +1,12 @@
+{
+  "version": "jev-evidence-3.2.1",
+  "model": "jev-latest",
+  "similarity_threshold": 0.9,
+  "burst_window_minutes": 15,
+  "coordination_mode": "RETROSPECTIVE",
+  "coordination_labels": "evidence-v1",
+  "concurrency": 4,
+  "fusion_weights": {"jev": 0.35, "similarity": 0.25, "burst": 0.2, "template": 0.1, "author": 0.1},
+  "fusion_state": "EXPERIMENTAL_NOT_CALIBRATED",
+  "minimum_effective_weight": 10
+}
