@@ -1,0 +1,126 @@
+{
+  "n": 104,
+  "successful": 104,
+  "failed_or_partial": 0,
+  "unprocessed": 0,
+  "coordination": {
+    "state": "PENDING_HUMAN_GOLD",
+    "n": 0,
+    "macro_f1": null,
+    "brier": null,
+    "ece": null,
+    "per_class": {
+      "ORGANIC": {
+        "support": 0,
+        "precision": null,
+        "recall": null,
+        "f1": null
+      },
+      "SUSPECTED_COORDINATED": {
+        "support": 0,
+        "precision": null,
+        "recall": null,
+        "f1": null
+      },
+      "UNCERTAIN": {
+        "support": 0,
+        "precision": null,
+        "recall": null,
+        "f1": null
+      }
+    },
+    "confusion": null
+  },
+  "direction": {
+    "state": "PENDING_HUMAN_GOLD",
+    "n": 0,
+    "macro_f1": null,
+    "brier": null,
+    "ece": null,
+    "per_class": {
+      "BULLISH": {
+        "support": 0,
+        "precision": null,
+        "recall": null,
+        "f1": null
+      },
+      "BEARISH": {
+        "support": 0,
+        "precision": null,
+        "recall": null,
+        "f1": null
+      },
+      "NEUTRAL": {
+        "support": 0,
+        "precision": null,
+        "recall": null,
+        "f1": null
+      },
+      "UNCLEAR": {
+        "support": 0,
+        "precision": null,
+        "recall": null,
+        "f1": null
+      },
+      "NOT_APPLICABLE": {
+        "support": 0,
+        "precision": null,
+        "recall": null,
+        "f1": null
+      }
+    },
+    "confusion": null
+  },
+  "human_completed": 0,
+  "aggregation": {
+    "relevant": 86,
+    "organic_probability_weighted": {
+      "score": -0.019326424870466326,
+      "weight_sum": 15.44,
+      "n": 86
+    },
+    "coordinated_probability_weighted": {
+      "score": 0.7147058823529411,
+      "weight_sum": 0.17,
+      "n": 86
+    },
+    "divergence": null,
+    "divergence_state": "INSUFFICIENT_WEIGHT",
+    "raw_difference_diagnostic": 0.7340323072234074,
+    "note": "Choice masses are uncalibrated. Heuristic fusion score is separate and not a calibrated probability. No account authenticity or investment-return assertion."
+  },
+  "cost": {
+    "api_attempts": 208,
+    "successful_requests": 208,
+    "cache_hits": 0,
+    "reported_input_tokens": 146014,
+    "latency_seconds": 201.2514551669592,
+    "estimated_cost": null
+  },
+  "pipelines": {
+    "A_LLM_only": "PENDING_COMPARABLE_PREDICTIONS",
+    "B_Jev_only": "PREDICTIONS_READY",
+    "C_extraction_plus_Jev": "PENDING_COMPARABLE_PREDICTIONS"
+  },
+  "promotion_state": "RESEARCH_ONLY",
+  "state": "PENDING_HUMAN_ANNOTATION",
+  "prediction_coverage": 1.0,
+  "prediction_counts": {
+    "coordination": {
+      "UNCERTAIN": 104
+    },
+    "direction": {
+      "BEARISH": 31,
+      "NOT_APPLICABLE": 39,
+      "BULLISH": 29,
+      "UNCLEAR": 5
+    }
+  },
+  "unknown_rates": {
+    "coordination": 1.0,
+    "direction": 0.04807692307692308
+  },
+  "resolved_models": [
+    "jev-1.13.0"
+  ]
+}

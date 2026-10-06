@@ -1,0 +1,14 @@
+{
+  "coordination": {
+    "state": "PENDING_HUMAN_GOLD",
+    "n": 0,
+    "brier": null,
+    "ece": null
+  },
+  "direction": {
+    "state": "PENDING_HUMAN_GOLD",
+    "n": 0,
+    "brier": null,
+    "ece": null
+  }
+}

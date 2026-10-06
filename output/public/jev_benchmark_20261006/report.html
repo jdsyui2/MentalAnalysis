@@ -1,0 +1,136 @@
+<!doctype html><meta charset="utf-8"><h1>JEV Benchmark</h1><pre># JEV 可评测判定器升级
+
+104条路维光电，全部成功；模型响应为 jev-1.13.0。人工Gold完成0条。两层精度、混淆矩阵、Brier及ECE待标注，不以0冒充测量结果。
+
+新增可插拔SemanticJudge、版本化问题审计、行为特征扩展、独立语言信号与实验融合分数、方向明确性/期限、三类概率权重聚合。融合分数未校准，不能直接称为P(coord)。未集成ASDC、不扩展股票。
+
+本地包含104条空Gold模板及原文预测JSONL；公開只含聚合质量数据。无原文、昵称、评论/用户ID、来源明细、本机路径或密钥。填完真实Gold后可用evaluate-only离线评测。A/C对照需要可比预测，未把现有规则提取冒充LLM结果。
+
+参考 evaluation/JEV_GOLD_GUIDE.md 与 scripts/JEV_PILOT.md。
+
+{
+  &quot;n&quot;: 104,
+  &quot;successful&quot;: 104,
+  &quot;failed_or_partial&quot;: 0,
+  &quot;unprocessed&quot;: 0,
+  &quot;coordination&quot;: {
+    &quot;state&quot;: &quot;PENDING_HUMAN_GOLD&quot;,
+    &quot;n&quot;: 0,
+    &quot;macro_f1&quot;: null,
+    &quot;brier&quot;: null,
+    &quot;ece&quot;: null,
+    &quot;per_class&quot;: {
+      &quot;ORGANIC&quot;: {
+        &quot;support&quot;: 0,
+        &quot;precision&quot;: null,
+        &quot;recall&quot;: null,
+        &quot;f1&quot;: null
+      },
+      &quot;SUSPECTED_COORDINATED&quot;: {
+        &quot;support&quot;: 0,
+        &quot;precision&quot;: null,
+        &quot;recall&quot;: null,
+        &quot;f1&quot;: null
+      },
+      &quot;UNCERTAIN&quot;: {
+        &quot;support&quot;: 0,
+        &quot;precision&quot;: null,
+        &quot;recall&quot;: null,
+        &quot;f1&quot;: null
+      }
+    },
+    &quot;confusion&quot;: null
+  },
+  &quot;direction&quot;: {
+    &quot;state&quot;: &quot;PENDING_HUMAN_GOLD&quot;,
+    &quot;n&quot;: 0,
+    &quot;macro_f1&quot;: null,
+    &quot;brier&quot;: null,
+    &quot;ece&quot;: null,
+    &quot;per_class&quot;: {
+      &quot;BULLISH&quot;: {
+        &quot;support&quot;: 0,
+        &quot;precision&quot;: null,
+        &quot;recall&quot;: null,
+        &quot;f1&quot;: null
+      },
+      &quot;BEARISH&quot;: {
+        &quot;support&quot;: 0,
+        &quot;precision&quot;: null,
+        &quot;recall&quot;: null,
+        &quot;f1&quot;: null
+      },
+      &quot;NEUTRAL&quot;: {
+        &quot;support&quot;: 0,
+        &quot;precision&quot;: null,
+        &quot;recall&quot;: null,
+        &quot;f1&quot;: null
+      },
+      &quot;UNCLEAR&quot;: {
+        &quot;support&quot;: 0,
+        &quot;precision&quot;: null,
+        &quot;recall&quot;: null,
+        &quot;f1&quot;: null
+      },
+      &quot;NOT_APPLICABLE&quot;: {
+        &quot;support&quot;: 0,
+        &quot;precision&quot;: null,
+        &quot;recall&quot;: null,
+        &quot;f1&quot;: null
+      }
+    },
+    &quot;confusion&quot;: null
+  },
+  &quot;human_completed&quot;: 0,
+  &quot;aggregation&quot;: {
+    &quot;relevant&quot;: 86,
+    &quot;organic_probability_weighted&quot;: {
+      &quot;score&quot;: -0.019326424870466326,
+      &quot;weight_sum&quot;: 15.44,
+      &quot;n&quot;: 86
+    },
+    &quot;coordinated_probability_weighted&quot;: {
+      &quot;score&quot;: 0.7147058823529411,
+      &quot;weight_sum&quot;: 0.17,
+      &quot;n&quot;: 86
+    },
+    &quot;divergence&quot;: null,
+    &quot;divergence_state&quot;: &quot;INSUFFICIENT_WEIGHT&quot;,
+    &quot;raw_difference_diagnostic&quot;: 0.7340323072234074,
+    &quot;note&quot;: &quot;Choice masses are uncalibrated. Heuristic fusion score is separate and not a calibrated probability. No account authenticity or investment-return assertion.&quot;
+  },
+  &quot;cost&quot;: {
+    &quot;api_attempts&quot;: 208,
+    &quot;successful_requests&quot;: 208,
+    &quot;cache_hits&quot;: 0,
+    &quot;reported_input_tokens&quot;: 146014,
+    &quot;latency_seconds&quot;: 201.2514551669592,
+    &quot;estimated_cost&quot;: null
+  },
+  &quot;pipelines&quot;: {
+    &quot;A_LLM_only&quot;: &quot;PENDING_COMPARABLE_PREDICTIONS&quot;,
+    &quot;B_Jev_only&quot;: &quot;PREDICTIONS_READY&quot;,
+    &quot;C_extraction_plus_Jev&quot;: &quot;PENDING_COMPARABLE_PREDICTIONS&quot;
+  },
+  &quot;promotion_state&quot;: &quot;RESEARCH_ONLY&quot;,
+  &quot;state&quot;: &quot;PENDING_HUMAN_ANNOTATION&quot;,
+  &quot;prediction_coverage&quot;: 1.0,
+  &quot;prediction_counts&quot;: {
+    &quot;coordination&quot;: {
+      &quot;UNCERTAIN&quot;: 104
+    },
+    &quot;direction&quot;: {
+      &quot;BEARISH&quot;: 31,
+      &quot;NOT_APPLICABLE&quot;: 39,
+      &quot;BULLISH&quot;: 29,
+      &quot;UNCLEAR&quot;: 5
+    }
+  },
+  &quot;unknown_rates&quot;: {
+    &quot;coordination&quot;: 1.0,
+    &quot;direction&quot;: 0.04807692307692308
+  },
+  &quot;resolved_models&quot;: [
+    &quot;jev-1.13.0&quot;
+  ]
+}</pre>

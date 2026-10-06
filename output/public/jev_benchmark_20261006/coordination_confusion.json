@@ -1,0 +1,28 @@
+{
+  "state": "PENDING_HUMAN_GOLD",
+  "n": 0,
+  "macro_f1": null,
+  "brier": null,
+  "ece": null,
+  "per_class": {
+    "ORGANIC": {
+      "support": 0,
+      "precision": null,
+      "recall": null,
+      "f1": null
+    },
+    "SUSPECTED_COORDINATED": {
+      "support": 0,
+      "precision": null,
+      "recall": null,
+      "f1": null
+    },
+    "UNCERTAIN": {
+      "support": 0,
+      "precision": null,
+      "recall": null,
+      "f1": null
+    }
+  },
+  "confusion": null
+}

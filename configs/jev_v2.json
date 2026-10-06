@@ -1,0 +1,11 @@
+{
+  "version": "jev-judge-v2.0",
+  "model": "jev-latest",
+  "exclude_threshold": 0.8,
+  "review_threshold": 0.5,
+  "similarity_threshold": 0.9,
+  "burst_window_minutes": 15,
+  "relevance_threshold": 0.5,
+  "minimum_group_size": 10,
+  "threshold_status": "EXPERIMENTAL_PENDING_GOLD"
+}

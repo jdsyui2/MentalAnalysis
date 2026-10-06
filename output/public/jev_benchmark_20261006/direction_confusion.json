@@ -1,0 +1,40 @@
+{
+  "state": "PENDING_HUMAN_GOLD",
+  "n": 0,
+  "macro_f1": null,
+  "brier": null,
+  "ece": null,
+  "per_class": {
+    "BULLISH": {
+      "support": 0,
+      "precision": null,
+      "recall": null,
+      "f1": null
+    },
+    "BEARISH": {
+      "support": 0,
+      "precision": null,
+      "recall": null,
+      "f1": null
+    },
+    "NEUTRAL": {
+      "support": 0,
+      "precision": null,
+      "recall": null,
+      "f1": null
+    },
+    "UNCLEAR": {
+      "support": 0,
+      "precision": null,
+      "recall": null,
+      "f1": null
+    },
+    "NOT_APPLICABLE": {
+      "support": 0,
+      "precision": null,
+      "recall": null,
+      "f1": null
+    }
+  },
+  "confusion": null
+}
