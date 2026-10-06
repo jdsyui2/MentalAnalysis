@@ -1,0 +1,56 @@
+{
+  "baseline_commit": "12439cdab9f83c68b2586e59af9890db792aea13",
+  "source_record_count": 787,
+  "seed": 42,
+  "api_calls": 0,
+  "human_completed": 0,
+  "calibration_state": "BLOCKED_PENDING_HUMAN_DEV",
+  "frozen_evaluation_state": "NOT_STARTED",
+  "promotion_state": "RESEARCH_ONLY",
+  "tasks": {
+    "COORDINATION_PIT": {
+      "n": 200,
+      "split_counts": {
+        "FROZEN": 150,
+        "DEVELOPMENT": 50
+      },
+      "platform_counts": {
+        "eastmoney": 167,
+        "taoguba": 33
+      },
+      "selection_counts": {
+        "HIGH_SIGNAL_CANDIDATE": 100,
+        "RANDOM": 100
+      },
+      "double_annotation_count": 50,
+      "labels": [
+        "NO_COORDINATION_EVIDENCE",
+        "SUSPECTED_COORDINATED",
+        "INSUFFICIENT_EVIDENCE"
+      ]
+    },
+    "DIRECTION": {
+      "n": 300,
+      "split_counts": {
+        "FROZEN": 210,
+        "DEVELOPMENT": 90
+      },
+      "platform_counts": {
+        "eastmoney": 180,
+        "taoguba": 100,
+        "xueqiu": 20
+      },
+      "selection_counts": {
+        "PLATFORM_RANDOM": 300
+      },
+      "double_annotation_count": 50,
+      "labels": [
+        "BULLISH",
+        "BEARISH",
+        "NEUTRAL",
+        "UNCLEAR",
+        "NOT_APPLICABLE"
+      ]
+    }
+  }
+}

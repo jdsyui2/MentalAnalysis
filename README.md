@@ -2,6 +2,10 @@
 
 可追溯的中文投资评论批量分析：分别识别推荐、本人持仓、询问、预测、方法态度和理由，提供本地原文报告与公开脱敏结果。当前用途为 **RESEARCH_ASSIST（研究辅助可用）**，保留 **RESEARCH_ONLY / PENDING_HUMAN_ANNOTATION**，测试通过不代表模型准确率达标。
 
+## 人工 Gold 阶段
+
+PIT 工程基线冻结于 `12439cd`。已准备 200 条 PIT 协同与 300 条分平台方向盲标任务；原文页面仅在本地。人工完成前不校准、不运行正式冻结验收、不晋级投资信号。见 [人工标注说明](evaluation/PIT_HUMAN_GOLD_GUIDE.md) 和 [脱敏任务汇总](output/public/human_gold_pit_20261006/README.md)。
+
 ## JEV v3.2.2
 
 本轮仅修订 PIT 接入：发布时间可未知，时间统计使用 `available_at`，新增正规语料离线验证。见 [v3.2.2 说明](docs/JEV_322.md)。语义精度仍待人工验收。
